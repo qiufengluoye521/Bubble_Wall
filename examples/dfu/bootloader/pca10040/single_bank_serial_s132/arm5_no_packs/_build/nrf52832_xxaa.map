@@ -1,0 +1,1737 @@
+Component: ARM Compiler 5.06 update 2 (build 183) Tool: armlink [4d35b7]
+
+==============================================================================
+
+Section Cross References
+
+    main.o(i.assert_nrf_callback) refers to app_error.o(i.app_error_handler) for app_error_handler
+    main.o(i.ble_stack_init) refers to app_error.o(i.app_error_handler_bare) for app_error_handler_bare
+    main.o(i.ble_stack_init) refers to softdevice_handler.o(i.softdevice_handler_init) for softdevice_handler_init
+    main.o(i.ble_stack_init) refers to softdevice_handler.o(i.softdevice_enable_get_default_config) for softdevice_enable_get_default_config
+    main.o(i.ble_stack_init) refers to softdevice_handler.o(i.softdevice_enable) for softdevice_enable
+    main.o(i.ble_stack_init) refers to softdevice_handler.o(i.softdevice_sys_evt_handler_set) for softdevice_sys_evt_handler_set
+    main.o(i.ble_stack_init) refers to main.o(.constdata) for .constdata
+    main.o(i.ble_stack_init) refers to softdevice_handler_appsh.o(i.softdevice_evt_schedule) for softdevice_evt_schedule
+    main.o(i.ble_stack_init) refers to main.o(.bss) for .bss
+    main.o(i.ble_stack_init) refers to main.o(i.sys_evt_dispatch) for sys_evt_dispatch
+    main.o(i.main) refers to main.o(i.nrf_gpio_cfg) for nrf_gpio_cfg
+    main.o(i.main) refers to app_error.o(i.app_error_handler_bare) for app_error_handler_bare
+    main.o(i.main) refers to app_timer.o(i.app_timer_init) for app_timer_init
+    main.o(i.main) refers to bootloader.o(i.bootloader_init) for bootloader_init
+    main.o(i.main) refers to bootloader.o(i.bootloader_dfu_sd_in_progress) for bootloader_dfu_sd_in_progress
+    main.o(i.main) refers to bootloader.o(i.bootloader_dfu_sd_update_continue) for bootloader_dfu_sd_update_continue
+    main.o(i.main) refers to main.o(i.ble_stack_init) for ble_stack_init
+    main.o(i.main) refers to main.o(i.scheduler_init) for scheduler_init
+    main.o(i.main) refers to bootloader.o(i.bootloader_dfu_sd_update_finalize) for bootloader_dfu_sd_update_finalize
+    main.o(i.main) refers to bootloader.o(i.bootloader_app_is_valid) for bootloader_app_is_valid
+    main.o(i.main) refers to bootloader.o(i.bootloader_dfu_start) for bootloader_dfu_start
+    main.o(i.main) refers to bootloader.o(i.bootloader_app_start) for bootloader_app_start
+    main.o(i.main) refers to app_timer_appsh.o(i.app_timer_evt_schedule) for app_timer_evt_schedule
+    main.o(i.main) refers to main.o(.bss) for .bss
+    main.o(i.scheduler_init) refers to app_scheduler.o(i.app_sched_init) for app_sched_init
+    main.o(i.scheduler_init) refers to app_error.o(i.app_error_handler_bare) for app_error_handler_bare
+    main.o(i.scheduler_init) refers to main.o(.bss) for .bss
+    main.o(i.sys_evt_dispatch) refers to pstorage_raw.o(i.pstorage_sys_event_handler) for pstorage_sys_event_handler
+    ble_advdata.o(i.adv_data_encode) refers to ble_advdata.o(i.le_role_encode) for le_role_encode
+    ble_advdata.o(i.adv_data_encode) refers to ble_advdata.o(i.ble_device_addr_encode) for ble_device_addr_encode
+    ble_advdata.o(i.adv_data_encode) refers to ble_advdata.o(i.uint16_encode) for uint16_encode
+    ble_advdata.o(i.adv_data_encode) refers to ble_advdata.o(i.uuid_list_encode) for uuid_list_encode
+    ble_advdata.o(i.adv_data_encode) refers to ble_advdata.o(i.conn_int_encode) for conn_int_encode
+    ble_advdata.o(i.adv_data_encode) refers to ble_advdata.o(i.manuf_specific_data_encode) for manuf_specific_data_encode
+    ble_advdata.o(i.adv_data_encode) refers to ble_advdata.o(i.service_data_encode) for service_data_encode
+    ble_advdata.o(i.adv_data_encode) refers to ble_advdata.o(i.name_encode) for name_encode
+    ble_advdata.o(i.ble_advdata_set) refers to ble_advdata.o(i.adv_data_encode) for adv_data_encode
+    ble_advdata.o(i.conn_int_encode) refers to ble_advdata.o(i.uint16_encode) for uint16_encode
+    ble_advdata.o(i.manuf_specific_data_encode) refers to ble_advdata.o(i.uint16_encode) for uint16_encode
+    ble_advdata.o(i.manuf_specific_data_encode) refers to memcpya.o(.text) for __aeabi_memcpy
+    ble_advdata.o(i.service_data_encode) refers to ble_advdata.o(i.uint16_encode) for uint16_encode
+    ble_advdata.o(i.service_data_encode) refers to memcpya.o(.text) for __aeabi_memcpy
+    ble_advdata.o(i.uuid_list_encode) refers to ble_advdata.o(i.uuid_list_sized_encode) for uuid_list_sized_encode
+    ble_conn_params.o(i.ble_conn_params_change_conn_params) refers to ble_conn_params.o(i.is_conn_params_ok) for is_conn_params_ok
+    ble_conn_params.o(i.ble_conn_params_change_conn_params) refers to ble_conn_params.o(.data) for .data
+    ble_conn_params.o(i.ble_conn_params_change_conn_params) refers to ble_conn_params.o(.bss) for .bss
+    ble_conn_params.o(i.ble_conn_params_init) refers to memcpya.o(.text) for __aeabi_memcpy4
+    ble_conn_params.o(i.ble_conn_params_init) refers to app_timer.o(i.app_timer_create) for app_timer_create
+    ble_conn_params.o(i.ble_conn_params_init) refers to ble_conn_params.o(.bss) for .bss
+    ble_conn_params.o(i.ble_conn_params_init) refers to ble_conn_params.o(.data) for .data
+    ble_conn_params.o(i.ble_conn_params_init) refers to ble_conn_params.o(i.update_timeout_handler) for update_timeout_handler
+    ble_conn_params.o(i.ble_conn_params_init) refers to ble_conn_params.o(.constdata) for .constdata
+    ble_conn_params.o(i.ble_conn_params_on_ble_evt) refers to ble_conn_params.o(i.conn_params_negotiation) for conn_params_negotiation
+    ble_conn_params.o(i.ble_conn_params_on_ble_evt) refers to app_timer.o(i.app_timer_stop) for app_timer_stop
+    ble_conn_params.o(i.ble_conn_params_on_ble_evt) refers to ble_conn_params.o(.data) for .data
+    ble_conn_params.o(i.ble_conn_params_on_ble_evt) refers to ble_conn_params.o(.bss) for .bss
+    ble_conn_params.o(i.ble_conn_params_on_ble_evt) refers to ble_conn_params.o(.constdata) for .constdata
+    ble_conn_params.o(i.ble_conn_params_stop) refers to app_timer.o(i.app_timer_stop) for app_timer_stop
+    ble_conn_params.o(i.ble_conn_params_stop) refers to ble_conn_params.o(.constdata) for .constdata
+    ble_conn_params.o(i.conn_params_negotiation) refers to ble_conn_params.o(i.is_conn_params_ok) for is_conn_params_ok
+    ble_conn_params.o(i.conn_params_negotiation) refers to app_timer.o(i.app_timer_start) for app_timer_start
+    ble_conn_params.o(i.conn_params_negotiation) refers to ble_conn_params.o(.data) for .data
+    ble_conn_params.o(i.conn_params_negotiation) refers to ble_conn_params.o(.bss) for .bss
+    ble_conn_params.o(i.conn_params_negotiation) refers to ble_conn_params.o(.constdata) for .constdata
+    ble_conn_params.o(i.is_conn_params_ok) refers to ble_conn_params.o(.data) for .data
+    ble_conn_params.o(i.update_timeout_handler) refers to ble_conn_params.o(.data) for .data
+    ble_conn_params.o(i.update_timeout_handler) refers to ble_conn_params.o(.bss) for .bss
+    ble_conn_params.o(.constdata) refers to ble_conn_params.o(.bss) for m_conn_params_timer_id_data
+    ble_srv_common.o(i.ble_srv_ascii_to_utf8) refers to strlen.o(.text) for strlen
+    ble_srv_common.o(i.characteristic_add) refers to ble_srv_common.o(i.set_security_req) for set_security_req
+    ble_srv_common.o(i.characteristic_add) refers to memseta.o(.text) for __aeabi_memclr4
+    ble_srv_common.o(i.descriptor_add) refers to memseta.o(.text) for __aeabi_memclr4
+    ble_srv_common.o(i.descriptor_add) refers to ble_srv_common.o(i.set_security_req) for set_security_req
+    app_uart.o(i.app_uart_close) refers to nrf_drv_uart.o(i.nrf_drv_uart_uninit) for nrf_drv_uart_uninit
+    app_uart.o(i.app_uart_get) refers to app_uart.o(.data) for .data
+    app_uart.o(i.app_uart_init) refers to memcpya.o(.text) for __aeabi_memcpy4
+    app_uart.o(i.app_uart_init) refers to nrf_drv_uart.o(i.nrf_drv_uart_init) for nrf_drv_uart_init
+    app_uart.o(i.app_uart_init) refers to nrf_drv_uart.o(i.nrf_drv_uart_rx_enable) for nrf_drv_uart_rx_enable
+    app_uart.o(i.app_uart_init) refers to nrf_drv_uart.o(i.nrf_drv_uart_rx) for nrf_drv_uart_rx
+    app_uart.o(i.app_uart_init) refers to app_uart.o(.constdata) for .constdata
+    app_uart.o(i.app_uart_init) refers to app_uart.o(.data) for .data
+    app_uart.o(i.app_uart_init) refers to app_uart.o(i.uart_event_handler) for uart_event_handler
+    app_uart.o(i.app_uart_put) refers to nrf_drv_uart.o(i.nrf_drv_uart_tx) for nrf_drv_uart_tx
+    app_uart.o(i.app_uart_put) refers to app_uart.o(.data) for .data
+    app_uart.o(i.uart_event_handler) refers to nrf_drv_uart.o(i.nrf_drv_uart_rx) for nrf_drv_uart_rx
+    app_uart.o(i.uart_event_handler) refers to app_uart.o(.data) for .data
+    nrf_delay.o(i.nrf_delay_ms) refers to nrf_delay.o(.emb_text) for __asm___11_nrf_delay_c_532987f3__nrf_delay_us
+    nrf_drv_uart.o(i.UARTE0_UART0_IRQHandler) refers to nrf_drv_uart.o(i.uarte_irq_handler) for uarte_irq_handler
+    nrf_drv_uart.o(i.UARTE0_UART0_IRQHandler) refers to nrf_drv_uart.o(i.uart_irq_handler) for uart_irq_handler
+    nrf_drv_uart.o(i.UARTE0_UART0_IRQHandler) refers to nrf_drv_uart.o(.bss) for .bss
+    nrf_drv_uart.o(i.apply_config) refers to nrf_drv_uart.o(i.nrf_gpio_cfg_output) for nrf_gpio_cfg_output
+    nrf_drv_uart.o(i.apply_config) refers to nrf_drv_uart.o(i.nrf_gpio_cfg_input) for nrf_gpio_cfg_input
+    nrf_drv_uart.o(i.apply_config) refers to nrf_drv_uart.o(.bss) for .bss
+    nrf_drv_uart.o(i.nrf_drv_uart_errorsrc_get) refers to nrf_drv_uart.o(.bss) for .bss
+    nrf_drv_uart.o(i.nrf_drv_uart_init) refers to nrf_drv_uart.o(i.apply_config) for apply_config
+    nrf_drv_uart.o(i.nrf_drv_uart_init) refers to nrf_drv_common.o(i.nrf_drv_common_irq_enable) for nrf_drv_common_irq_enable
+    nrf_drv_uart.o(i.nrf_drv_uart_init) refers to nrf_drv_uart.o(.bss) for .bss
+    nrf_drv_uart.o(i.nrf_drv_uart_init) refers to nrf_drv_uart.o(.constdata) for .constdata
+    nrf_drv_uart.o(i.nrf_drv_uart_rx) refers to nrf_drv_uart.o(i.nrf_drv_uart_rx_for_uarte) for nrf_drv_uart_rx_for_uarte
+    nrf_drv_uart.o(i.nrf_drv_uart_rx) refers to nrf_drv_uart.o(i.nrf_drv_uart_rx_for_uart) for nrf_drv_uart_rx_for_uart
+    nrf_drv_uart.o(i.nrf_drv_uart_rx) refers to nrf_drv_uart.o(.bss) for .bss
+    nrf_drv_uart.o(i.nrf_drv_uart_rx_abort) refers to nrf_drv_uart.o(.bss) for .bss
+    nrf_drv_uart.o(i.nrf_drv_uart_rx_disable) refers to nrf_drv_uart.o(.bss) for .bss
+    nrf_drv_uart.o(i.nrf_drv_uart_rx_enable) refers to nrf_drv_uart.o(i.rx_enable) for rx_enable
+    nrf_drv_uart.o(i.nrf_drv_uart_rx_enable) refers to nrf_drv_uart.o(.bss) for .bss
+    nrf_drv_uart.o(i.nrf_drv_uart_rx_for_uart) refers to nrf_drv_uart.o(i.rx_enable) for rx_enable
+    nrf_drv_uart.o(i.nrf_drv_uart_rx_for_uart) refers to nrf_drv_uart.o(i.nrf_uart_event_check) for nrf_uart_event_check
+    nrf_drv_uart.o(i.nrf_drv_uart_rx_for_uart) refers to nrf_drv_uart.o(i.rx_byte) for rx_byte
+    nrf_drv_uart.o(i.nrf_drv_uart_rx_for_uart) refers to nrf_drv_uart.o(.bss) for .bss
+    nrf_drv_uart.o(i.nrf_drv_uart_rx_for_uarte) refers to nrf_drv_uart.o(i.nrf_uarte_event_check) for nrf_uarte_event_check
+    nrf_drv_uart.o(i.nrf_drv_uart_rx_for_uarte) refers to nrf_drv_uart.o(.bss) for .bss
+    nrf_drv_uart.o(i.nrf_drv_uart_tx) refers to nrf_drv_uart.o(i.nrf_drv_uart_tx_in_progress) for nrf_drv_uart_tx_in_progress
+    nrf_drv_uart.o(i.nrf_drv_uart_tx) refers to nrf_drv_uart.o(i.nrf_uarte_event_check) for nrf_uarte_event_check
+    nrf_drv_uart.o(i.nrf_drv_uart_tx) refers to nrf_drv_uart.o(i.nrf_drv_uart_tx_for_uart) for nrf_drv_uart_tx_for_uart
+    nrf_drv_uart.o(i.nrf_drv_uart_tx) refers to nrf_drv_uart.o(.bss) for .bss
+    nrf_drv_uart.o(i.nrf_drv_uart_tx_abort) refers to nrf_drv_uart.o(i.nrf_uarte_event_check) for nrf_uarte_event_check
+    nrf_drv_uart.o(i.nrf_drv_uart_tx_abort) refers to nrf_drv_uart.o(i.tx_done_event) for tx_done_event
+    nrf_drv_uart.o(i.nrf_drv_uart_tx_abort) refers to nrf_drv_uart.o(.bss) for .bss
+    nrf_drv_uart.o(i.nrf_drv_uart_tx_for_uart) refers to nrf_drv_uart.o(i.tx_byte) for tx_byte
+    nrf_drv_uart.o(i.nrf_drv_uart_tx_for_uart) refers to nrf_drv_uart.o(i.nrf_uart_event_check) for nrf_uart_event_check
+    nrf_drv_uart.o(i.nrf_drv_uart_tx_for_uart) refers to nrf_drv_uart.o(.bss) for .bss
+    nrf_drv_uart.o(i.nrf_drv_uart_tx_in_progress) refers to nrf_drv_uart.o(.bss) for .bss
+    nrf_drv_uart.o(i.nrf_drv_uart_uninit) refers to nrf_drv_uart.o(i.pins_to_default) for pins_to_default
+    nrf_drv_uart.o(i.nrf_drv_uart_uninit) refers to nrf_drv_uart.o(.bss) for .bss
+    nrf_drv_uart.o(i.nrf_gpio_cfg_default) refers to nrf_drv_uart.o(i.nrf_gpio_cfg) for nrf_gpio_cfg
+    nrf_drv_uart.o(i.nrf_gpio_cfg_input) refers to nrf_drv_uart.o(i.nrf_gpio_cfg) for nrf_gpio_cfg
+    nrf_drv_uart.o(i.nrf_gpio_cfg_output) refers to nrf_drv_uart.o(i.nrf_gpio_cfg) for nrf_gpio_cfg
+    nrf_drv_uart.o(i.pins_to_default) refers to nrf_drv_uart.o(i.nrf_gpio_cfg_default) for nrf_gpio_cfg_default
+    nrf_drv_uart.o(i.rx_byte) refers to nrf_drv_uart.o(.bss) for .bss
+    nrf_drv_uart.o(i.rx_done_event) refers to nrf_drv_uart.o(.bss) for .bss
+    nrf_drv_uart.o(i.tx_byte) refers to nrf_drv_uart.o(.bss) for .bss
+    nrf_drv_uart.o(i.tx_done_event) refers to nrf_drv_uart.o(.bss) for .bss
+    nrf_drv_uart.o(i.uart_irq_handler) refers to nrf_drv_uart.o(i.nrf_uart_int_enable_check) for nrf_uart_int_enable_check
+    nrf_drv_uart.o(i.uart_irq_handler) refers to nrf_drv_uart.o(i.nrf_uart_event_check) for nrf_uart_event_check
+    nrf_drv_uart.o(i.uart_irq_handler) refers to nrf_drv_uart.o(i.rx_byte) for rx_byte
+    nrf_drv_uart.o(i.uart_irq_handler) refers to nrf_drv_uart.o(i.rx_done_event) for rx_done_event
+    nrf_drv_uart.o(i.uart_irq_handler) refers to nrf_drv_uart.o(i.tx_byte) for tx_byte
+    nrf_drv_uart.o(i.uart_irq_handler) refers to nrf_drv_uart.o(i.tx_done_event) for tx_done_event
+    nrf_drv_uart.o(i.uart_irq_handler) refers to nrf_drv_uart.o(.bss) for .bss
+    nrf_drv_uart.o(i.uarte_irq_handler) refers to nrf_drv_uart.o(i.nrf_uarte_event_check) for nrf_uarte_event_check
+    nrf_drv_uart.o(i.uarte_irq_handler) refers to nrf_drv_uart.o(i.rx_done_event) for rx_done_event
+    nrf_drv_uart.o(i.uarte_irq_handler) refers to nrf_drv_uart.o(i.tx_done_event) for tx_done_event
+    nrf_drv_uart.o(i.uarte_irq_handler) refers to nrf_drv_uart.o(.bss) for .bss
+    pstorage_raw.o(i.app_notify) refers to pstorage_raw.o(.bss) for .bss
+    pstorage_raw.o(i.cmd_process) refers to pstorage_raw.o(.bss) for .bss
+    pstorage_raw.o(i.cmd_process) refers to pstorage_raw.o(.data) for .data
+    pstorage_raw.o(i.cmd_queue_element_init) refers to pstorage_raw.o(.bss) for .bss
+    pstorage_raw.o(i.cmd_queue_enqueue) refers to pstorage_raw.o(i.cmd_process) for cmd_process
+    pstorage_raw.o(i.cmd_queue_enqueue) refers to pstorage_raw.o(.bss) for .bss
+    pstorage_raw.o(i.pstorage_clear) refers to pstorage_raw.o(i.cmd_queue_enqueue) for cmd_queue_enqueue
+    pstorage_raw.o(i.pstorage_init) refers to pstorage_raw.o(i.cmd_queue_element_init) for cmd_queue_element_init
+    pstorage_raw.o(i.pstorage_init) refers to pstorage_raw.o(.data) for .data
+    pstorage_raw.o(i.pstorage_init) refers to pstorage_raw.o(.bss) for .bss
+    pstorage_raw.o(i.pstorage_register) refers to pstorage_raw.o(.data) for .data
+    pstorage_raw.o(i.pstorage_register) refers to pstorage_raw.o(.bss) for .bss
+    pstorage_raw.o(i.pstorage_store) refers to pstorage_raw.o(i.is_word_aligned) for is_word_aligned
+    pstorage_raw.o(i.pstorage_store) refers to pstorage_raw.o(i.cmd_queue_enqueue) for cmd_queue_enqueue
+    pstorage_raw.o(i.pstorage_sys_event_handler) refers to pstorage_raw.o(i.app_notify) for app_notify
+    pstorage_raw.o(i.pstorage_sys_event_handler) refers to pstorage_raw.o(i.cmd_queue_element_init) for cmd_queue_element_init
+    pstorage_raw.o(i.pstorage_sys_event_handler) refers to pstorage_raw.o(i.cmd_process) for cmd_process
+    pstorage_raw.o(i.pstorage_sys_event_handler) refers to pstorage_raw.o(.bss) for .bss
+    pstorage_raw.o(i.pstorage_sys_event_handler) refers to pstorage_raw.o(.data) for .data
+    app_error.o(i.app_error_handler) refers to app_error_weak.o(i.app_error_fault_handler) for app_error_fault_handler
+    app_error.o(i.app_error_handler_bare) refers to app_error_weak.o(i.app_error_fault_handler) for app_error_fault_handler
+    app_error.o(i.app_error_save_and_stop) refers to app_error.o(.bss) for .bss
+    app_scheduler.o(i.app_sched_event_get) refers to app_scheduler.o(.data) for .data
+    app_scheduler.o(i.app_sched_event_put) refers to app_util_platform.o(i.app_util_critical_region_enter) for app_util_critical_region_enter
+    app_scheduler.o(i.app_sched_event_put) refers to app_util_platform.o(i.app_util_critical_region_exit) for app_util_critical_region_exit
+    app_scheduler.o(i.app_sched_event_put) refers to memcpya.o(.text) for __aeabi_memcpy
+    app_scheduler.o(i.app_sched_event_put) refers to app_scheduler.o(.data) for .data
+    app_scheduler.o(i.app_sched_execute) refers to app_scheduler.o(i.app_sched_event_get) for app_sched_event_get
+    app_scheduler.o(i.app_sched_init) refers to app_scheduler.o(.data) for .data
+    app_timer.o(i.RTC1_IRQHandler) refers to app_timer.o(i.timer_timeouts_check) for timer_timeouts_check
+    app_timer.o(i.SWI0_EGU0_IRQHandler) refers to app_timer.o(i.timer_list_handler) for timer_list_handler
+    app_timer.o(i.app_timer_create) refers to app_timer.o(.data) for .data
+    app_timer.o(i.app_timer_init) refers to app_timer.o(i.rtc1_stop) for rtc1_stop
+    app_timer.o(i.app_timer_init) refers to app_timer.o(i.NVIC_ClearPendingIRQ) for NVIC_ClearPendingIRQ
+    app_timer.o(i.app_timer_init) refers to app_timer.o(i.NVIC_SetPriority) for NVIC_SetPriority
+    app_timer.o(i.app_timer_init) refers to app_timer.o(i.NVIC_EnableIRQ) for NVIC_EnableIRQ
+    app_timer.o(i.app_timer_init) refers to app_timer.o(.data) for .data
+    app_timer.o(i.app_timer_start) refers to app_timer.o(i.user_id_get) for user_id_get
+    app_timer.o(i.app_timer_start) refers to app_timer.o(i.user_op_alloc) for user_op_alloc
+    app_timer.o(i.app_timer_start) refers to app_timer.o(i.NVIC_SetPendingIRQ) for NVIC_SetPendingIRQ
+    app_timer.o(i.app_timer_start) refers to app_timer.o(.data) for .data
+    app_timer.o(i.app_timer_stop) refers to app_timer.o(i.user_id_get) for user_id_get
+    app_timer.o(i.app_timer_stop) refers to app_timer.o(i.user_op_alloc) for user_op_alloc
+    app_timer.o(i.app_timer_stop) refers to app_timer.o(i.NVIC_SetPendingIRQ) for NVIC_SetPendingIRQ
+    app_timer.o(i.app_timer_stop) refers to app_timer.o(.data) for .data
+    app_timer.o(i.app_timer_stop_all) refers to app_timer.o(i.user_id_get) for user_id_get
+    app_timer.o(i.app_timer_stop_all) refers to app_timer.o(i.user_op_alloc) for user_op_alloc
+    app_timer.o(i.app_timer_stop_all) refers to app_timer.o(i.NVIC_SetPendingIRQ) for NVIC_SetPendingIRQ
+    app_timer.o(i.app_timer_stop_all) refers to app_timer.o(.data) for .data
+    app_timer.o(i.compare_reg_update) refers to app_timer.o(i.NVIC_ClearPendingIRQ) for NVIC_ClearPendingIRQ
+    app_timer.o(i.compare_reg_update) refers to app_timer.o(i.NVIC_EnableIRQ) for NVIC_EnableIRQ
+    app_timer.o(i.compare_reg_update) refers to app_timer.o(.emb_text) for __asm___11_app_timer_c_cd27f9c3__nrf_delay_us
+    app_timer.o(i.compare_reg_update) refers to app_timer.o(i.NVIC_SetPendingIRQ) for NVIC_SetPendingIRQ
+    app_timer.o(i.compare_reg_update) refers to app_timer.o(i.rtc1_stop) for rtc1_stop
+    app_timer.o(i.compare_reg_update) refers to app_timer.o(.data) for .data
+    app_timer.o(i.elapsed_ticks_acquire) refers to app_timer.o(.data) for .data
+    app_timer.o(i.list_deletions_handler) refers to app_timer.o(.data) for .data
+    app_timer.o(i.list_insertions_handler) refers to app_timer.o(i.timer_list_insert) for timer_list_insert
+    app_timer.o(i.list_insertions_handler) refers to app_timer.o(.data) for .data
+    app_timer.o(i.rtc1_stop) refers to app_timer.o(.emb_text) for __asm___11_app_timer_c_cd27f9c3__nrf_delay_us
+    app_timer.o(i.rtc1_stop) refers to app_timer.o(.data) for .data
+    app_timer.o(i.timer_list_handler) refers to app_timer.o(i.elapsed_ticks_acquire) for elapsed_ticks_acquire
+    app_timer.o(i.timer_list_handler) refers to app_timer.o(i.list_deletions_handler) for list_deletions_handler
+    app_timer.o(i.timer_list_handler) refers to app_timer.o(i.list_insertions_handler) for list_insertions_handler
+    app_timer.o(i.timer_list_handler) refers to app_timer.o(i.compare_reg_update) for compare_reg_update
+    app_timer.o(i.timer_list_handler) refers to app_timer.o(.data) for .data
+    app_timer.o(i.timer_list_insert) refers to app_timer.o(.data) for .data
+    app_timer.o(i.timer_timeouts_check) refers to app_error.o(i.app_error_handler_bare) for app_error_handler_bare
+    app_timer.o(i.timer_timeouts_check) refers to app_timer.o(i.NVIC_SetPendingIRQ) for NVIC_SetPendingIRQ
+    app_timer.o(i.timer_timeouts_check) refers to app_timer.o(.data) for .data
+    app_timer_appsh.o(i.app_timer_evt_get) refers to app_error.o(i.app_error_handler_bare) for app_error_handler_bare
+    app_timer_appsh.o(i.app_timer_evt_schedule) refers to app_scheduler.o(i.app_sched_event_put) for app_sched_event_put
+    app_timer_appsh.o(i.app_timer_evt_schedule) refers to app_timer_appsh.o(i.app_timer_evt_get) for app_timer_evt_get
+    app_util_platform.o(i.app_util_critical_region_enter) refers to softdevice_handler.o(.bss) for nrf_nvic_state
+    app_util_platform.o(i.app_util_critical_region_exit) refers to softdevice_handler.o(.bss) for nrf_nvic_state
+    app_util_platform.o(i.app_util_disable_irq) refers to app_util_platform.o(.data) for .data
+    app_util_platform.o(i.app_util_enable_irq) refers to app_util_platform.o(.data) for .data
+    bootloader.o(i.bootloader_app_is_valid) refers to bootloader_settings.o(i.bootloader_util_settings_get) for bootloader_util_settings_get
+    bootloader.o(i.bootloader_app_is_valid) refers to crc16.o(i.crc16_compute) for crc16_compute
+    bootloader.o(i.bootloader_app_start) refers to app_error.o(i.app_error_handler_bare) for app_error_handler_bare
+    bootloader.o(i.bootloader_app_start) refers to bootloader_util.o(i.bootloader_util_app_start) for bootloader_util_app_start
+    bootloader.o(i.bootloader_dfu_sd_in_progress) refers to bootloader_settings.o(i.bootloader_util_settings_get) for bootloader_util_settings_get
+    bootloader.o(i.bootloader_dfu_sd_update_continue) refers to dfu_single_bank.o(i.dfu_sd_image_validate) for dfu_sd_image_validate
+    bootloader.o(i.bootloader_dfu_sd_update_continue) refers to dfu_single_bank.o(i.dfu_bl_image_validate) for dfu_bl_image_validate
+    bootloader.o(i.bootloader_dfu_sd_update_continue) refers to nrf_delay.o(i.nrf_delay_ms) for nrf_delay_ms
+    bootloader.o(i.bootloader_dfu_sd_update_continue) refers to dfu_single_bank.o(i.dfu_sd_image_swap) for dfu_sd_image_swap
+    bootloader.o(i.bootloader_dfu_sd_update_continue) refers to app_error.o(i.app_error_handler_bare) for app_error_handler_bare
+    bootloader.o(i.bootloader_dfu_sd_update_continue) refers to dfu_single_bank.o(i.dfu_bl_image_swap) for dfu_bl_image_swap
+    bootloader.o(i.bootloader_dfu_sd_update_finalize) refers to memcpya.o(.text) for __aeabi_memcpy4
+    bootloader.o(i.bootloader_dfu_sd_update_finalize) refers to bootloader.o(i.bootloader_dfu_update_process) for bootloader_dfu_update_process
+    bootloader.o(i.bootloader_dfu_sd_update_finalize) refers to bootloader.o(i.wait_for_events) for wait_for_events
+    bootloader.o(i.bootloader_dfu_sd_update_finalize) refers to bootloader.o(.constdata) for .constdata
+    bootloader.o(i.bootloader_dfu_start) refers to dfu_single_bank.o(i.dfu_init) for dfu_init
+    bootloader.o(i.bootloader_dfu_start) refers to dfu_transport_serial.o(i.dfu_transport_update_start) for dfu_transport_update_start
+    bootloader.o(i.bootloader_dfu_start) refers to bootloader.o(i.wait_for_events) for wait_for_events
+    bootloader.o(i.bootloader_dfu_update_process) refers to bootloader_settings.o(i.bootloader_util_settings_get) for bootloader_util_settings_get
+    bootloader.o(i.bootloader_dfu_update_process) refers to bootloader.o(i.bootloader_settings_save) for bootloader_settings_save
+    bootloader.o(i.bootloader_dfu_update_process) refers to dfu_transport_serial.o(i.dfu_transport_close) for dfu_transport_close
+    bootloader.o(i.bootloader_dfu_update_process) refers to app_error.o(i.app_error_handler_bare) for app_error_handler_bare
+    bootloader.o(i.bootloader_dfu_update_process) refers to bootloader.o(.data) for .data
+    bootloader.o(i.bootloader_dfu_update_process) refers to bootloader.o(.bss) for .bss
+    bootloader.o(i.bootloader_init) refers to pstorage_raw.o(i.pstorage_init) for pstorage_init
+    bootloader.o(i.bootloader_init) refers to pstorage_raw.o(i.pstorage_register) for pstorage_register
+    bootloader.o(i.bootloader_init) refers to bootloader.o(.constdata) for .constdata
+    bootloader.o(i.bootloader_init) refers to bootloader.o(.data) for .data
+    bootloader.o(i.bootloader_settings_get) refers to bootloader_settings.o(i.bootloader_util_settings_get) for bootloader_util_settings_get
+    bootloader.o(i.bootloader_settings_save) refers to pstorage_raw.o(i.pstorage_clear) for pstorage_clear
+    bootloader.o(i.bootloader_settings_save) refers to app_error.o(i.app_error_handler_bare) for app_error_handler_bare
+    bootloader.o(i.bootloader_settings_save) refers to pstorage_raw.o(i.pstorage_store) for pstorage_store
+    bootloader.o(i.bootloader_settings_save) refers to bootloader.o(.data) for .data
+    bootloader.o(i.pstorage_callback_handler) refers to app_error.o(i.app_error_handler_bare) for app_error_handler_bare
+    bootloader.o(i.pstorage_callback_handler) refers to bootloader.o(.data) for .data
+    bootloader.o(i.wait_for_events) refers to app_error.o(i.app_error_handler_bare) for app_error_handler_bare
+    bootloader.o(i.wait_for_events) refers to app_scheduler.o(i.app_sched_execute) for app_sched_execute
+    bootloader.o(i.wait_for_events) refers to bootloader.o(.data) for .data
+    bootloader.o(.constdata) refers to bootloader.o(i.pstorage_callback_handler) for pstorage_callback_handler
+    bootloader_settings.o(i.bootloader_util_settings_get) refers to bootloader_settings.o(.ARM.__AT_0x0007F000) for .ARM.__AT_0x0007F000
+    bootloader_util.o(i.bootloader_util_app_start) refers to bootloader_util.o(.emb_text) for __asm___17_bootloader_util_c_c13d365c__bootloader_util_reset
+    dfu_init_template.o(i.dfu_init_postvalidate) refers to crc16.o(i.crc16_compute) for crc16_compute
+    dfu_init_template.o(i.dfu_init_postvalidate) refers to dfu_init_template.o(.bss) for .bss
+    dfu_init_template.o(i.dfu_init_prevalidate) refers to memcpya.o(.text) for __aeabi_memcpy
+    dfu_init_template.o(i.dfu_init_prevalidate) refers to dfu_init_template.o(.data) for .data
+    dfu_init_template.o(i.dfu_init_prevalidate) refers to dfu_init_template.o(.bss) for .bss
+    dfu_single_bank.o(i.dfu_activate_app) refers to memseta.o(.text) for __aeabi_memclr4
+    dfu_single_bank.o(i.dfu_activate_app) refers to bootloader.o(i.bootloader_dfu_update_process) for bootloader_dfu_update_process
+    dfu_single_bank.o(i.dfu_activate_app) refers to dfu_single_bank.o(.data) for .data
+    dfu_single_bank.o(i.dfu_activate_app) refers to dfu_single_bank.o(.bss) for .bss
+    dfu_single_bank.o(i.dfu_activate_bl) refers to bootloader.o(i.bootloader_dfu_update_process) for bootloader_dfu_update_process
+    dfu_single_bank.o(i.dfu_activate_bl) refers to dfu_single_bank.o(.data) for .data
+    dfu_single_bank.o(i.dfu_activate_bl) refers to dfu_single_bank.o(.bss) for .bss
+    dfu_single_bank.o(i.dfu_activate_sd) refers to bootloader.o(i.bootloader_dfu_update_process) for bootloader_dfu_update_process
+    dfu_single_bank.o(i.dfu_activate_sd) refers to dfu_single_bank.o(.data) for .data
+    dfu_single_bank.o(i.dfu_activate_sd) refers to dfu_single_bank.o(.bss) for .bss
+    dfu_single_bank.o(i.dfu_bl_image_swap) refers to bootloader.o(i.bootloader_settings_get) for bootloader_settings_get
+    dfu_single_bank.o(i.dfu_bl_image_validate) refers to bootloader.o(i.bootloader_settings_get) for bootloader_settings_get
+    dfu_single_bank.o(i.dfu_cleared_func_app) refers to memcpya.o(.text) for __aeabi_memcpy4
+    dfu_single_bank.o(i.dfu_cleared_func_app) refers to bootloader.o(i.bootloader_dfu_update_process) for bootloader_dfu_update_process
+    dfu_single_bank.o(i.dfu_cleared_func_app) refers to dfu_single_bank.o(.constdata) for .constdata
+    dfu_single_bank.o(i.dfu_data_pkt_handle) refers to dfu_single_bank.o(i.dfu_timer_restart) for dfu_timer_restart
+    dfu_single_bank.o(i.dfu_data_pkt_handle) refers to pstorage_raw.o(i.pstorage_store) for pstorage_store
+    dfu_single_bank.o(i.dfu_data_pkt_handle) refers to dfu_single_bank.o(.data) for .data
+    dfu_single_bank.o(i.dfu_image_activate) refers to app_timer.o(i.app_timer_stop) for app_timer_stop
+    dfu_single_bank.o(i.dfu_image_activate) refers to app_error.o(i.app_error_handler_bare) for app_error_handler_bare
+    dfu_single_bank.o(i.dfu_image_activate) refers to dfu_single_bank.o(.data) for .data
+    dfu_single_bank.o(i.dfu_image_activate) refers to dfu_single_bank.o(.constdata) for .constdata
+    dfu_single_bank.o(i.dfu_image_activate) refers to dfu_single_bank.o(.bss) for .bss
+    dfu_single_bank.o(i.dfu_image_validate) refers to dfu_single_bank.o(i.dfu_timer_restart) for dfu_timer_restart
+    dfu_single_bank.o(i.dfu_image_validate) refers to dfu_init_template.o(i.dfu_init_postvalidate) for dfu_init_postvalidate
+    dfu_single_bank.o(i.dfu_image_validate) refers to dfu_single_bank.o(.data) for .data
+    dfu_single_bank.o(i.dfu_init) refers to pstorage_raw.o(i.pstorage_register) for pstorage_register
+    dfu_single_bank.o(i.dfu_init) refers to app_timer.o(i.app_timer_create) for app_timer_create
+    dfu_single_bank.o(i.dfu_init) refers to app_error.o(i.app_error_handler_bare) for app_error_handler_bare
+    dfu_single_bank.o(i.dfu_init) refers to app_timer.o(i.app_timer_start) for app_timer_start
+    dfu_single_bank.o(i.dfu_init) refers to dfu_single_bank.o(.constdata) for .constdata
+    dfu_single_bank.o(i.dfu_init) refers to dfu_single_bank.o(.data) for .data
+    dfu_single_bank.o(i.dfu_init) refers to dfu_single_bank.o(i.dfu_timeout_handler) for dfu_timeout_handler
+    dfu_single_bank.o(i.dfu_init_pkt_complete) refers to dfu_init_template.o(i.dfu_init_prevalidate) for dfu_init_prevalidate
+    dfu_single_bank.o(i.dfu_init_pkt_complete) refers to dfu_single_bank.o(.data) for .data
+    dfu_single_bank.o(i.dfu_init_pkt_complete) refers to dfu_single_bank.o(.bss) for .bss
+    dfu_single_bank.o(i.dfu_init_pkt_handle) refers to dfu_single_bank.o(i.dfu_timer_restart) for dfu_timer_restart
+    dfu_single_bank.o(i.dfu_init_pkt_handle) refers to memcpya.o(.text) for __aeabi_memcpy
+    dfu_single_bank.o(i.dfu_init_pkt_handle) refers to dfu_single_bank.o(.data) for .data
+    dfu_single_bank.o(i.dfu_init_pkt_handle) refers to dfu_single_bank.o(.bss) for .bss
+    dfu_single_bank.o(i.dfu_prepare_func_app_erase) refers to pstorage_raw.o(i.pstorage_clear) for pstorage_clear
+    dfu_single_bank.o(i.dfu_prepare_func_app_erase) refers to app_error.o(i.app_error_handler_bare) for app_error_handler_bare
+    dfu_single_bank.o(i.dfu_prepare_func_app_erase) refers to dfu_single_bank.o(.data) for .data
+    dfu_single_bank.o(i.dfu_register_callback) refers to dfu_single_bank.o(.data) for .data
+    dfu_single_bank.o(i.dfu_reset) refers to bootloader.o(i.bootloader_dfu_update_process) for bootloader_dfu_update_process
+    dfu_single_bank.o(i.dfu_sd_image_swap) refers to bootloader.o(i.bootloader_settings_get) for bootloader_settings_get
+    dfu_single_bank.o(i.dfu_sd_image_swap) refers to dfu_single_bank.o(i.dfu_copy_sd) for dfu_copy_sd
+    dfu_single_bank.o(i.dfu_sd_image_swap) refers to dfu_single_bank.o(i.dfu_sd_img_block_swap) for dfu_sd_img_block_swap
+    dfu_single_bank.o(i.dfu_sd_image_validate) refers to bootloader.o(i.bootloader_settings_get) for bootloader_settings_get
+    dfu_single_bank.o(i.dfu_sd_image_validate) refers to dfu_single_bank.o(i.dfu_sd_img_block_swap) for dfu_sd_img_block_swap
+    dfu_single_bank.o(i.dfu_sd_img_block_swap) refers to dfu_single_bank.o(i.dfu_compare_block) for dfu_compare_block
+    dfu_single_bank.o(i.dfu_sd_img_block_swap) refers to dfu_single_bank.o(i.dfu_copy_sd) for dfu_copy_sd
+    dfu_single_bank.o(i.dfu_start_pkt_handle) refers to dfu_single_bank.o(i.dfu_timer_restart) for dfu_timer_restart
+    dfu_single_bank.o(i.dfu_start_pkt_handle) refers to dfu_single_bank.o(.bss) for .bss
+    dfu_single_bank.o(i.dfu_start_pkt_handle) refers to dfu_single_bank.o(.data) for .data
+    dfu_single_bank.o(i.dfu_start_pkt_handle) refers to dfu_single_bank.o(i.dfu_prepare_func_app_erase) for dfu_prepare_func_app_erase
+    dfu_single_bank.o(i.dfu_start_pkt_handle) refers to dfu_single_bank.o(i.dfu_cleared_func_app) for dfu_cleared_func_app
+    dfu_single_bank.o(i.dfu_start_pkt_handle) refers to dfu_single_bank.o(i.dfu_activate_sd) for dfu_activate_sd
+    dfu_single_bank.o(i.dfu_start_pkt_handle) refers to dfu_single_bank.o(i.dfu_activate_bl) for dfu_activate_bl
+    dfu_single_bank.o(i.dfu_start_pkt_handle) refers to dfu_single_bank.o(i.dfu_activate_app) for dfu_activate_app
+    dfu_single_bank.o(i.dfu_timeout_handler) refers to bootloader.o(i.bootloader_dfu_update_process) for bootloader_dfu_update_process
+    dfu_single_bank.o(i.dfu_timeout_handler) refers to dfu_single_bank.o(.data) for .data
+    dfu_single_bank.o(i.dfu_timer_restart) refers to app_timer.o(i.app_timer_stop) for app_timer_stop
+    dfu_single_bank.o(i.dfu_timer_restart) refers to app_error.o(i.app_error_handler_bare) for app_error_handler_bare
+    dfu_single_bank.o(i.dfu_timer_restart) refers to app_timer.o(i.app_timer_start) for app_timer_start
+    dfu_single_bank.o(i.dfu_timer_restart) refers to dfu_single_bank.o(.data) for .data
+    dfu_single_bank.o(i.dfu_timer_restart) refers to dfu_single_bank.o(.constdata) for .constdata
+    dfu_single_bank.o(i.offset_calculate) refers to dfu_single_bank.o(.bss) for .bss
+    dfu_single_bank.o(i.pstorage_callback_handler) refers to app_error.o(i.app_error_handler_bare) for app_error_handler_bare
+    dfu_single_bank.o(i.pstorage_callback_handler) refers to dfu_single_bank.o(.data) for .data
+    dfu_single_bank.o(i.pstorage_callback_handler) refers to dfu_single_bank.o(.bss) for .bss
+    dfu_single_bank.o(.constdata) refers to dfu_single_bank.o(.bss) for m_dfu_timer_id_data
+    dfu_single_bank.o(.constdata) refers to dfu_single_bank.o(i.pstorage_callback_handler) for pstorage_callback_handler
+    dfu_transport_serial.o(i.data_queue_element_free) refers to dfu_transport_serial.o(i.data_queue_element_init) for data_queue_element_init
+    dfu_transport_serial.o(i.data_queue_element_free) refers to hci_transport.o(i.hci_transport_rx_pkt_consume) for hci_transport_rx_pkt_consume
+    dfu_transport_serial.o(i.data_queue_element_free) refers to app_error.o(i.app_error_handler_bare) for app_error_handler_bare
+    dfu_transport_serial.o(i.data_queue_element_free) refers to dfu_transport_serial.o(.bss) for .bss
+    dfu_transport_serial.o(i.data_queue_element_init) refers to dfu_transport_serial.o(.bss) for .bss
+    dfu_transport_serial.o(i.dfu_cb_handler) refers to app_error.o(i.app_error_handler_bare) for app_error_handler_bare
+    dfu_transport_serial.o(i.dfu_transport_close) refers to dfu_transport_serial.o(i.data_queue_element_free) for data_queue_element_free
+    dfu_transport_serial.o(i.dfu_transport_close) refers to hci_transport.o(i.hci_transport_close) for hci_transport_close
+    dfu_transport_serial.o(i.dfu_transport_update_start) refers to dfu_transport_serial.o(i.data_queue_element_init) for data_queue_element_init
+    dfu_transport_serial.o(i.dfu_transport_update_start) refers to dfu_single_bank.o(i.dfu_register_callback) for dfu_register_callback
+    dfu_transport_serial.o(i.dfu_transport_update_start) refers to hci_transport.o(i.hci_transport_open) for hci_transport_open
+    dfu_transport_serial.o(i.dfu_transport_update_start) refers to app_error.o(i.app_error_handler_bare) for app_error_handler_bare
+    dfu_transport_serial.o(i.dfu_transport_update_start) refers to hci_transport.o(i.hci_transport_evt_handler_reg) for hci_transport_evt_handler_reg
+    dfu_transport_serial.o(i.dfu_transport_update_start) refers to dfu_transport_serial.o(.bss) for .bss
+    dfu_transport_serial.o(i.dfu_transport_update_start) refers to dfu_transport_serial.o(i.dfu_cb_handler) for dfu_cb_handler
+    dfu_transport_serial.o(i.dfu_transport_update_start) refers to dfu_transport_serial.o(i.rpc_transport_event_handler) for rpc_transport_event_handler
+    dfu_transport_serial.o(i.process_dfu_packet) refers to dfu_single_bank.o(i.dfu_data_pkt_handle) for dfu_data_pkt_handle
+    dfu_transport_serial.o(i.process_dfu_packet) refers to dfu_single_bank.o(i.dfu_start_pkt_handle) for dfu_start_pkt_handle
+    dfu_transport_serial.o(i.process_dfu_packet) refers to dfu_single_bank.o(i.dfu_init_pkt_handle) for dfu_init_pkt_handle
+    dfu_transport_serial.o(i.process_dfu_packet) refers to dfu_single_bank.o(i.dfu_init_pkt_complete) for dfu_init_pkt_complete
+    dfu_transport_serial.o(i.process_dfu_packet) refers to app_error.o(i.app_error_handler_bare) for app_error_handler_bare
+    dfu_transport_serial.o(i.process_dfu_packet) refers to dfu_transport_serial.o(i.data_queue_element_free) for data_queue_element_free
+    dfu_transport_serial.o(i.process_dfu_packet) refers to dfu_single_bank.o(i.dfu_image_validate) for dfu_image_validate
+    dfu_transport_serial.o(i.process_dfu_packet) refers to dfu_single_bank.o(i.dfu_image_activate) for dfu_image_activate
+    dfu_transport_serial.o(i.process_dfu_packet) refers to dfu_transport_serial.o(.bss) for .bss
+    dfu_transport_serial.o(i.rpc_transport_event_handler) refers to hci_transport.o(i.hci_transport_rx_pkt_extract) for hci_transport_rx_pkt_extract
+    dfu_transport_serial.o(i.rpc_transport_event_handler) refers to hci_transport.o(i.hci_transport_rx_pkt_consume) for hci_transport_rx_pkt_consume
+    dfu_transport_serial.o(i.rpc_transport_event_handler) refers to app_error.o(i.app_error_handler_bare) for app_error_handler_bare
+    dfu_transport_serial.o(i.rpc_transport_event_handler) refers to app_scheduler.o(i.app_sched_event_put) for app_sched_event_put
+    dfu_transport_serial.o(i.rpc_transport_event_handler) refers to dfu_transport_serial.o(.bss) for .bss
+    dfu_transport_serial.o(i.rpc_transport_event_handler) refers to dfu_transport_serial.o(i.process_dfu_packet) for process_dfu_packet
+    hci_mem_pool.o(i.hci_mem_pool_open) refers to hci_mem_pool.o(.data) for .data
+    hci_mem_pool.o(i.hci_mem_pool_open) refers to hci_mem_pool.o(.bss) for .bss
+    hci_mem_pool.o(i.hci_mem_pool_rx_consume) refers to hci_mem_pool.o(.bss) for .bss
+    hci_mem_pool.o(i.hci_mem_pool_rx_data_size_set) refers to hci_mem_pool.o(.bss) for .bss
+    hci_mem_pool.o(i.hci_mem_pool_rx_extract) refers to hci_mem_pool.o(.bss) for .bss
+    hci_mem_pool.o(i.hci_mem_pool_rx_produce) refers to hci_mem_pool.o(.bss) for .bss
+    hci_mem_pool.o(i.hci_mem_pool_tx_alloc) refers to hci_mem_pool.o(.data) for .data
+    hci_mem_pool.o(i.hci_mem_pool_tx_alloc) refers to hci_mem_pool.o(.bss) for .bss
+    hci_mem_pool.o(i.hci_mem_pool_tx_free) refers to hci_mem_pool.o(.data) for .data
+    hci_slip.o(i.handle_rx_byte_default) refers to hci_slip.o(i.handle_slip_end) for handle_slip_end
+    hci_slip.o(i.handle_rx_byte_default) refers to hci_slip.o(.data) for .data
+    hci_slip.o(i.handle_rx_byte_default) refers to hci_slip.o(i.handle_rx_byte_esc) for handle_rx_byte_esc
+    hci_slip.o(i.handle_rx_byte_esc) refers to hci_slip.o(i.handle_slip_end) for handle_slip_end
+    hci_slip.o(i.handle_rx_byte_esc) refers to hci_slip.o(.data) for .data
+    hci_slip.o(i.handle_rx_byte_esc) refers to hci_slip.o(i.handle_rx_byte_default) for handle_rx_byte_default
+    hci_slip.o(i.handle_rx_byte_wait_start) refers to hci_slip.o(i.handle_rx_byte_default) for handle_rx_byte_default
+    hci_slip.o(i.handle_rx_byte_wait_start) refers to hci_slip.o(.data) for .data
+    hci_slip.o(i.handle_slip_end) refers to hci_slip.o(.data) for .data
+    hci_slip.o(i.hci_slip_close) refers to app_uart.o(i.app_uart_close) for app_uart_close
+    hci_slip.o(i.hci_slip_close) refers to hci_slip.o(.data) for .data
+    hci_slip.o(i.hci_slip_evt_handler_register) refers to hci_slip.o(.data) for .data
+    hci_slip.o(i.hci_slip_open) refers to app_uart.o(i.app_uart_init) for app_uart_init
+    hci_slip.o(i.hci_slip_open) refers to hci_slip.o(.data) for .data
+    hci_slip.o(i.hci_slip_open) refers to hci_slip.o(.constdata) for .constdata
+    hci_slip.o(i.hci_slip_open) refers to hci_slip.o(i.slip_uart_eventhandler) for slip_uart_eventhandler
+    hci_slip.o(i.hci_slip_rx_buffer_register) refers to hci_slip.o(.data) for .data
+    hci_slip.o(i.hci_slip_rx_buffer_register) refers to hci_slip.o(i.handle_rx_byte_wait_start) for handle_rx_byte_wait_start
+    hci_slip.o(i.hci_slip_write) refers to hci_slip.o(i.transmit_buffer) for transmit_buffer
+    hci_slip.o(i.hci_slip_write) refers to hci_slip.o(.data) for .data
+    hci_slip.o(i.hci_slip_write) refers to hci_slip.o(i.send_tx_byte_end) for send_tx_byte_end
+    hci_slip.o(i.send_tx_byte_default) refers to app_uart.o(i.app_uart_put) for app_uart_put
+    hci_slip.o(i.send_tx_byte_default) refers to hci_slip.o(.data) for .data
+    hci_slip.o(i.send_tx_byte_encoded) refers to app_uart.o(i.app_uart_put) for app_uart_put
+    hci_slip.o(i.send_tx_byte_encoded) refers to hci_slip.o(.data) for .data
+    hci_slip.o(i.send_tx_byte_encoded) refers to hci_slip.o(i.send_tx_byte_default) for send_tx_byte_default
+    hci_slip.o(i.send_tx_byte_end) refers to app_uart.o(i.app_uart_put) for app_uart_put
+    hci_slip.o(i.send_tx_byte_end) refers to hci_slip.o(.data) for .data
+    hci_slip.o(i.send_tx_byte_end) refers to hci_slip.o(i.send_tx_byte_default) for send_tx_byte_default
+    hci_slip.o(i.send_tx_byte_esc) refers to app_uart.o(i.app_uart_put) for app_uart_put
+    hci_slip.o(i.send_tx_byte_esc) refers to hci_slip.o(i.send_tx_byte_encoded) for send_tx_byte_encoded
+    hci_slip.o(i.send_tx_byte_esc) refers to hci_slip.o(.data) for .data
+    hci_slip.o(i.slip_uart_eventhandler) refers to hci_slip.o(i.transmit_buffer) for transmit_buffer
+    hci_slip.o(i.slip_uart_eventhandler) refers to hci_slip.o(.data) for .data
+    hci_slip.o(i.slip_uart_eventhandler) refers to hci_slip.o(.constdata) for .constdata
+    hci_slip.o(i.transmit_buffer) refers to hci_slip.o(i.send_tx_byte_end) for send_tx_byte_end
+    hci_slip.o(i.transmit_buffer) refers to hci_slip.o(i.send_tx_byte_default) for send_tx_byte_default
+    hci_slip.o(i.transmit_buffer) refers to hci_slip.o(i.send_tx_byte_esc) for send_tx_byte_esc
+    hci_slip.o(i.transmit_buffer) refers to hci_slip.o(.data) for .data
+    hci_slip.o(i.transmit_buffer) refers to hci_slip.o(.constdata) for .constdata
+    hci_slip.o(.data) refers to hci_slip.o(i.handle_rx_byte_wait_start) for handle_rx_byte_wait_start
+    hci_slip.o(.data) refers to hci_slip.o(i.send_tx_byte_default) for send_tx_byte_default
+    hci_transport.o(i.ack_transmit) refers to hci_transport.o(i.header_checksum_calculate) for header_checksum_calculate
+    hci_transport.o(i.ack_transmit) refers to hci_slip.o(i.hci_slip_write) for hci_slip_write
+    hci_transport.o(i.ack_transmit) refers to hci_transport.o(.data) for .data
+    hci_transport.o(i.hci_transport_close) refers to hci_mem_pool.o(i.hci_mem_pool_close) for hci_mem_pool_close
+    hci_transport.o(i.hci_transport_close) refers to app_error.o(i.app_error_handler_bare) for app_error_handler_bare
+    hci_transport.o(i.hci_transport_close) refers to hci_slip.o(i.hci_slip_close) for hci_slip_close
+    hci_transport.o(i.hci_transport_close) refers to app_timer.o(i.app_timer_stop) for app_timer_stop
+    hci_transport.o(i.hci_transport_close) refers to hci_transport.o(.data) for .data
+    hci_transport.o(i.hci_transport_close) refers to hci_transport.o(.constdata) for .constdata
+    hci_transport.o(i.hci_transport_evt_handler_reg) refers to hci_slip.o(i.hci_slip_evt_handler_register) for hci_slip_evt_handler_register
+    hci_transport.o(i.hci_transport_evt_handler_reg) refers to app_error.o(i.app_error_handler_bare) for app_error_handler_bare
+    hci_transport.o(i.hci_transport_evt_handler_reg) refers to hci_transport.o(.data) for .data
+    hci_transport.o(i.hci_transport_evt_handler_reg) refers to hci_transport.o(i.slip_event_handle) for slip_event_handle
+    hci_transport.o(i.hci_transport_open) refers to app_timer.o(i.app_timer_create) for app_timer_create
+    hci_transport.o(i.hci_transport_open) refers to hci_mem_pool.o(i.hci_mem_pool_open) for hci_mem_pool_open
+    hci_transport.o(i.hci_transport_open) refers to hci_slip.o(i.hci_slip_open) for hci_slip_open
+    hci_transport.o(i.hci_transport_open) refers to hci_mem_pool.o(i.hci_mem_pool_rx_produce) for hci_mem_pool_rx_produce
+    hci_transport.o(i.hci_transport_open) refers to hci_slip.o(i.hci_slip_rx_buffer_register) for hci_slip_rx_buffer_register
+    hci_transport.o(i.hci_transport_open) refers to hci_transport.o(.data) for .data
+    hci_transport.o(i.hci_transport_open) refers to hci_transport.o(i.hci_transport_timeout_handle) for hci_transport_timeout_handle
+    hci_transport.o(i.hci_transport_open) refers to hci_transport.o(.constdata) for .constdata
+    hci_transport.o(i.hci_transport_pkt_write) refers to hci_transport.o(i.pkt_write_handle) for pkt_write_handle
+    hci_transport.o(i.hci_transport_pkt_write) refers to hci_transport.o(.data) for .data
+    hci_transport.o(i.hci_transport_rx_pkt_consume) refers to hci_mem_pool.o(i.hci_mem_pool_rx_consume) for hci_mem_pool_rx_consume
+    hci_transport.o(i.hci_transport_rx_pkt_extract) refers to hci_mem_pool.o(i.hci_mem_pool_rx_extract) for hci_mem_pool_rx_extract
+    hci_transport.o(i.hci_transport_rx_pkt_extract) refers to hci_transport.o(.data) for .data
+    hci_transport.o(i.hci_transport_timeout_handle) refers to hci_transport.o(i.tx_sm_event_handle) for tx_sm_event_handle
+    hci_transport.o(i.hci_transport_tx_alloc) refers to hci_mem_pool.o(i.hci_mem_pool_tx_alloc) for hci_mem_pool_tx_alloc
+    hci_transport.o(i.hci_transport_tx_done_register) refers to hci_slip.o(i.hci_slip_evt_handler_register) for hci_slip_evt_handler_register
+    hci_transport.o(i.hci_transport_tx_done_register) refers to app_error.o(i.app_error_handler_bare) for app_error_handler_bare
+    hci_transport.o(i.hci_transport_tx_done_register) refers to hci_transport.o(.data) for .data
+    hci_transport.o(i.hci_transport_tx_done_register) refers to hci_transport.o(i.slip_event_handle) for slip_event_handle
+    hci_transport.o(i.hci_transport_tx_free) refers to hci_mem_pool.o(i.hci_mem_pool_tx_free) for hci_mem_pool_tx_free
+    hci_transport.o(i.pkt_write_handle) refers to hci_transport.o(i.header_checksum_calculate) for header_checksum_calculate
+    hci_transport.o(i.pkt_write_handle) refers to crc16.o(i.crc16_compute) for crc16_compute
+    hci_transport.o(i.pkt_write_handle) refers to hci_slip.o(i.hci_slip_write) for hci_slip_write
+    hci_transport.o(i.pkt_write_handle) refers to hci_transport.o(i.tx_sm_state_change) for tx_sm_state_change
+    hci_transport.o(i.pkt_write_handle) refers to hci_transport.o(.data) for .data
+    hci_transport.o(i.rx_vendor_specific_pkt_type_handle) refers to crc16.o(i.crc16_compute) for crc16_compute
+    hci_transport.o(i.rx_vendor_specific_pkt_type_handle) refers to hci_transport.o(i.ack_transmit) for ack_transmit
+    hci_transport.o(i.rx_vendor_specific_pkt_type_handle) refers to hci_mem_pool.o(i.hci_mem_pool_rx_data_size_set) for hci_mem_pool_rx_data_size_set
+    hci_transport.o(i.rx_vendor_specific_pkt_type_handle) refers to app_error.o(i.app_error_handler_bare) for app_error_handler_bare
+    hci_transport.o(i.rx_vendor_specific_pkt_type_handle) refers to hci_mem_pool.o(i.hci_mem_pool_rx_produce) for hci_mem_pool_rx_produce
+    hci_transport.o(i.rx_vendor_specific_pkt_type_handle) refers to hci_slip.o(i.hci_slip_rx_buffer_register) for hci_slip_rx_buffer_register
+    hci_transport.o(i.rx_vendor_specific_pkt_type_handle) refers to hci_transport.o(.data) for .data
+    hci_transport.o(i.slip_event_handle) refers to hci_transport.o(i.tx_sm_event_handle) for tx_sm_event_handle
+    hci_transport.o(i.slip_event_handle) refers to hci_transport.o(i.rx_vendor_specific_pkt_type_handle) for rx_vendor_specific_pkt_type_handle
+    hci_transport.o(i.slip_event_handle) refers to hci_mem_pool.o(i.hci_mem_pool_rx_produce) for hci_mem_pool_rx_produce
+    hci_transport.o(i.slip_event_handle) refers to app_error.o(i.app_error_handler_bare) for app_error_handler_bare
+    hci_transport.o(i.slip_event_handle) refers to hci_slip.o(i.hci_slip_rx_buffer_register) for hci_slip_rx_buffer_register
+    hci_transport.o(i.slip_event_handle) refers to hci_transport.o(.data) for .data
+    hci_transport.o(i.tx_sm_event_handle) refers to app_timer.o(i.app_timer_stop) for app_timer_stop
+    hci_transport.o(i.tx_sm_event_handle) refers to app_error.o(i.app_error_handler_bare) for app_error_handler_bare
+    hci_transport.o(i.tx_sm_event_handle) refers to hci_slip.o(i.hci_slip_write) for hci_slip_write
+    hci_transport.o(i.tx_sm_event_handle) refers to app_timer.o(i.app_timer_start) for app_timer_start
+    hci_transport.o(i.tx_sm_event_handle) refers to hci_transport.o(i.tx_sm_state_change) for tx_sm_state_change
+    hci_transport.o(i.tx_sm_event_handle) refers to hci_transport.o(.data) for .data
+    hci_transport.o(i.tx_sm_event_handle) refers to hci_transport.o(.constdata) for .constdata
+    hci_transport.o(i.tx_sm_state_change) refers to hci_transport.o(i.tx_sm_event_handle) for tx_sm_event_handle
+    hci_transport.o(i.tx_sm_state_change) refers to hci_transport.o(.data) for .data
+    hci_transport.o(.constdata) refers to hci_transport.o(.bss) for m_app_timer_id_data
+    softdevice_handler.o(i.SWI2_EGU2_IRQHandler) refers to app_error.o(i.app_error_handler_bare) for app_error_handler_bare
+    softdevice_handler.o(i.SWI2_EGU2_IRQHandler) refers to softdevice_handler.o(i.intern_softdevice_events_execute) for intern_softdevice_events_execute
+    softdevice_handler.o(i.SWI2_EGU2_IRQHandler) refers to softdevice_handler.o(.data) for .data
+    softdevice_handler.o(i.intern_softdevice_events_execute) refers to app_error.o(i.app_error_handler_bare) for app_error_handler_bare
+    softdevice_handler.o(i.intern_softdevice_events_execute) refers to softdevice_handler.o(.data) for .data
+    softdevice_handler.o(i.sd_nvic_EnableIRQ) refers to softdevice_handler.o(.bss) for .bss
+    softdevice_handler.o(i.softdevice_ble_evt_handler_set) refers to softdevice_handler.o(.data) for .data
+    softdevice_handler.o(i.softdevice_enable_get_default_config) refers to memseta.o(.text) for __aeabi_memclr4
+    softdevice_handler.o(i.softdevice_fault_handler) refers to app_error_weak.o(i.app_error_fault_handler) for app_error_fault_handler
+    softdevice_handler.o(i.softdevice_handler_init) refers to softdevice_handler.o(i.sd_nvic_EnableIRQ) for sd_nvic_EnableIRQ
+    softdevice_handler.o(i.softdevice_handler_init) refers to softdevice_handler.o(.data) for .data
+    softdevice_handler.o(i.softdevice_handler_init) refers to softdevice_handler.o(i.softdevice_fault_handler) for softdevice_fault_handler
+    softdevice_handler.o(i.softdevice_handler_isEnabled) refers to softdevice_handler.o(.data) for .data
+    softdevice_handler.o(i.softdevice_handler_sd_disable) refers to softdevice_handler.o(.data) for .data
+    softdevice_handler.o(i.softdevice_sys_evt_handler_set) refers to softdevice_handler.o(.data) for .data
+    softdevice_handler_appsh.o(i.softdevice_evt_get) refers to app_error.o(i.app_error_handler_bare) for app_error_handler_bare
+    softdevice_handler_appsh.o(i.softdevice_evt_get) refers to softdevice_handler.o(i.intern_softdevice_events_execute) for intern_softdevice_events_execute
+    softdevice_handler_appsh.o(i.softdevice_evt_schedule) refers to app_scheduler.o(i.app_sched_event_put) for app_sched_event_put
+    softdevice_handler_appsh.o(i.softdevice_evt_schedule) refers to softdevice_handler_appsh.o(i.softdevice_evt_get) for softdevice_evt_get
+    arm_startup_nrf52.o(RESET) refers to arm_startup_nrf52.o(STACK) for __initial_sp
+    arm_startup_nrf52.o(RESET) refers to arm_startup_nrf52.o(.text) for Reset_Handler
+    arm_startup_nrf52.o(RESET) refers to nrf_drv_uart.o(i.UARTE0_UART0_IRQHandler) for UARTE0_UART0_IRQHandler
+    arm_startup_nrf52.o(RESET) refers to app_timer.o(i.RTC1_IRQHandler) for RTC1_IRQHandler
+    arm_startup_nrf52.o(RESET) refers to app_timer.o(i.SWI0_EGU0_IRQHandler) for SWI0_EGU0_IRQHandler
+    arm_startup_nrf52.o(RESET) refers to softdevice_handler.o(i.SWI2_EGU2_IRQHandler) for SWI2_EGU2_IRQHandler
+    arm_startup_nrf52.o(.text) refers to system_nrf52.o(i.SystemInit) for SystemInit
+    arm_startup_nrf52.o(.text) refers to entry.o(.ARM.Collect$$$$00000000) for __main
+    system_nrf52.o(i.SystemCoreClockUpdate) refers to system_nrf52.o(.data) for .data
+    system_nrf52.o(i.SystemInit) refers to system_nrf52.o(.data) for .data
+    entry.o(.ARM.Collect$$$$00000000) refers (Special) to entry10a.o(.ARM.Collect$$$$0000000D) for __rt_final_cpp
+    entry.o(.ARM.Collect$$$$00000000) refers (Special) to entry11a.o(.ARM.Collect$$$$0000000F) for __rt_final_exit
+    entry.o(.ARM.Collect$$$$00000000) refers (Special) to entry7b.o(.ARM.Collect$$$$00000008) for _main_clock
+    entry.o(.ARM.Collect$$$$00000000) refers (Special) to entry8b.o(.ARM.Collect$$$$0000000A) for _main_cpp_init
+    entry.o(.ARM.Collect$$$$00000000) refers (Special) to entry9a.o(.ARM.Collect$$$$0000000B) for _main_init
+    entry.o(.ARM.Collect$$$$00000000) refers (Special) to entry5.o(.ARM.Collect$$$$00000004) for _main_scatterload
+    entry.o(.ARM.Collect$$$$00000000) refers (Special) to entry2.o(.ARM.Collect$$$$00000001) for _main_stk
+    entry2.o(.ARM.Collect$$$$00000001) refers to entry2.o(.ARM.Collect$$$$00002712) for __lit__00000000
+    entry2.o(.ARM.Collect$$$$00002712) refers to arm_startup_nrf52.o(STACK) for __initial_sp
+    entry2.o(__vectab_stack_and_reset_area) refers to arm_startup_nrf52.o(STACK) for __initial_sp
+    entry2.o(__vectab_stack_and_reset_area) refers to entry.o(.ARM.Collect$$$$00000000) for __main
+    entry5.o(.ARM.Collect$$$$00000004) refers to init.o(.text) for __scatterload
+    entry9a.o(.ARM.Collect$$$$0000000B) refers to main.o(i.main) for main
+    entry9b.o(.ARM.Collect$$$$0000000C) refers to main.o(i.main) for main
+    init.o(.text) refers to entry5.o(.ARM.Collect$$$$00000004) for __main_after_scatterload
+
+
+==============================================================================
+
+Removing Unused input sections from the image.
+
+    Removing main.o(.rev16_text), (4 bytes).
+    Removing main.o(.revsh_text), (4 bytes).
+    Removing main.o(.rrx_text), (6 bytes).
+    Removing main.o(i.assert_nrf_callback), (16 bytes).
+    Removing ble_advdata.o(.rev16_text), (4 bytes).
+    Removing ble_advdata.o(.revsh_text), (4 bytes).
+    Removing ble_advdata.o(.rrx_text), (6 bytes).
+    Removing ble_advdata.o(i.adv_data_encode), (514 bytes).
+    Removing ble_advdata.o(i.ble_advdata_set), (104 bytes).
+    Removing ble_advdata.o(i.ble_device_addr_encode), (94 bytes).
+    Removing ble_advdata.o(i.conn_int_encode), (136 bytes).
+    Removing ble_advdata.o(i.le_role_encode), (84 bytes).
+    Removing ble_advdata.o(i.manuf_specific_data_encode), (100 bytes).
+    Removing ble_advdata.o(i.name_encode), (156 bytes).
+    Removing ble_advdata.o(i.service_data_encode), (136 bytes).
+    Removing ble_advdata.o(i.uint16_encode), (10 bytes).
+    Removing ble_advdata.o(i.uuid_list_encode), (48 bytes).
+    Removing ble_advdata.o(i.uuid_list_sized_encode), (158 bytes).
+    Removing ble_conn_params.o(.rev16_text), (4 bytes).
+    Removing ble_conn_params.o(.revsh_text), (4 bytes).
+    Removing ble_conn_params.o(.rrx_text), (6 bytes).
+    Removing ble_conn_params.o(i.ble_conn_params_change_conn_params), (76 bytes).
+    Removing ble_conn_params.o(i.ble_conn_params_init), (88 bytes).
+    Removing ble_conn_params.o(i.ble_conn_params_on_ble_evt), (132 bytes).
+    Removing ble_conn_params.o(i.ble_conn_params_stop), (12 bytes).
+    Removing ble_conn_params.o(i.conn_params_negotiation), (92 bytes).
+    Removing ble_conn_params.o(i.is_conn_params_ok), (28 bytes).
+    Removing ble_conn_params.o(i.update_timeout_handler), (96 bytes).
+    Removing ble_conn_params.o(.bss), (32 bytes).
+    Removing ble_conn_params.o(.bss), (28 bytes).
+    Removing ble_conn_params.o(.constdata), (4 bytes).
+    Removing ble_conn_params.o(.data), (20 bytes).
+    Removing ble_srv_common.o(.rev16_text), (4 bytes).
+    Removing ble_srv_common.o(.revsh_text), (4 bytes).
+    Removing ble_srv_common.o(.rrx_text), (6 bytes).
+    Removing ble_srv_common.o(i.ble_srv_ascii_to_utf8), (18 bytes).
+    Removing ble_srv_common.o(i.ble_srv_report_ref_encode), (12 bytes).
+    Removing ble_srv_common.o(i.characteristic_add), (394 bytes).
+    Removing ble_srv_common.o(i.descriptor_add), (170 bytes).
+    Removing ble_srv_common.o(i.set_security_req), (48 bytes).
+    Removing app_uart.o(.rev16_text), (4 bytes).
+    Removing app_uart.o(.revsh_text), (4 bytes).
+    Removing app_uart.o(.rrx_text), (6 bytes).
+    Removing app_uart.o(i.app_uart_flush), (4 bytes).
+    Removing app_uart.o(i.app_uart_get), (28 bytes).
+    Removing nrf_delay.o(.rev16_text), (4 bytes).
+    Removing nrf_delay.o(.revsh_text), (4 bytes).
+    Removing nrf_delay.o(.rrx_text), (6 bytes).
+    Removing nrf_drv_common.o(.rev16_text), (4 bytes).
+    Removing nrf_drv_common.o(.revsh_text), (4 bytes).
+    Removing nrf_drv_common.o(.rrx_text), (6 bytes).
+    Removing nrf_drv_uart.o(.rev16_text), (4 bytes).
+    Removing nrf_drv_uart.o(.revsh_text), (4 bytes).
+    Removing nrf_drv_uart.o(.rrx_text), (6 bytes).
+    Removing nrf_drv_uart.o(i.nrf_drv_uart_errorsrc_get), (32 bytes).
+    Removing nrf_drv_uart.o(i.nrf_drv_uart_rx_abort), (32 bytes).
+    Removing nrf_drv_uart.o(i.nrf_drv_uart_rx_disable), (28 bytes).
+    Removing nrf_drv_uart.o(i.nrf_drv_uart_tx_abort), (80 bytes).
+    Removing pstorage_raw.o(.rev16_text), (4 bytes).
+    Removing pstorage_raw.o(.revsh_text), (4 bytes).
+    Removing pstorage_raw.o(.rrx_text), (6 bytes).
+    Removing pstorage_raw.o(i.pstorage_block_identifier_get), (4 bytes).
+    Removing app_error.o(.rev16_text), (4 bytes).
+    Removing app_error.o(.revsh_text), (4 bytes).
+    Removing app_error.o(.rrx_text), (6 bytes).
+    Removing app_error.o(i.app_error_handler), (24 bytes).
+    Removing app_error.o(i.app_error_save_and_stop), (100 bytes).
+    Removing app_error.o(.bss), (32 bytes).
+    Removing app_error_weak.o(.rev16_text), (4 bytes).
+    Removing app_error_weak.o(.revsh_text), (4 bytes).
+    Removing app_error_weak.o(.rrx_text), (6 bytes).
+    Removing app_scheduler.o(.rev16_text), (4 bytes).
+    Removing app_scheduler.o(.revsh_text), (4 bytes).
+    Removing app_scheduler.o(.rrx_text), (6 bytes).
+    Removing app_timer.o(.rev16_text), (4 bytes).
+    Removing app_timer.o(.revsh_text), (4 bytes).
+    Removing app_timer.o(.rrx_text), (6 bytes).
+    Removing app_timer.o(i.app_timer_cnt_diff_compute), (12 bytes).
+    Removing app_timer.o(i.app_timer_cnt_get), (16 bytes).
+    Removing app_timer.o(i.app_timer_stop_all), (72 bytes).
+    Removing app_timer_appsh.o(.rev16_text), (4 bytes).
+    Removing app_timer_appsh.o(.revsh_text), (4 bytes).
+    Removing app_timer_appsh.o(.rrx_text), (6 bytes).
+    Removing app_util_platform.o(.rev16_text), (4 bytes).
+    Removing app_util_platform.o(.revsh_text), (4 bytes).
+    Removing app_util_platform.o(.rrx_text), (6 bytes).
+    Removing app_util_platform.o(i.app_util_disable_irq), (16 bytes).
+    Removing app_util_platform.o(i.app_util_enable_irq), (20 bytes).
+    Removing app_util_platform.o(.data), (4 bytes).
+    Removing bootloader.o(.rev16_text), (4 bytes).
+    Removing bootloader.o(.revsh_text), (4 bytes).
+    Removing bootloader.o(.rrx_text), (6 bytes).
+    Removing bootloader.o(.emb_text), (118 bytes).
+    Removing bootloader_settings.o(.rev16_text), (4 bytes).
+    Removing bootloader_settings.o(.revsh_text), (4 bytes).
+    Removing bootloader_settings.o(.rrx_text), (6 bytes).
+    Removing dfu_init_template.o(.rev16_text), (4 bytes).
+    Removing dfu_init_template.o(.revsh_text), (4 bytes).
+    Removing dfu_init_template.o(.rrx_text), (6 bytes).
+    Removing dfu_single_bank.o(.rev16_text), (4 bytes).
+    Removing dfu_single_bank.o(.revsh_text), (4 bytes).
+    Removing dfu_single_bank.o(.rrx_text), (6 bytes).
+    Removing dfu_single_bank.o(i.dfu_reset), (16 bytes).
+    Removing dfu_single_bank.o(i.offset_calculate), (40 bytes).
+    Removing dfu_transport_serial.o(.rev16_text), (4 bytes).
+    Removing dfu_transport_serial.o(.revsh_text), (4 bytes).
+    Removing dfu_transport_serial.o(.rrx_text), (6 bytes).
+    Removing hci_mem_pool.o(i.hci_mem_pool_tx_alloc), (36 bytes).
+    Removing hci_mem_pool.o(i.hci_mem_pool_tx_free), (12 bytes).
+    Removing hci_slip.o(.rev16_text), (4 bytes).
+    Removing hci_slip.o(.revsh_text), (4 bytes).
+    Removing hci_slip.o(.rrx_text), (6 bytes).
+    Removing hci_transport.o(.rev16_text), (4 bytes).
+    Removing hci_transport.o(.revsh_text), (4 bytes).
+    Removing hci_transport.o(.rrx_text), (6 bytes).
+    Removing hci_transport.o(i.hci_transport_pkt_write), (28 bytes).
+    Removing hci_transport.o(i.hci_transport_tx_alloc), (20 bytes).
+    Removing hci_transport.o(i.hci_transport_tx_done_register), (40 bytes).
+    Removing hci_transport.o(i.hci_transport_tx_free), (4 bytes).
+    Removing hci_transport.o(i.pkt_write_handle), (112 bytes).
+    Removing nrf_assert.o(.rev16_text), (4 bytes).
+    Removing nrf_assert.o(.revsh_text), (4 bytes).
+    Removing nrf_assert.o(.rrx_text), (6 bytes).
+    Removing softdevice_handler.o(.rev16_text), (4 bytes).
+    Removing softdevice_handler.o(.revsh_text), (4 bytes).
+    Removing softdevice_handler.o(.rrx_text), (6 bytes).
+    Removing softdevice_handler.o(i.sd_check_ram_start), (16 bytes).
+    Removing softdevice_handler.o(i.softdevice_ble_evt_handler_set), (20 bytes).
+    Removing softdevice_handler.o(i.softdevice_handler_isEnabled), (12 bytes).
+    Removing softdevice_handler.o(i.softdevice_handler_sd_disable), (20 bytes).
+    Removing softdevice_handler_appsh.o(.rev16_text), (4 bytes).
+    Removing softdevice_handler_appsh.o(.revsh_text), (4 bytes).
+    Removing softdevice_handler_appsh.o(.rrx_text), (6 bytes).
+    Removing arm_startup_nrf52.o(HEAP), (0 bytes).
+    Removing system_nrf52.o(.rev16_text), (4 bytes).
+    Removing system_nrf52.o(.revsh_text), (4 bytes).
+    Removing system_nrf52.o(.rrx_text), (6 bytes).
+    Removing system_nrf52.o(i.SystemCoreClockUpdate), (16 bytes).
+
+138 unused section(s) (total 4184 bytes) removed from the image.
+
+==============================================================================
+
+Image Symbol Table
+
+    Local Symbols
+
+    Symbol Name                              Value     Ov Type        Size  Object(Section)
+
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry9b.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry11b.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry10a.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry7a.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry2.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry10b.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry7b.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry8a.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry11a.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry9a.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry8b.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry5.o ABSOLUTE
+    ../clib/microlib/string/memcpy.c         0x00000000   Number         0  memcpyb.o ABSOLUTE
+    ../clib/microlib/string/memcpy.c         0x00000000   Number         0  memcpya.o ABSOLUTE
+    ../clib/microlib/string/memset.c         0x00000000   Number         0  memseta.o ABSOLUTE
+    ../clib/microlib/string/strlen.c         0x00000000   Number         0  strlen.o ABSOLUTE
+    ..\..\..\..\..\..\components\ble\common\ble_advdata.c 0x00000000   Number         0  ble_advdata.o ABSOLUTE
+    ..\..\..\..\..\..\components\ble\common\ble_conn_params.c 0x00000000   Number         0  ble_conn_params.o ABSOLUTE
+    ..\..\..\..\..\..\components\ble\common\ble_srv_common.c 0x00000000   Number         0  ble_srv_common.o ABSOLUTE
+    ..\..\..\..\..\..\components\drivers_nrf\common\nrf_drv_common.c 0x00000000   Number         0  nrf_drv_common.o ABSOLUTE
+    ..\..\..\..\..\..\components\drivers_nrf\delay\nrf_delay.c 0x00000000   Number         0  nrf_delay.o ABSOLUTE
+    ..\..\..\..\..\..\components\drivers_nrf\pstorage\pstorage_raw.c 0x00000000   Number         0  pstorage_raw.o ABSOLUTE
+    ..\..\..\..\..\..\components\drivers_nrf\uart\nrf_drv_uart.c 0x00000000   Number         0  nrf_drv_uart.o ABSOLUTE
+    ..\..\..\..\..\..\components\libraries\bootloader_dfu\bootloader.c 0x00000000   Number         0  bootloader.o ABSOLUTE
+    ..\..\..\..\..\..\components\libraries\bootloader_dfu\bootloader_settings.c 0x00000000   Number         0  bootloader_settings.o ABSOLUTE
+    ..\..\..\..\..\..\components\libraries\bootloader_dfu\bootloader_util.c 0x00000000   Number         0  bootloader_util.o ABSOLUTE
+    ..\..\..\..\..\..\components\libraries\bootloader_dfu\dfu_init_template.c 0x00000000   Number         0  dfu_init_template.o ABSOLUTE
+    ..\..\..\..\..\..\components\libraries\bootloader_dfu\dfu_single_bank.c 0x00000000   Number         0  dfu_single_bank.o ABSOLUTE
+    ..\..\..\..\..\..\components\libraries\bootloader_dfu\dfu_transport_serial.c 0x00000000   Number         0  dfu_transport_serial.o ABSOLUTE
+    ..\..\..\..\..\..\components\libraries\crc16\crc16.c 0x00000000   Number         0  crc16.o ABSOLUTE
+    ..\..\..\..\..\..\components\libraries\hci\hci_mem_pool.c 0x00000000   Number         0  hci_mem_pool.o ABSOLUTE
+    ..\..\..\..\..\..\components\libraries\hci\hci_slip.c 0x00000000   Number         0  hci_slip.o ABSOLUTE
+    ..\..\..\..\..\..\components\libraries\hci\hci_transport.c 0x00000000   Number         0  hci_transport.o ABSOLUTE
+    ..\..\..\..\..\..\components\libraries\scheduler\app_scheduler.c 0x00000000   Number         0  app_scheduler.o ABSOLUTE
+    ..\..\..\..\..\..\components\libraries\timer\app_timer.c 0x00000000   Number         0  app_timer.o ABSOLUTE
+    ..\..\..\..\..\..\components\libraries\timer\app_timer_appsh.c 0x00000000   Number         0  app_timer_appsh.o ABSOLUTE
+    ..\..\..\..\..\..\components\libraries\uart\app_uart.c 0x00000000   Number         0  app_uart.o ABSOLUTE
+    ..\..\..\..\..\..\components\libraries\util\app_error.c 0x00000000   Number         0  app_error.o ABSOLUTE
+    ..\..\..\..\..\..\components\libraries\util\app_error_weak.c 0x00000000   Number         0  app_error_weak.o ABSOLUTE
+    ..\..\..\..\..\..\components\libraries\util\app_util_platform.c 0x00000000   Number         0  app_util_platform.o ABSOLUTE
+    ..\..\..\..\..\..\components\libraries\util\nrf_assert.c 0x00000000   Number         0  nrf_assert.o ABSOLUTE
+    ..\..\..\..\..\..\components\softdevice\common\softdevice_handler\softdevice_handler.c 0x00000000   Number         0  softdevice_handler.o ABSOLUTE
+    ..\..\..\..\..\..\components\softdevice\common\softdevice_handler\softdevice_handler_appsh.c 0x00000000   Number         0  softdevice_handler_appsh.o ABSOLUTE
+    ..\..\..\main.c                          0x00000000   Number         0  main.o ABSOLUTE
+    ..\\..\\..\\..\\..\\..\\components\\ble\\common\\ble_advdata.c 0x00000000   Number         0  ble_advdata.o ABSOLUTE
+    ..\\..\\..\\..\\..\\..\\components\\ble\\common\\ble_conn_params.c 0x00000000   Number         0  ble_conn_params.o ABSOLUTE
+    ..\\..\\..\\..\\..\\..\\components\\ble\\common\\ble_srv_common.c 0x00000000   Number         0  ble_srv_common.o ABSOLUTE
+    ..\\..\\..\\..\\..\\..\\components\\drivers_nrf\\common\\nrf_drv_common.c 0x00000000   Number         0  nrf_drv_common.o ABSOLUTE
+    ..\\..\\..\\..\\..\\..\\components\\drivers_nrf\\delay\\nrf_delay.c 0x00000000   Number         0  nrf_delay.o ABSOLUTE
+    ..\\..\\..\\..\\..\\..\\components\\drivers_nrf\\pstorage\\pstorage_raw.c 0x00000000   Number         0  pstorage_raw.o ABSOLUTE
+    ..\\..\\..\\..\\..\\..\\components\\drivers_nrf\\uart\\nrf_drv_uart.c 0x00000000   Number         0  nrf_drv_uart.o ABSOLUTE
+    ..\\..\\..\\..\\..\\..\\components\\libraries\\bootloader_dfu\\bootloader.c 0x00000000   Number         0  bootloader.o ABSOLUTE
+    ..\\..\\..\\..\\..\\..\\components\\libraries\\bootloader_dfu\\bootloader_settings.c 0x00000000   Number         0  bootloader_settings.o ABSOLUTE
+    ..\\..\\..\\..\\..\\..\\components\\libraries\\bootloader_dfu\\bootloader_util.c 0x00000000   Number         0  bootloader_util.o ABSOLUTE
+    ..\\..\\..\\..\\..\\..\\components\\libraries\\bootloader_dfu\\dfu_init_template.c 0x00000000   Number         0  dfu_init_template.o ABSOLUTE
+    ..\\..\\..\\..\\..\\..\\components\\libraries\\bootloader_dfu\\dfu_single_bank.c 0x00000000   Number         0  dfu_single_bank.o ABSOLUTE
+    ..\\..\\..\\..\\..\\..\\components\\libraries\\bootloader_dfu\\dfu_transport_serial.c 0x00000000   Number         0  dfu_transport_serial.o ABSOLUTE
+    ..\\..\\..\\..\\..\\..\\components\\libraries\\hci\\hci_slip.c 0x00000000   Number         0  hci_slip.o ABSOLUTE
+    ..\\..\\..\\..\\..\\..\\components\\libraries\\hci\\hci_transport.c 0x00000000   Number         0  hci_transport.o ABSOLUTE
+    ..\\..\\..\\..\\..\\..\\components\\libraries\\scheduler\\app_scheduler.c 0x00000000   Number         0  app_scheduler.o ABSOLUTE
+    ..\\..\\..\\..\\..\\..\\components\\libraries\\timer\\app_timer.c 0x00000000   Number         0  app_timer.o ABSOLUTE
+    ..\\..\\..\\..\\..\\..\\components\\libraries\\timer\\app_timer_appsh.c 0x00000000   Number         0  app_timer_appsh.o ABSOLUTE
+    ..\\..\\..\\..\\..\\..\\components\\libraries\\uart\\app_uart.c 0x00000000   Number         0  app_uart.o ABSOLUTE
+    ..\\..\\..\\..\\..\\..\\components\\libraries\\util\\app_error.c 0x00000000   Number         0  app_error.o ABSOLUTE
+    ..\\..\\..\\..\\..\\..\\components\\libraries\\util\\app_error_weak.c 0x00000000   Number         0  app_error_weak.o ABSOLUTE
+    ..\\..\\..\\..\\..\\..\\components\\libraries\\util\\app_util_platform.c 0x00000000   Number         0  app_util_platform.o ABSOLUTE
+    ..\\..\\..\\..\\..\\..\\components\\libraries\\util\\nrf_assert.c 0x00000000   Number         0  nrf_assert.o ABSOLUTE
+    ..\\..\\..\\..\\..\\..\\components\\softdevice\\common\\softdevice_handler\\softdevice_handler.c 0x00000000   Number         0  softdevice_handler.o ABSOLUTE
+    ..\\..\\..\\..\\..\\..\\components\\softdevice\\common\\softdevice_handler\\softdevice_handler_appsh.c 0x00000000   Number         0  softdevice_handler_appsh.o ABSOLUTE
+    ..\\..\\..\\main.c                       0x00000000   Number         0  main.o ABSOLUTE
+    RTE\Device\nRF52832_xxAA\arm_startup_nrf52.s 0x00000000   Number         0  arm_startup_nrf52.o ABSOLUTE
+    RTE\Device\nRF52832_xxAA\system_nrf52.c  0x00000000   Number         0  system_nrf52.o ABSOLUTE
+    RTE\\Device\\nRF52832_xxAA\\system_nrf52.c 0x00000000   Number         0  system_nrf52.o ABSOLUTE
+    dc.s                                     0x00000000   Number         0  dc.o ABSOLUTE
+    handlers.s                               0x00000000   Number         0  handlers.o ABSOLUTE
+    init.s                                   0x00000000   Number         0  init.o ABSOLUTE
+    RESET                                    0x0007a000   Section     1024  arm_startup_nrf52.o(RESET)
+    .ARM.Collect$$$$00000000                 0x0007a400   Section        0  entry.o(.ARM.Collect$$$$00000000)
+    .ARM.Collect$$$$00000001                 0x0007a400   Section        4  entry2.o(.ARM.Collect$$$$00000001)
+    .ARM.Collect$$$$00000004                 0x0007a404   Section        4  entry5.o(.ARM.Collect$$$$00000004)
+    .ARM.Collect$$$$00000008                 0x0007a408   Section        0  entry7b.o(.ARM.Collect$$$$00000008)
+    .ARM.Collect$$$$0000000A                 0x0007a408   Section        0  entry8b.o(.ARM.Collect$$$$0000000A)
+    .ARM.Collect$$$$0000000B                 0x0007a408   Section        8  entry9a.o(.ARM.Collect$$$$0000000B)
+    .ARM.Collect$$$$0000000D                 0x0007a410   Section        0  entry10a.o(.ARM.Collect$$$$0000000D)
+    .ARM.Collect$$$$0000000F                 0x0007a410   Section        0  entry11a.o(.ARM.Collect$$$$0000000F)
+    .ARM.Collect$$$$00002712                 0x0007a410   Section        4  entry2.o(.ARM.Collect$$$$00002712)
+    __lit__00000000                          0x0007a410   Data           4  entry2.o(.ARM.Collect$$$$00002712)
+    .emb_text                                0x0007a414   Section      118  nrf_delay.o(.emb_text)
+    $v0                                      0x0007a414   Number         0  nrf_delay.o(.emb_text)
+    .emb_text                                0x0007a48c   Section      118  app_timer.o(.emb_text)
+    $v0                                      0x0007a48c   Number         0  app_timer.o(.emb_text)
+    .emb_text                                0x0007a504   Section       52  bootloader_util.o(.emb_text)
+    $v0                                      0x0007a504   Number         0  bootloader_util.o(.emb_text)
+    .text                                    0x0007a538   Section       36  arm_startup_nrf52.o(.text)
+    $v0                                      0x0007a538   Number         0  arm_startup_nrf52.o(.text)
+    .text                                    0x0007a55c   Section        0  memcpya.o(.text)
+    .text                                    0x0007a580   Section        0  memseta.o(.text)
+    .text                                    0x0007a5a4   Section       36  init.o(.text)
+    i.NVIC_ClearPendingIRQ                   0x0007a5c8   Section        0  app_timer.o(i.NVIC_ClearPendingIRQ)
+    NVIC_ClearPendingIRQ                     0x0007a5c9   Thumb Code    22  app_timer.o(i.NVIC_ClearPendingIRQ)
+    i.NVIC_EnableIRQ                         0x0007a5de   Section        0  app_timer.o(i.NVIC_EnableIRQ)
+    NVIC_EnableIRQ                           0x0007a5df   Thumb Code    22  app_timer.o(i.NVIC_EnableIRQ)
+    i.NVIC_SetPendingIRQ                     0x0007a5f4   Section        0  app_timer.o(i.NVIC_SetPendingIRQ)
+    NVIC_SetPendingIRQ                       0x0007a5f5   Thumb Code    22  app_timer.o(i.NVIC_SetPendingIRQ)
+    i.NVIC_SetPriority                       0x0007a60a   Section        0  app_timer.o(i.NVIC_SetPriority)
+    NVIC_SetPriority                         0x0007a60b   Thumb Code    32  app_timer.o(i.NVIC_SetPriority)
+    i.RTC1_IRQHandler                        0x0007a62c   Section        0  app_timer.o(i.RTC1_IRQHandler)
+    i.SWI0_EGU0_IRQHandler                   0x0007a650   Section        0  app_timer.o(i.SWI0_EGU0_IRQHandler)
+    i.SWI2_EGU2_IRQHandler                   0x0007a654   Section        0  softdevice_handler.o(i.SWI2_EGU2_IRQHandler)
+    i.SystemInit                             0x0007a678   Section        0  system_nrf52.o(i.SystemInit)
+    i.UARTE0_UART0_IRQHandler                0x0007a8e4   Section        0  nrf_drv_uart.o(i.UARTE0_UART0_IRQHandler)
+    i.__scatterload_copy                     0x0007a8f8   Section       14  handlers.o(i.__scatterload_copy)
+    i.__scatterload_null                     0x0007a906   Section        2  handlers.o(i.__scatterload_null)
+    i.__scatterload_zeroinit                 0x0007a908   Section       14  handlers.o(i.__scatterload_zeroinit)
+    i.ack_transmit                           0x0007a918   Section        0  hci_transport.o(i.ack_transmit)
+    ack_transmit                             0x0007a919   Thumb Code    40  hci_transport.o(i.ack_transmit)
+    i.app_error_fault_handler                0x0007a944   Section        0  app_error_weak.o(i.app_error_fault_handler)
+    i.app_error_handler_bare                 0x0007a968   Section        0  app_error.o(i.app_error_handler_bare)
+    i.app_notify                             0x0007a980   Section        0  pstorage_raw.o(i.app_notify)
+    app_notify                               0x0007a981   Thumb Code    30  pstorage_raw.o(i.app_notify)
+    i.app_sched_event_get                    0x0007a9a4   Section        0  app_scheduler.o(i.app_sched_event_get)
+    app_sched_event_get                      0x0007a9a5   Thumb Code    64  app_scheduler.o(i.app_sched_event_get)
+    i.app_sched_event_put                    0x0007a9e8   Section        0  app_scheduler.o(i.app_sched_event_put)
+    i.app_sched_execute                      0x0007aa88   Section        0  app_scheduler.o(i.app_sched_execute)
+    i.app_sched_init                         0x0007aaa8   Section        0  app_scheduler.o(i.app_sched_init)
+    i.app_timer_create                       0x0007aad4   Section        0  app_timer.o(i.app_timer_create)
+    i.app_timer_evt_get                      0x0007aaf8   Section        0  app_timer_appsh.o(i.app_timer_evt_get)
+    app_timer_evt_get                        0x0007aaf9   Thumb Code    24  app_timer_appsh.o(i.app_timer_evt_get)
+    i.app_timer_evt_schedule                 0x0007ab10   Section        0  app_timer_appsh.o(i.app_timer_evt_schedule)
+    i.app_timer_init                         0x0007ab28   Section        0  app_timer.o(i.app_timer_init)
+    i.app_timer_start                        0x0007abb8   Section        0  app_timer.o(i.app_timer_start)
+    i.app_timer_stop                         0x0007ac38   Section        0  app_timer.o(i.app_timer_stop)
+    i.app_uart_close                         0x0007ac88   Section        0  app_uart.o(i.app_uart_close)
+    i.app_uart_init                          0x0007ac94   Section        0  app_uart.o(i.app_uart_init)
+    i.app_uart_put                           0x0007ad18   Section        0  app_uart.o(i.app_uart_put)
+    i.app_util_critical_region_enter         0x0007ad3c   Section        0  app_util_platform.o(i.app_util_critical_region_enter)
+    i.app_util_critical_region_exit          0x0007ad84   Section        0  app_util_platform.o(i.app_util_critical_region_exit)
+    i.apply_config                           0x0007adb8   Section        0  nrf_drv_uart.o(i.apply_config)
+    apply_config                             0x0007adb9   Thumb Code   108  nrf_drv_uart.o(i.apply_config)
+    i.ble_stack_init                         0x0007ae30   Section        0  main.o(i.ble_stack_init)
+    ble_stack_init                           0x0007ae31   Thumb Code   116  main.o(i.ble_stack_init)
+    i.bootloader_app_is_valid                0x0007aeb4   Section        0  bootloader.o(i.bootloader_app_is_valid)
+    i.bootloader_app_start                   0x0007aef0   Section        0  bootloader.o(i.bootloader_app_start)
+    i.bootloader_dfu_sd_in_progress          0x0007af44   Section        0  bootloader.o(i.bootloader_dfu_sd_in_progress)
+    i.bootloader_dfu_sd_update_continue      0x0007af62   Section        0  bootloader.o(i.bootloader_dfu_sd_update_continue)
+    i.bootloader_dfu_sd_update_finalize      0x0007af9c   Section        0  bootloader.o(i.bootloader_dfu_sd_update_finalize)
+    i.bootloader_dfu_start                   0x0007afc8   Section        0  bootloader.o(i.bootloader_dfu_start)
+    i.bootloader_dfu_update_process          0x0007afe0   Section        0  bootloader.o(i.bootloader_dfu_update_process)
+    i.bootloader_init                        0x0007b0c4   Section        0  bootloader.o(i.bootloader_init)
+    i.bootloader_settings_get                0x0007b0f0   Section        0  bootloader.o(i.bootloader_settings_get)
+    i.bootloader_settings_save               0x0007b120   Section        0  bootloader.o(i.bootloader_settings_save)
+    bootloader_settings_save                 0x0007b121   Thumb Code    44  bootloader.o(i.bootloader_settings_save)
+    i.bootloader_util_app_start              0x0007b150   Section        0  bootloader_util.o(i.bootloader_util_app_start)
+    i.bootloader_util_settings_get           0x0007b154   Section        0  bootloader_settings.o(i.bootloader_util_settings_get)
+    i.cmd_process                            0x0007b160   Section        0  pstorage_raw.o(i.cmd_process)
+    cmd_process                              0x0007b161   Thumb Code    96  pstorage_raw.o(i.cmd_process)
+    i.cmd_queue_element_init                 0x0007b1c8   Section        0  pstorage_raw.o(i.cmd_queue_element_init)
+    cmd_queue_element_init                   0x0007b1c9   Thumb Code    28  pstorage_raw.o(i.cmd_queue_element_init)
+    i.cmd_queue_enqueue                      0x0007b1e8   Section        0  pstorage_raw.o(i.cmd_queue_enqueue)
+    cmd_queue_enqueue                        0x0007b1e9   Thumb Code    82  pstorage_raw.o(i.cmd_queue_enqueue)
+    i.compare_reg_update                     0x0007b240   Section        0  app_timer.o(i.compare_reg_update)
+    compare_reg_update                       0x0007b241   Thumb Code   160  app_timer.o(i.compare_reg_update)
+    i.crc16_compute                          0x0007b2ec   Section        0  crc16.o(i.crc16_compute)
+    i.data_queue_element_free                0x0007b324   Section        0  dfu_transport_serial.o(i.data_queue_element_free)
+    data_queue_element_free                  0x0007b325   Thumb Code    56  dfu_transport_serial.o(i.data_queue_element_free)
+    i.data_queue_element_init                0x0007b360   Section        0  dfu_transport_serial.o(i.data_queue_element_init)
+    data_queue_element_init                  0x0007b361   Thumb Code    22  dfu_transport_serial.o(i.data_queue_element_init)
+    i.dfu_activate_app                       0x0007b37c   Section        0  dfu_single_bank.o(i.dfu_activate_app)
+    dfu_activate_app                         0x0007b37d   Thumb Code    54  dfu_single_bank.o(i.dfu_activate_app)
+    i.dfu_activate_bl                        0x0007b3bc   Section        0  dfu_single_bank.o(i.dfu_activate_bl)
+    dfu_activate_bl                          0x0007b3bd   Thumb Code    30  dfu_single_bank.o(i.dfu_activate_bl)
+    i.dfu_activate_sd                        0x0007b3e4   Section        0  dfu_single_bank.o(i.dfu_activate_sd)
+    dfu_activate_sd                          0x0007b3e5   Thumb Code    36  dfu_single_bank.o(i.dfu_activate_sd)
+    i.dfu_bl_image_swap                      0x0007b410   Section        0  dfu_single_bank.o(i.dfu_bl_image_swap)
+    i.dfu_bl_image_validate                  0x0007b446   Section        0  dfu_single_bank.o(i.dfu_bl_image_validate)
+    i.dfu_cb_handler                         0x0007b482   Section        0  dfu_transport_serial.o(i.dfu_cb_handler)
+    dfu_cb_handler                           0x0007b483   Thumb Code    10  dfu_transport_serial.o(i.dfu_cb_handler)
+    i.dfu_cleared_func_app                   0x0007b48c   Section        0  dfu_single_bank.o(i.dfu_cleared_func_app)
+    dfu_cleared_func_app                     0x0007b48d   Thumb Code    34  dfu_single_bank.o(i.dfu_cleared_func_app)
+    i.dfu_compare_block                      0x0007b4b4   Section        0  dfu_single_bank.o(i.dfu_compare_block)
+    dfu_compare_block                        0x0007b4b5   Thumb Code    22  dfu_single_bank.o(i.dfu_compare_block)
+    i.dfu_copy_sd                            0x0007b4ca   Section        0  dfu_single_bank.o(i.dfu_copy_sd)
+    dfu_copy_sd                              0x0007b4cb   Thumb Code    22  dfu_single_bank.o(i.dfu_copy_sd)
+    i.dfu_data_pkt_handle                    0x0007b4e0   Section        0  dfu_single_bank.o(i.dfu_data_pkt_handle)
+    i.dfu_image_activate                     0x0007b54c   Section        0  dfu_single_bank.o(i.dfu_image_activate)
+    i.dfu_image_validate                     0x0007b580   Section        0  dfu_single_bank.o(i.dfu_image_validate)
+    i.dfu_init                               0x0007b5bc   Section        0  dfu_single_bank.o(i.dfu_init)
+    i.dfu_init_pkt_complete                  0x0007b628   Section        0  dfu_single_bank.o(i.dfu_init_pkt_complete)
+    i.dfu_init_pkt_handle                    0x0007b658   Section        0  dfu_single_bank.o(i.dfu_init_pkt_handle)
+    i.dfu_init_postvalidate                  0x0007b6b4   Section        0  dfu_init_template.o(i.dfu_init_postvalidate)
+    i.dfu_init_prevalidate                   0x0007b6d0   Section        0  dfu_init_template.o(i.dfu_init_prevalidate)
+    i.dfu_prepare_func_app_erase             0x0007b758   Section        0  dfu_single_bank.o(i.dfu_prepare_func_app_erase)
+    dfu_prepare_func_app_erase               0x0007b759   Thumb Code    36  dfu_single_bank.o(i.dfu_prepare_func_app_erase)
+    i.dfu_register_callback                  0x0007b780   Section        0  dfu_single_bank.o(i.dfu_register_callback)
+    i.dfu_sd_image_swap                      0x0007b78c   Section        0  dfu_single_bank.o(i.dfu_sd_image_swap)
+    i.dfu_sd_image_validate                  0x0007b806   Section        0  dfu_single_bank.o(i.dfu_sd_image_validate)
+    i.dfu_sd_img_block_swap                  0x0007b866   Section        0  dfu_single_bank.o(i.dfu_sd_img_block_swap)
+    dfu_sd_img_block_swap                    0x0007b867   Thumb Code    74  dfu_single_bank.o(i.dfu_sd_img_block_swap)
+    i.dfu_start_pkt_handle                   0x0007b8b0   Section        0  dfu_single_bank.o(i.dfu_start_pkt_handle)
+    i.dfu_timeout_handler                    0x0007b958   Section        0  dfu_single_bank.o(i.dfu_timeout_handler)
+    dfu_timeout_handler                      0x0007b959   Thumb Code    22  dfu_single_bank.o(i.dfu_timeout_handler)
+    i.dfu_timer_restart                      0x0007b974   Section        0  dfu_single_bank.o(i.dfu_timer_restart)
+    dfu_timer_restart                        0x0007b975   Thumb Code    50  dfu_single_bank.o(i.dfu_timer_restart)
+    i.dfu_transport_close                    0x0007b9b0   Section        0  dfu_transport_serial.o(i.dfu_transport_close)
+    i.dfu_transport_update_start             0x0007b9c8   Section        0  dfu_transport_serial.o(i.dfu_transport_update_start)
+    i.elapsed_ticks_acquire                  0x0007ba0c   Section        0  app_timer.o(i.elapsed_ticks_acquire)
+    elapsed_ticks_acquire                    0x0007ba0d   Thumb Code    58  app_timer.o(i.elapsed_ticks_acquire)
+    i.handle_rx_byte_default                 0x0007ba4c   Section        0  hci_slip.o(i.handle_rx_byte_default)
+    handle_rx_byte_default                   0x0007ba4d   Thumb Code    32  hci_slip.o(i.handle_rx_byte_default)
+    i.handle_rx_byte_esc                     0x0007ba74   Section        0  hci_slip.o(i.handle_rx_byte_esc)
+    handle_rx_byte_esc                       0x0007ba75   Thumb Code    48  hci_slip.o(i.handle_rx_byte_esc)
+    i.handle_rx_byte_wait_start              0x0007baac   Section        0  hci_slip.o(i.handle_rx_byte_wait_start)
+    handle_rx_byte_wait_start                0x0007baad   Thumb Code    12  hci_slip.o(i.handle_rx_byte_wait_start)
+    i.handle_slip_end                        0x0007bac0   Section        0  hci_slip.o(i.handle_slip_end)
+    handle_slip_end                          0x0007bac1   Thumb Code    34  hci_slip.o(i.handle_slip_end)
+    i.hci_mem_pool_close                     0x0007bae8   Section        0  hci_mem_pool.o(i.hci_mem_pool_close)
+    i.hci_mem_pool_open                      0x0007baec   Section        0  hci_mem_pool.o(i.hci_mem_pool_open)
+    i.hci_mem_pool_rx_consume                0x0007bb14   Section        0  hci_mem_pool.o(i.hci_mem_pool_rx_consume)
+    i.hci_mem_pool_rx_data_size_set          0x0007bb7c   Section        0  hci_mem_pool.o(i.hci_mem_pool_rx_data_size_set)
+    i.hci_mem_pool_rx_extract                0x0007bba0   Section        0  hci_mem_pool.o(i.hci_mem_pool_rx_extract)
+    i.hci_mem_pool_rx_produce                0x0007bbe8   Section        0  hci_mem_pool.o(i.hci_mem_pool_rx_produce)
+    i.hci_slip_close                         0x0007bc38   Section        0  hci_slip.o(i.hci_slip_close)
+    i.hci_slip_evt_handler_register          0x0007bc48   Section        0  hci_slip.o(i.hci_slip_evt_handler_register)
+    i.hci_slip_open                          0x0007bc54   Section        0  hci_slip.o(i.hci_slip_open)
+    i.hci_slip_rx_buffer_register            0x0007bc8c   Section        0  hci_slip.o(i.hci_slip_rx_buffer_register)
+    i.hci_slip_write                         0x0007bca8   Section        0  hci_slip.o(i.hci_slip_write)
+    i.hci_transport_close                    0x0007bce4   Section        0  hci_transport.o(i.hci_transport_close)
+    i.hci_transport_evt_handler_reg          0x0007bd20   Section        0  hci_transport.o(i.hci_transport_evt_handler_reg)
+    i.hci_transport_open                     0x0007bd48   Section        0  hci_transport.o(i.hci_transport_open)
+    i.hci_transport_rx_pkt_consume           0x0007bda8   Section        0  hci_transport.o(i.hci_transport_rx_pkt_consume)
+    i.hci_transport_rx_pkt_extract           0x0007bdb0   Section        0  hci_transport.o(i.hci_transport_rx_pkt_extract)
+    i.hci_transport_timeout_handle           0x0007bdec   Section        0  hci_transport.o(i.hci_transport_timeout_handle)
+    i.header_checksum_calculate              0x0007bdf2   Section        0  hci_transport.o(i.header_checksum_calculate)
+    header_checksum_calculate                0x0007bdf3   Thumb Code    18  hci_transport.o(i.header_checksum_calculate)
+    i.intern_softdevice_events_execute       0x0007be04   Section        0  softdevice_handler.o(i.intern_softdevice_events_execute)
+    i.is_word_aligned                        0x0007be74   Section        0  pstorage_raw.o(i.is_word_aligned)
+    is_word_aligned                          0x0007be75   Thumb Code    12  pstorage_raw.o(i.is_word_aligned)
+    i.list_deletions_handler                 0x0007be80   Section        0  app_timer.o(i.list_deletions_handler)
+    list_deletions_handler                   0x0007be81   Thumb Code   178  app_timer.o(i.list_deletions_handler)
+    i.list_insertions_handler                0x0007bf3c   Section        0  app_timer.o(i.list_insertions_handler)
+    list_insertions_handler                  0x0007bf3d   Thumb Code   196  app_timer.o(i.list_insertions_handler)
+    i.main                                   0x0007c008   Section        0  main.o(i.main)
+    i.nrf_delay_ms                           0x0007c144   Section        0  nrf_delay.o(i.nrf_delay_ms)
+    i.nrf_drv_common_irq_enable              0x0007c15e   Section        0  nrf_drv_common.o(i.nrf_drv_common_irq_enable)
+    i.nrf_drv_uart_init                      0x0007c198   Section        0  nrf_drv_uart.o(i.nrf_drv_uart_init)
+    i.nrf_drv_uart_rx                        0x0007c22c   Section        0  nrf_drv_uart.o(i.nrf_drv_uart_rx)
+    i.nrf_drv_uart_rx_enable                 0x0007c2b8   Section        0  nrf_drv_uart.o(i.nrf_drv_uart_rx_enable)
+    i.nrf_drv_uart_rx_for_uart               0x0007c2d8   Section        0  nrf_drv_uart.o(i.nrf_drv_uart_rx_for_uart)
+    nrf_drv_uart_rx_for_uart                 0x0007c2d9   Thumb Code   148  nrf_drv_uart.o(i.nrf_drv_uart_rx_for_uart)
+    i.nrf_drv_uart_rx_for_uarte              0x0007c374   Section        0  nrf_drv_uart.o(i.nrf_drv_uart_rx_for_uarte)
+    nrf_drv_uart_rx_for_uarte                0x0007c375   Thumb Code   136  nrf_drv_uart.o(i.nrf_drv_uart_rx_for_uarte)
+    i.nrf_drv_uart_tx                        0x0007c404   Section        0  nrf_drv_uart.o(i.nrf_drv_uart_tx)
+    i.nrf_drv_uart_tx_for_uart               0x0007c494   Section        0  nrf_drv_uart.o(i.nrf_drv_uart_tx_for_uart)
+    nrf_drv_uart_tx_for_uart                 0x0007c495   Thumb Code   118  nrf_drv_uart.o(i.nrf_drv_uart_tx_for_uart)
+    i.nrf_drv_uart_tx_in_progress            0x0007c514   Section        0  nrf_drv_uart.o(i.nrf_drv_uart_tx_in_progress)
+    i.nrf_drv_uart_uninit                    0x0007c524   Section        0  nrf_drv_uart.o(i.nrf_drv_uart_uninit)
+    i.nrf_gpio_cfg                           0x0007c564   Section        0  main.o(i.nrf_gpio_cfg)
+    nrf_gpio_cfg                             0x0007c565   Thumb Code    34  main.o(i.nrf_gpio_cfg)
+    i.nrf_gpio_cfg                           0x0007c586   Section        0  nrf_drv_uart.o(i.nrf_gpio_cfg)
+    nrf_gpio_cfg                             0x0007c587   Thumb Code    34  nrf_drv_uart.o(i.nrf_gpio_cfg)
+    i.nrf_gpio_cfg_default                   0x0007c5a8   Section        0  nrf_drv_uart.o(i.nrf_gpio_cfg_default)
+    nrf_gpio_cfg_default                     0x0007c5a9   Thumb Code    18  nrf_drv_uart.o(i.nrf_gpio_cfg_default)
+    i.nrf_gpio_cfg_input                     0x0007c5ba   Section        0  nrf_drv_uart.o(i.nrf_gpio_cfg_input)
+    nrf_gpio_cfg_input                       0x0007c5bb   Thumb Code    18  nrf_drv_uart.o(i.nrf_gpio_cfg_input)
+    i.nrf_gpio_cfg_output                    0x0007c5cc   Section        0  nrf_drv_uart.o(i.nrf_gpio_cfg_output)
+    nrf_gpio_cfg_output                      0x0007c5cd   Thumb Code    20  nrf_drv_uart.o(i.nrf_gpio_cfg_output)
+    i.nrf_uart_event_check                   0x0007c5e0   Section        0  nrf_drv_uart.o(i.nrf_uart_event_check)
+    nrf_uart_event_check                     0x0007c5e1   Thumb Code    10  nrf_drv_uart.o(i.nrf_uart_event_check)
+    i.nrf_uart_int_enable_check              0x0007c5ea   Section        0  nrf_drv_uart.o(i.nrf_uart_int_enable_check)
+    nrf_uart_int_enable_check                0x0007c5eb   Thumb Code    12  nrf_drv_uart.o(i.nrf_uart_int_enable_check)
+    i.nrf_uarte_event_check                  0x0007c5f6   Section        0  nrf_drv_uart.o(i.nrf_uarte_event_check)
+    nrf_uarte_event_check                    0x0007c5f7   Thumb Code    10  nrf_drv_uart.o(i.nrf_uarte_event_check)
+    i.pins_to_default                        0x0007c600   Section        0  nrf_drv_uart.o(i.pins_to_default)
+    pins_to_default                          0x0007c601   Thumb Code    78  nrf_drv_uart.o(i.pins_to_default)
+    i.process_dfu_packet                     0x0007c654   Section        0  dfu_transport_serial.o(i.process_dfu_packet)
+    process_dfu_packet                       0x0007c655   Thumb Code   108  dfu_transport_serial.o(i.process_dfu_packet)
+    i.pstorage_callback_handler              0x0007c6c4   Section        0  bootloader.o(i.pstorage_callback_handler)
+    pstorage_callback_handler                0x0007c6c5   Thumb Code    26  bootloader.o(i.pstorage_callback_handler)
+    i.pstorage_callback_handler              0x0007c6e4   Section        0  dfu_single_bank.o(i.pstorage_callback_handler)
+    pstorage_callback_handler                0x0007c6e5   Thumb Code    74  dfu_single_bank.o(i.pstorage_callback_handler)
+    i.pstorage_clear                         0x0007c738   Section        0  pstorage_raw.o(i.pstorage_clear)
+    i.pstorage_init                          0x0007c74c   Section        0  pstorage_raw.o(i.pstorage_init)
+    i.pstorage_register                      0x0007c78c   Section        0  pstorage_raw.o(i.pstorage_register)
+    i.pstorage_store                         0x0007c7b4   Section        0  pstorage_raw.o(i.pstorage_store)
+    i.pstorage_sys_event_handler             0x0007c7e4   Section        0  pstorage_raw.o(i.pstorage_sys_event_handler)
+    i.rpc_transport_event_handler            0x0007c880   Section        0  dfu_transport_serial.o(i.rpc_transport_event_handler)
+    i.rtc1_stop                              0x0007c924   Section        0  app_timer.o(i.rtc1_stop)
+    rtc1_stop                                0x0007c925   Thumb Code    52  app_timer.o(i.rtc1_stop)
+    i.rx_byte                                0x0007c960   Section        0  nrf_drv_uart.o(i.rx_byte)
+    rx_byte                                  0x0007c961   Thumb Code    38  nrf_drv_uart.o(i.rx_byte)
+    i.rx_done_event                          0x0007c990   Section        0  nrf_drv_uart.o(i.rx_done_event)
+    rx_done_event                            0x0007c991   Thumb Code    26  nrf_drv_uart.o(i.rx_done_event)
+    i.rx_enable                              0x0007c9b0   Section        0  nrf_drv_uart.o(i.rx_enable)
+    rx_enable                                0x0007c9b1   Thumb Code    18  nrf_drv_uart.o(i.rx_enable)
+    i.rx_vendor_specific_pkt_type_handle     0x0007c9c8   Section        0  hci_transport.o(i.rx_vendor_specific_pkt_type_handle)
+    rx_vendor_specific_pkt_type_handle       0x0007c9c9   Thumb Code   226  hci_transport.o(i.rx_vendor_specific_pkt_type_handle)
+    i.scheduler_init                         0x0007cab0   Section        0  main.o(i.scheduler_init)
+    scheduler_init                           0x0007cab1   Thumb Code    26  main.o(i.scheduler_init)
+    i.sd_nvic_EnableIRQ                      0x0007cad0   Section        0  softdevice_handler.o(i.sd_nvic_EnableIRQ)
+    sd_nvic_EnableIRQ                        0x0007cad1   Thumb Code   128  softdevice_handler.o(i.sd_nvic_EnableIRQ)
+    i.send_tx_byte_default                   0x0007cb58   Section        0  hci_slip.o(i.send_tx_byte_default)
+    send_tx_byte_default                     0x0007cb59   Thumb Code    26  hci_slip.o(i.send_tx_byte_default)
+    i.send_tx_byte_encoded                   0x0007cb78   Section        0  hci_slip.o(i.send_tx_byte_encoded)
+    send_tx_byte_encoded                     0x0007cb79   Thumb Code    48  hci_slip.o(i.send_tx_byte_encoded)
+    i.send_tx_byte_end                       0x0007cbb0   Section        0  hci_slip.o(i.send_tx_byte_end)
+    send_tx_byte_end                         0x0007cbb1   Thumb Code    26  hci_slip.o(i.send_tx_byte_end)
+    i.send_tx_byte_esc                       0x0007cbd4   Section        0  hci_slip.o(i.send_tx_byte_esc)
+    send_tx_byte_esc                         0x0007cbd5   Thumb Code    20  hci_slip.o(i.send_tx_byte_esc)
+    i.slip_event_handle                      0x0007cbf0   Section        0  hci_transport.o(i.slip_event_handle)
+    i.slip_uart_eventhandler                 0x0007cc9c   Section        0  hci_slip.o(i.slip_uart_eventhandler)
+    slip_uart_eventhandler                   0x0007cc9d   Thumb Code    70  hci_slip.o(i.slip_uart_eventhandler)
+    i.softdevice_enable                      0x0007ccec   Section        0  softdevice_handler.o(i.softdevice_enable)
+    i.softdevice_enable_get_default_config   0x0007cd00   Section        0  softdevice_handler.o(i.softdevice_enable_get_default_config)
+    i.softdevice_evt_get                     0x0007cd26   Section        0  softdevice_handler_appsh.o(i.softdevice_evt_get)
+    i.softdevice_evt_schedule                0x0007cd38   Section        0  softdevice_handler_appsh.o(i.softdevice_evt_schedule)
+    i.softdevice_fault_handler               0x0007cd48   Section        0  softdevice_handler.o(i.softdevice_fault_handler)
+    i.softdevice_handler_init                0x0007cd4c   Section        0  softdevice_handler.o(i.softdevice_handler_init)
+    i.softdevice_sys_evt_handler_set         0x0007cd80   Section        0  softdevice_handler.o(i.softdevice_sys_evt_handler_set)
+    i.sys_evt_dispatch                       0x0007cd94   Section        0  main.o(i.sys_evt_dispatch)
+    sys_evt_dispatch                         0x0007cd95   Thumb Code     4  main.o(i.sys_evt_dispatch)
+    i.timer_list_handler                     0x0007cd98   Section        0  app_timer.o(i.timer_list_handler)
+    timer_list_handler                       0x0007cd99   Thumb Code   134  app_timer.o(i.timer_list_handler)
+    i.timer_list_insert                      0x0007ce24   Section        0  app_timer.o(i.timer_list_insert)
+    timer_list_insert                        0x0007ce25   Thumb Code    56  app_timer.o(i.timer_list_insert)
+    i.timer_timeouts_check                   0x0007ce60   Section        0  app_timer.o(i.timer_timeouts_check)
+    timer_timeouts_check                     0x0007ce61   Thumb Code   124  app_timer.o(i.timer_timeouts_check)
+    i.transmit_buffer                        0x0007cee4   Section        0  hci_slip.o(i.transmit_buffer)
+    transmit_buffer                          0x0007cee5   Thumb Code    94  hci_slip.o(i.transmit_buffer)
+    i.tx_byte                                0x0007cf58   Section        0  nrf_drv_uart.o(i.tx_byte)
+    tx_byte                                  0x0007cf59   Thumb Code    28  nrf_drv_uart.o(i.tx_byte)
+    i.tx_done_event                          0x0007cf7c   Section        0  nrf_drv_uart.o(i.tx_done_event)
+    tx_done_event                            0x0007cf7d   Thumb Code    30  nrf_drv_uart.o(i.tx_done_event)
+    i.tx_sm_event_handle                     0x0007cfa0   Section        0  hci_transport.o(i.tx_sm_event_handle)
+    tx_sm_event_handle                       0x0007cfa1   Thumb Code   164  hci_transport.o(i.tx_sm_event_handle)
+    i.tx_sm_state_change                     0x0007d04c   Section        0  hci_transport.o(i.tx_sm_state_change)
+    tx_sm_state_change                       0x0007d04d   Thumb Code    10  hci_transport.o(i.tx_sm_state_change)
+    i.uart_event_handler                     0x0007d05c   Section        0  app_uart.o(i.uart_event_handler)
+    i.uart_irq_handler                       0x0007d0b4   Section        0  nrf_drv_uart.o(i.uart_irq_handler)
+    uart_irq_handler                         0x0007d0b5   Thumb Code   254  nrf_drv_uart.o(i.uart_irq_handler)
+    i.uarte_irq_handler                      0x0007d1bc   Section        0  nrf_drv_uart.o(i.uarte_irq_handler)
+    uarte_irq_handler                        0x0007d1bd   Thumb Code   206  nrf_drv_uart.o(i.uarte_irq_handler)
+    i.user_id_get                            0x0007d294   Section        0  app_timer.o(i.user_id_get)
+    user_id_get                              0x0007d295   Thumb Code    62  app_timer.o(i.user_id_get)
+    i.user_op_alloc                          0x0007d2d2   Section        0  app_timer.o(i.user_op_alloc)
+    user_op_alloc                            0x0007d2d3   Thumb Code    40  app_timer.o(i.user_op_alloc)
+    i.wait_for_events                        0x0007d2fc   Section        0  bootloader.o(i.wait_for_events)
+    wait_for_events                          0x0007d2fd   Thumb Code    32  bootloader.o(i.wait_for_events)
+    .constdata                               0x0007d320   Section       20  main.o(.constdata)
+    .constdata                               0x0007d334   Section       32  app_uart.o(.constdata)
+    .constdata                               0x0007d354   Section       32  nrf_drv_uart.o(.constdata)
+    m_default_config                         0x0007d354   Data          32  nrf_drv_uart.o(.constdata)
+    .constdata                               0x0007d374   Section       32  bootloader.o(.constdata)
+    .constdata                               0x0007d394   Section       36  dfu_single_bank.o(.constdata)
+    m_dfu_timer_id                           0x0007d394   Data           4  dfu_single_bank.o(.constdata)
+    .constdata                               0x0007d3b8   Section       36  hci_slip.o(.constdata)
+    .constdata                               0x0007d3dc   Section        4  hci_transport.o(.constdata)
+    m_app_timer_id                           0x0007d3dc   Data           4  hci_transport.o(.constdata)
+    .ARM.__AT_0x0007E000                     0x0007e000   Section     4096  bootloader_settings.o(.ARM.__AT_0x0007E000)
+    __tagsym$$used                           0x0007e000   Number         0  bootloader_settings.o(.ARM.__AT_0x0007E000)
+    .ARM.__AT_0x0007F000                     0x0007f000   Section     4096  bootloader_settings.o(.ARM.__AT_0x0007F000)
+    __tagsym$$used                           0x0007f000   Number         0  bootloader_settings.o(.ARM.__AT_0x0007F000)
+    .ARM.__AT_0x10001014                     0x10001014   Section        4  bootloader_settings.o(.ARM.__AT_0x10001014)
+    .ARM.__AT_0x10001018                     0x10001018   Section        4  bootloader_settings.o(.ARM.__AT_0x10001018)
+    .data                                    0x20002c00   Section        8  app_uart.o(.data)
+    tx_buffer                                0x20002c00   Data           1  app_uart.o(.data)
+    rx_buffer                                0x20002c01   Data           1  app_uart.o(.data)
+    rx_done                                  0x20002c02   Data           1  app_uart.o(.data)
+    m_event_handler                          0x20002c04   Data           4  app_uart.o(.data)
+    .data                                    0x20002c08   Section        8  pstorage_raw.o(.data)
+    m_next_app_instance                      0x20002c08   Data           4  pstorage_raw.o(.data)
+    m_round_val                              0x20002c0c   Data           4  pstorage_raw.o(.data)
+    .data                                    0x20002c10   Section       16  app_scheduler.o(.data)
+    m_queue_start_index                      0x20002c10   Data           1  app_scheduler.o(.data)
+    m_queue_end_index                        0x20002c11   Data           1  app_scheduler.o(.data)
+    m_queue_event_size                       0x20002c12   Data           2  app_scheduler.o(.data)
+    m_queue_size                             0x20002c14   Data           2  app_scheduler.o(.data)
+    m_queue_event_headers                    0x20002c18   Data           4  app_scheduler.o(.data)
+    m_queue_event_data                       0x20002c1c   Data           4  app_scheduler.o(.data)
+    .data                                    0x20002c20   Section       32  app_timer.o(.data)
+    m_user_array_size                        0x20002c20   Data           1  app_timer.o(.data)
+    m_ticks_elapsed_q_read_ind               0x20002c21   Data           1  app_timer.o(.data)
+    m_ticks_elapsed_q_write_ind              0x20002c22   Data           1  app_timer.o(.data)
+    m_rtc1_running                           0x20002c23   Data           1  app_timer.o(.data)
+    m_rtc1_reset                             0x20002c24   Data           1  app_timer.o(.data)
+    mp_users                                 0x20002c28   Data           4  app_timer.o(.data)
+    mp_timer_id_head                         0x20002c2c   Data           4  app_timer.o(.data)
+    m_ticks_latest                           0x20002c30   Data           4  app_timer.o(.data)
+    m_evt_schedule_func                      0x20002c34   Data           4  app_timer.o(.data)
+    m_ticks_elapsed                          0x20002c38   Data           8  app_timer.o(.data)
+    .data                                    0x20002c40   Section       12  bootloader.o(.data)
+    m_update_status                          0x20002c40   Data           1  bootloader.o(.data)
+    m_bootsettings_handle                    0x20002c44   Data           8  bootloader.o(.data)
+    .data                                    0x20002c4c   Section        1  dfu_init_template.o(.data)
+    m_extended_packet_length                 0x20002c4c   Data           1  dfu_init_template.o(.data)
+    .data                                    0x20002c50   Section       32  dfu_single_bank.o(.data)
+    m_dfu_timed_out                          0x20002c50   Data           1  dfu_single_bank.o(.data)
+    m_dfu_state                              0x20002c51   Data           1  dfu_single_bank.o(.data)
+    m_init_packet_length                     0x20002c52   Data           1  dfu_single_bank.o(.data)
+    m_image_crc                              0x20002c54   Data           2  dfu_single_bank.o(.data)
+    m_data_received                          0x20002c58   Data           4  dfu_single_bank.o(.data)
+    m_image_size                             0x20002c5c   Data           4  dfu_single_bank.o(.data)
+    mp_storage_handle_active                 0x20002c60   Data           4  dfu_single_bank.o(.data)
+    m_data_pkt_cb                            0x20002c64   Data           4  dfu_single_bank.o(.data)
+    m_storage_handle_app                     0x20002c68   Data           8  dfu_single_bank.o(.data)
+    .data                                    0x20002c70   Section        1  hci_mem_pool.o(.data)
+    m_is_tx_allocated                        0x20002c70   Data           1  hci_mem_pool.o(.data)
+    .data                                    0x20002c74   Section       40  hci_slip.o(.data)
+    m_current_state                          0x20002c74   Data           1  hci_slip.o(.data)
+    handle_rx_byte                           0x20002c78   Data           4  hci_slip.o(.data)
+    m_slip_event_handler                     0x20002c80   Data           4  hci_slip.o(.data)
+    mp_tx_buffer                             0x20002c84   Data           4  hci_slip.o(.data)
+    m_tx_buffer_length                       0x20002c88   Data           4  hci_slip.o(.data)
+    m_tx_buffer_index                        0x20002c8c   Data           4  hci_slip.o(.data)
+    mp_rx_buffer                             0x20002c90   Data           4  hci_slip.o(.data)
+    m_rx_buffer_length                       0x20002c94   Data           4  hci_slip.o(.data)
+    m_rx_received_count                      0x20002c98   Data           4  hci_slip.o(.data)
+    .data                                    0x20002c9c   Section       45  hci_transport.o(.data)
+    m_tx_state                               0x20002c9c   Data           1  hci_transport.o(.data)
+    m_is_slip_decode_ready                   0x20002c9d   Data           1  hci_transport.o(.data)
+    m_tx_done_result_code                    0x20002c9e   Data           1  hci_transport.o(.data)
+    ack_packet                               0x20002c9f   Data           4  hci_transport.o(.data)
+    m_transport_tx_done_handle               0x20002ca4   Data           4  hci_transport.o(.data)
+    m_transport_event_handle                 0x20002ca8   Data           4  hci_transport.o(.data)
+    mp_slip_used_rx_buffer                   0x20002cac   Data           4  hci_transport.o(.data)
+    m_packet_expected_seq_number             0x20002cb0   Data           4  hci_transport.o(.data)
+    m_packet_transmit_seq_number             0x20002cb4   Data           4  hci_transport.o(.data)
+    mp_tx_buffer                             0x20002cb8   Data           4  hci_transport.o(.data)
+    m_tx_buffer_length                       0x20002cbc   Data           4  hci_transport.o(.data)
+    m_tx_retry_counter                       0x20002cc0   Data           4  hci_transport.o(.data)
+    m_rx_ack_buffer                          0x20002cc4   Data           5  hci_transport.o(.data)
+    .data                                    0x20002ccc   Section       20  softdevice_handler.o(.data)
+    m_softdevice_enabled                     0x20002ccc   Data           1  softdevice_handler.o(.data)
+    m_ble_evt_buffer_size                    0x20002cce   Data           2  softdevice_handler.o(.data)
+    m_evt_schedule_func                      0x20002cd0   Data           4  softdevice_handler.o(.data)
+    mp_ble_evt_buffer                        0x20002cd4   Data           4  softdevice_handler.o(.data)
+    m_ble_evt_handler                        0x20002cd8   Data           4  softdevice_handler.o(.data)
+    m_sys_evt_handler                        0x20002cdc   Data           4  softdevice_handler.o(.data)
+    .data                                    0x20002ce0   Section        4  system_nrf52.o(.data)
+    __tagsym$$used                           0x20002ce0   Number         0  system_nrf52.o(.data)
+    .bss                                     0x20002ce4   Section      864  main.o(.bss)
+    APP_TIMER_BUF                            0x20002ce4   Data         456  main.o(.bss)
+    BLE_EVT_BUFFER                           0x20002eac   Data          72  main.o(.bss)
+    APP_SCHED_BUF                            0x20002ef4   Data         336  main.o(.bss)
+    .bss                                     0x20003044   Section       32  nrf_drv_uart.o(.bss)
+    m_cb                                     0x20003044   Data          32  nrf_drv_uart.o(.bss)
+    .bss                                     0x20003064   Section      256  pstorage_raw.o(.bss)
+    m_cmd_queue                              0x20003064   Data         244  pstorage_raw.o(.bss)
+    m_app_table                              0x20003158   Data          12  pstorage_raw.o(.bss)
+    .bss                                     0x20003164   Section       28  bootloader.o(.bss)
+    settings                                 0x20003164   Data          28  bootloader.o(.bss)
+    .bss                                     0x20003180   Section       10  dfu_init_template.o(.bss)
+    m_extended_packet                        0x20003180   Data          10  dfu_init_template.o(.bss)
+    .bss                                     0x2000318c   Section       32  dfu_single_bank.o(.bss)
+    m_dfu_timer_id_data                      0x2000318c   Data          32  dfu_single_bank.o(.bss)
+    .bss                                     0x200031ac   Section       92  dfu_single_bank.o(.bss)
+    m_start_packet                           0x200031ac   Data          16  dfu_single_bank.o(.bss)
+    m_init_packet                            0x200031bc   Data          64  dfu_single_bank.o(.bss)
+    m_functions                              0x200031fc   Data          12  dfu_single_bank.o(.bss)
+    .bss                                     0x20003208   Section       52  dfu_transport_serial.o(.bss)
+    m_data_queue                             0x20003208   Data          52  dfu_transport_serial.o(.bss)
+    .bss                                     0x2000323c   Section     1268  hci_mem_pool.o(.bss)
+    tx_buffer                                0x2000323c   Data          32  hci_mem_pool.o(.bss)
+    m_rx_buffer_elem_queue                   0x2000325c   Data        1208  hci_mem_pool.o(.bss)
+    m_rx_buffer_queue                        0x20003714   Data          28  hci_mem_pool.o(.bss)
+    .bss                                     0x20003730   Section       32  hci_transport.o(.bss)
+    m_app_timer_id_data                      0x20003730   Data          32  hci_transport.o(.bss)
+    .bss                                     0x20003750   Section       12  softdevice_handler.o(.bss)
+    STACK                                    0x20003760   Section     8192  arm_startup_nrf52.o(STACK)
+
+    Global Symbols
+
+    Symbol Name                              Value     Ov Type        Size  Object(Section)
+
+    BuildAttributes$$THM_ISAv4$E$P$D$K$B$S$7EM$VFPi3$EXTD16$VFPS$VFMA$PE$A:L22UL41UL21$X:L11$S22US41US21$IEEE1$IW$USESV6$~STKCKD$USESV7$~SHL$OSPACE$EBA8$MICROLIB$REQ8$PRES8$EABIv2 0x00000000   Number         0  anon$$obj.o ABSOLUTE
+    __ARM_use_no_argv                        0x00000000   Number         0  main.o ABSOLUTE
+    __cpp_initialize__aeabi_                  - Undefined Weak Reference
+    __cxa_finalize                            - Undefined Weak Reference
+    __decompress                              - Undefined Weak Reference
+    _clock_init                               - Undefined Weak Reference
+    _microlib_exit                            - Undefined Weak Reference
+    __Vectors_Size                           0x00000400   Number         0  arm_startup_nrf52.o ABSOLUTE
+    __Vectors                                0x0007a000   Data           4  arm_startup_nrf52.o(RESET)
+    __Vectors_End                            0x0007a400   Data           0  arm_startup_nrf52.o(RESET)
+    __main                                   0x0007a401   Thumb Code     0  entry.o(.ARM.Collect$$$$00000000)
+    _main_stk                                0x0007a401   Thumb Code     0  entry2.o(.ARM.Collect$$$$00000001)
+    _main_scatterload                        0x0007a405   Thumb Code     0  entry5.o(.ARM.Collect$$$$00000004)
+    __main_after_scatterload                 0x0007a409   Thumb Code     0  entry5.o(.ARM.Collect$$$$00000004)
+    _main_clock                              0x0007a409   Thumb Code     0  entry7b.o(.ARM.Collect$$$$00000008)
+    _main_cpp_init                           0x0007a409   Thumb Code     0  entry8b.o(.ARM.Collect$$$$0000000A)
+    _main_init                               0x0007a409   Thumb Code     0  entry9a.o(.ARM.Collect$$$$0000000B)
+    __rt_final_cpp                           0x0007a411   Thumb Code     0  entry10a.o(.ARM.Collect$$$$0000000D)
+    __rt_final_exit                          0x0007a411   Thumb Code     0  entry11a.o(.ARM.Collect$$$$0000000F)
+    __asm___11_nrf_delay_c_532987f3__nrf_delay_us 0x0007a415   Thumb Code   118  nrf_delay.o(.emb_text)
+    __asm___11_app_timer_c_cd27f9c3__nrf_delay_us 0x0007a48d   Thumb Code   118  app_timer.o(.emb_text)
+    __asm___17_bootloader_util_c_c13d365c__bootloader_util_reset 0x0007a505   Thumb Code    52  bootloader_util.o(.emb_text)
+    Reset_Handler                            0x0007a539   Thumb Code     8  arm_startup_nrf52.o(.text)
+    NMI_Handler                              0x0007a541   Thumb Code     2  arm_startup_nrf52.o(.text)
+    HardFault_Handler                        0x0007a543   Thumb Code     2  arm_startup_nrf52.o(.text)
+    MemoryManagement_Handler                 0x0007a545   Thumb Code     2  arm_startup_nrf52.o(.text)
+    BusFault_Handler                         0x0007a547   Thumb Code     2  arm_startup_nrf52.o(.text)
+    UsageFault_Handler                       0x0007a549   Thumb Code     2  arm_startup_nrf52.o(.text)
+    SVC_Handler                              0x0007a54b   Thumb Code     2  arm_startup_nrf52.o(.text)
+    DebugMonitor_Handler                     0x0007a54d   Thumb Code     2  arm_startup_nrf52.o(.text)
+    PendSV_Handler                           0x0007a54f   Thumb Code     2  arm_startup_nrf52.o(.text)
+    SysTick_Handler                          0x0007a551   Thumb Code     2  arm_startup_nrf52.o(.text)
+    CCM_AAR_IRQHandler                       0x0007a553   Thumb Code     0  arm_startup_nrf52.o(.text)
+    COMP_LPCOMP_IRQHandler                   0x0007a553   Thumb Code     0  arm_startup_nrf52.o(.text)
+    ECB_IRQHandler                           0x0007a553   Thumb Code     0  arm_startup_nrf52.o(.text)
+    FPU_IRQHandler                           0x0007a553   Thumb Code     0  arm_startup_nrf52.o(.text)
+    GPIOTE_IRQHandler                        0x0007a553   Thumb Code     0  arm_startup_nrf52.o(.text)
+    I2S_IRQHandler                           0x0007a553   Thumb Code     0  arm_startup_nrf52.o(.text)
+    MWU_IRQHandler                           0x0007a553   Thumb Code     0  arm_startup_nrf52.o(.text)
+    NFCT_IRQHandler                          0x0007a553   Thumb Code     0  arm_startup_nrf52.o(.text)
+    PDM_IRQHandler                           0x0007a553   Thumb Code     0  arm_startup_nrf52.o(.text)
+    POWER_CLOCK_IRQHandler                   0x0007a553   Thumb Code     0  arm_startup_nrf52.o(.text)
+    PWM0_IRQHandler                          0x0007a553   Thumb Code     0  arm_startup_nrf52.o(.text)
+    PWM1_IRQHandler                          0x0007a553   Thumb Code     0  arm_startup_nrf52.o(.text)
+    PWM2_IRQHandler                          0x0007a553   Thumb Code     0  arm_startup_nrf52.o(.text)
+    QDEC_IRQHandler                          0x0007a553   Thumb Code     0  arm_startup_nrf52.o(.text)
+    RADIO_IRQHandler                         0x0007a553   Thumb Code     0  arm_startup_nrf52.o(.text)
+    RNG_IRQHandler                           0x0007a553   Thumb Code     0  arm_startup_nrf52.o(.text)
+    RTC0_IRQHandler                          0x0007a553   Thumb Code     0  arm_startup_nrf52.o(.text)
+    RTC2_IRQHandler                          0x0007a553   Thumb Code     0  arm_startup_nrf52.o(.text)
+    SAADC_IRQHandler                         0x0007a553   Thumb Code     0  arm_startup_nrf52.o(.text)
+    SPIM0_SPIS0_TWIM0_TWIS0_SPI0_TWI0_IRQHandler 0x0007a553   Thumb Code     0  arm_startup_nrf52.o(.text)
+    SPIM1_SPIS1_TWIM1_TWIS1_SPI1_TWI1_IRQHandler 0x0007a553   Thumb Code     0  arm_startup_nrf52.o(.text)
+    SPIM2_SPIS2_SPI2_IRQHandler              0x0007a553   Thumb Code     0  arm_startup_nrf52.o(.text)
+    SWI1_EGU1_IRQHandler                     0x0007a553   Thumb Code     0  arm_startup_nrf52.o(.text)
+    SWI3_EGU3_IRQHandler                     0x0007a553   Thumb Code     0  arm_startup_nrf52.o(.text)
+    SWI4_EGU4_IRQHandler                     0x0007a553   Thumb Code     0  arm_startup_nrf52.o(.text)
+    SWI5_EGU5_IRQHandler                     0x0007a553   Thumb Code     0  arm_startup_nrf52.o(.text)
+    TEMP_IRQHandler                          0x0007a553   Thumb Code     0  arm_startup_nrf52.o(.text)
+    TIMER0_IRQHandler                        0x0007a553   Thumb Code     0  arm_startup_nrf52.o(.text)
+    TIMER1_IRQHandler                        0x0007a553   Thumb Code     0  arm_startup_nrf52.o(.text)
+    TIMER2_IRQHandler                        0x0007a553   Thumb Code     0  arm_startup_nrf52.o(.text)
+    TIMER3_IRQHandler                        0x0007a553   Thumb Code     0  arm_startup_nrf52.o(.text)
+    TIMER4_IRQHandler                        0x0007a553   Thumb Code     0  arm_startup_nrf52.o(.text)
+    WDT_IRQHandler                           0x0007a553   Thumb Code     0  arm_startup_nrf52.o(.text)
+    __aeabi_memcpy                           0x0007a55d   Thumb Code    36  memcpya.o(.text)
+    __aeabi_memcpy4                          0x0007a55d   Thumb Code     0  memcpya.o(.text)
+    __aeabi_memcpy8                          0x0007a55d   Thumb Code     0  memcpya.o(.text)
+    __aeabi_memset                           0x0007a581   Thumb Code    14  memseta.o(.text)
+    __aeabi_memset4                          0x0007a581   Thumb Code     0  memseta.o(.text)
+    __aeabi_memset8                          0x0007a581   Thumb Code     0  memseta.o(.text)
+    __aeabi_memclr                           0x0007a58f   Thumb Code     4  memseta.o(.text)
+    __aeabi_memclr4                          0x0007a58f   Thumb Code     0  memseta.o(.text)
+    __aeabi_memclr8                          0x0007a58f   Thumb Code     0  memseta.o(.text)
+    _memset$wrapper                          0x0007a593   Thumb Code    18  memseta.o(.text)
+    __scatterload                            0x0007a5a5   Thumb Code    28  init.o(.text)
+    __scatterload_rt2                        0x0007a5a5   Thumb Code     0  init.o(.text)
+    RTC1_IRQHandler                          0x0007a62d   Thumb Code    32  app_timer.o(i.RTC1_IRQHandler)
+    SWI0_EGU0_IRQHandler                     0x0007a651   Thumb Code     4  app_timer.o(i.SWI0_EGU0_IRQHandler)
+    SWI2_EGU2_IRQHandler                     0x0007a655   Thumb Code    32  softdevice_handler.o(i.SWI2_EGU2_IRQHandler)
+    SystemInit                               0x0007a679   Thumb Code   566  system_nrf52.o(i.SystemInit)
+    UARTE0_UART0_IRQHandler                  0x0007a8e5   Thumb Code    14  nrf_drv_uart.o(i.UARTE0_UART0_IRQHandler)
+    __scatterload_copy                       0x0007a8f9   Thumb Code    14  handlers.o(i.__scatterload_copy)
+    __scatterload_null                       0x0007a907   Thumb Code     2  handlers.o(i.__scatterload_null)
+    __scatterload_zeroinit                   0x0007a909   Thumb Code    14  handlers.o(i.__scatterload_zeroinit)
+    app_error_fault_handler                  0x0007a945   Thumb Code    26  app_error_weak.o(i.app_error_fault_handler)
+    app_error_handler_bare                   0x0007a969   Thumb Code    22  app_error.o(i.app_error_handler_bare)
+    app_sched_event_put                      0x0007a9e9   Thumb Code   154  app_scheduler.o(i.app_sched_event_put)
+    app_sched_execute                        0x0007aa89   Thumb Code    30  app_scheduler.o(i.app_sched_execute)
+    app_sched_init                           0x0007aaa9   Thumb Code    40  app_scheduler.o(i.app_sched_init)
+    app_timer_create                         0x0007aad5   Thumb Code    32  app_timer.o(i.app_timer_create)
+    app_timer_evt_schedule                   0x0007ab11   Thumb Code    18  app_timer_appsh.o(i.app_timer_evt_schedule)
+    app_timer_init                           0x0007ab29   Thumb Code   134  app_timer.o(i.app_timer_init)
+    app_timer_start                          0x0007abb9   Thumb Code   118  app_timer.o(i.app_timer_start)
+    app_timer_stop                           0x0007ac39   Thumb Code    76  app_timer.o(i.app_timer_stop)
+    app_uart_close                           0x0007ac89   Thumb Code    10  app_uart.o(i.app_uart_close)
+    app_uart_init                            0x0007ac95   Thumb Code   120  app_uart.o(i.app_uart_init)
+    app_uart_put                             0x0007ad19   Thumb Code    30  app_uart.o(i.app_uart_put)
+    app_util_critical_region_enter           0x0007ad3d   Thumb Code    64  app_util_platform.o(i.app_util_critical_region_enter)
+    app_util_critical_region_exit            0x0007ad85   Thumb Code    46  app_util_platform.o(i.app_util_critical_region_exit)
+    bootloader_app_is_valid                  0x0007aeb5   Thumb Code    60  bootloader.o(i.bootloader_app_is_valid)
+    bootloader_app_start                     0x0007aef1   Thumb Code    84  bootloader.o(i.bootloader_app_start)
+    bootloader_dfu_sd_in_progress            0x0007af45   Thumb Code    30  bootloader.o(i.bootloader_dfu_sd_in_progress)
+    bootloader_dfu_sd_update_continue        0x0007af63   Thumb Code    58  bootloader.o(i.bootloader_dfu_sd_update_continue)
+    bootloader_dfu_sd_update_finalize        0x0007af9d   Thumb Code    40  bootloader.o(i.bootloader_dfu_sd_update_finalize)
+    bootloader_dfu_start                     0x0007afc9   Thumb Code    24  bootloader.o(i.bootloader_dfu_start)
+    bootloader_dfu_update_process            0x0007afe1   Thumb Code   220  bootloader.o(i.bootloader_dfu_update_process)
+    bootloader_init                          0x0007b0c5   Thumb Code    34  bootloader.o(i.bootloader_init)
+    bootloader_settings_get                  0x0007b0f1   Thumb Code    46  bootloader.o(i.bootloader_settings_get)
+    bootloader_util_app_start                0x0007b151   Thumb Code     4  bootloader_util.o(i.bootloader_util_app_start)
+    bootloader_util_settings_get             0x0007b155   Thumb Code     6  bootloader_settings.o(i.bootloader_util_settings_get)
+    crc16_compute                            0x0007b2ed   Thumb Code    54  crc16.o(i.crc16_compute)
+    dfu_bl_image_swap                        0x0007b411   Thumb Code    54  dfu_single_bank.o(i.dfu_bl_image_swap)
+    dfu_bl_image_validate                    0x0007b447   Thumb Code    60  dfu_single_bank.o(i.dfu_bl_image_validate)
+    dfu_data_pkt_handle                      0x0007b4e1   Thumb Code   104  dfu_single_bank.o(i.dfu_data_pkt_handle)
+    dfu_image_activate                       0x0007b54d   Thumb Code    38  dfu_single_bank.o(i.dfu_image_activate)
+    dfu_image_validate                       0x0007b581   Thumb Code    54  dfu_single_bank.o(i.dfu_image_validate)
+    dfu_init                                 0x0007b5bd   Thumb Code    94  dfu_single_bank.o(i.dfu_init)
+    dfu_init_pkt_complete                    0x0007b629   Thumb Code    40  dfu_single_bank.o(i.dfu_init_pkt_complete)
+    dfu_init_pkt_handle                      0x0007b659   Thumb Code    82  dfu_single_bank.o(i.dfu_init_pkt_handle)
+    dfu_init_postvalidate                    0x0007b6b5   Thumb Code    24  dfu_init_template.o(i.dfu_init_postvalidate)
+    dfu_init_prevalidate                     0x0007b6d1   Thumb Code   126  dfu_init_template.o(i.dfu_init_prevalidate)
+    dfu_register_callback                    0x0007b781   Thumb Code     6  dfu_single_bank.o(i.dfu_register_callback)
+    dfu_sd_image_swap                        0x0007b78d   Thumb Code   122  dfu_single_bank.o(i.dfu_sd_image_swap)
+    dfu_sd_image_validate                    0x0007b807   Thumb Code    96  dfu_single_bank.o(i.dfu_sd_image_validate)
+    dfu_start_pkt_handle                     0x0007b8b1   Thumb Code   140  dfu_single_bank.o(i.dfu_start_pkt_handle)
+    dfu_transport_close                      0x0007b9b1   Thumb Code    24  dfu_transport_serial.o(i.dfu_transport_close)
+    dfu_transport_update_start               0x0007b9c9   Thumb Code    56  dfu_transport_serial.o(i.dfu_transport_update_start)
+    hci_mem_pool_close                       0x0007bae9   Thumb Code     4  hci_mem_pool.o(i.hci_mem_pool_close)
+    hci_mem_pool_open                        0x0007baed   Thumb Code    32  hci_mem_pool.o(i.hci_mem_pool_open)
+    hci_mem_pool_rx_consume                  0x0007bb15   Thumb Code   100  hci_mem_pool.o(i.hci_mem_pool_rx_consume)
+    hci_mem_pool_rx_data_size_set            0x0007bb7d   Thumb Code    30  hci_mem_pool.o(i.hci_mem_pool_rx_data_size_set)
+    hci_mem_pool_rx_extract                  0x0007bba1   Thumb Code    68  hci_mem_pool.o(i.hci_mem_pool_rx_extract)
+    hci_mem_pool_rx_produce                  0x0007bbe9   Thumb Code    76  hci_mem_pool.o(i.hci_mem_pool_rx_produce)
+    hci_slip_close                           0x0007bc39   Thumb Code    10  hci_slip.o(i.hci_slip_close)
+    hci_slip_evt_handler_register            0x0007bc49   Thumb Code     8  hci_slip.o(i.hci_slip_evt_handler_register)
+    hci_slip_open                            0x0007bc55   Thumb Code    42  hci_slip.o(i.hci_slip_open)
+    hci_slip_rx_buffer_register              0x0007bc8d   Thumb Code    18  hci_slip.o(i.hci_slip_rx_buffer_register)
+    hci_slip_write                           0x0007bca9   Thumb Code    52  hci_slip.o(i.hci_slip_write)
+    hci_transport_close                      0x0007bce5   Thumb Code    52  hci_transport.o(i.hci_transport_close)
+    hci_transport_evt_handler_reg            0x0007bd21   Thumb Code    30  hci_transport.o(i.hci_transport_evt_handler_reg)
+    hci_transport_open                       0x0007bd49   Thumb Code    84  hci_transport.o(i.hci_transport_open)
+    hci_transport_rx_pkt_consume             0x0007bda9   Thumb Code     6  hci_transport.o(i.hci_transport_rx_pkt_consume)
+    hci_transport_rx_pkt_extract             0x0007bdb1   Thumb Code    54  hci_transport.o(i.hci_transport_rx_pkt_extract)
+    hci_transport_timeout_handle             0x0007bded   Thumb Code     6  hci_transport.o(i.hci_transport_timeout_handle)
+    intern_softdevice_events_execute         0x0007be05   Thumb Code   106  softdevice_handler.o(i.intern_softdevice_events_execute)
+    main                                     0x0007c009   Thumb Code   290  main.o(i.main)
+    nrf_delay_ms                             0x0007c145   Thumb Code    26  nrf_delay.o(i.nrf_delay_ms)
+    nrf_drv_common_irq_enable                0x0007c15f   Thumb Code    56  nrf_drv_common.o(i.nrf_drv_common_irq_enable)
+    nrf_drv_uart_init                        0x0007c199   Thumb Code   126  nrf_drv_uart.o(i.nrf_drv_uart_init)
+    nrf_drv_uart_rx                          0x0007c22d   Thumb Code   132  nrf_drv_uart.o(i.nrf_drv_uart_rx)
+    nrf_drv_uart_rx_enable                   0x0007c2b9   Thumb Code    26  nrf_drv_uart.o(i.nrf_drv_uart_rx_enable)
+    nrf_drv_uart_tx                          0x0007c405   Thumb Code   134  nrf_drv_uart.o(i.nrf_drv_uart_tx)
+    nrf_drv_uart_tx_in_progress              0x0007c515   Thumb Code    12  nrf_drv_uart.o(i.nrf_drv_uart_tx_in_progress)
+    nrf_drv_uart_uninit                      0x0007c525   Thumb Code    52  nrf_drv_uart.o(i.nrf_drv_uart_uninit)
+    pstorage_clear                           0x0007c739   Thumb Code    18  pstorage_raw.o(i.pstorage_clear)
+    pstorage_init                            0x0007c74d   Thumb Code    54  pstorage_raw.o(i.pstorage_init)
+    pstorage_register                        0x0007c78d   Thumb Code    30  pstorage_raw.o(i.pstorage_register)
+    pstorage_store                           0x0007c7b5   Thumb Code    46  pstorage_raw.o(i.pstorage_store)
+    pstorage_sys_event_handler               0x0007c7e5   Thumb Code   148  pstorage_raw.o(i.pstorage_sys_event_handler)
+    rpc_transport_event_handler              0x0007c881   Thumb Code   154  dfu_transport_serial.o(i.rpc_transport_event_handler)
+    slip_event_handle                        0x0007cbf1   Thumb Code   168  hci_transport.o(i.slip_event_handle)
+    softdevice_enable                        0x0007cced   Thumb Code    14  softdevice_handler.o(i.softdevice_enable)
+    softdevice_enable_get_default_config     0x0007cd01   Thumb Code    38  softdevice_handler.o(i.softdevice_enable_get_default_config)
+    softdevice_evt_get                       0x0007cd27   Thumb Code    18  softdevice_handler_appsh.o(i.softdevice_evt_get)
+    softdevice_evt_schedule                  0x0007cd39   Thumb Code    10  softdevice_handler_appsh.o(i.softdevice_evt_schedule)
+    softdevice_fault_handler                 0x0007cd49   Thumb Code     4  softdevice_handler.o(i.softdevice_fault_handler)
+    softdevice_handler_init                  0x0007cd4d   Thumb Code    42  softdevice_handler.o(i.softdevice_handler_init)
+    softdevice_sys_evt_handler_set           0x0007cd81   Thumb Code    14  softdevice_handler.o(i.softdevice_sys_evt_handler_set)
+    uart_event_handler                       0x0007d05d   Thumb Code    84  app_uart.o(i.uart_event_handler)
+    Region$$Table$$Base                      0x0007d3e0   Number         0  anon$$obj.o(Region$$Table)
+    Region$$Table$$Limit                     0x0007d400   Number         0  anon$$obj.o(Region$$Table)
+    m_mbr_params_page                        0x0007e000   Data        4096  bootloader_settings.o(.ARM.__AT_0x0007E000)
+    m_boot_settings                          0x0007f000   Data        4096  bootloader_settings.o(.ARM.__AT_0x0007F000)
+    m_uicr_bootloader_start_address          0x10001014   Data           4  bootloader_settings.o(.ARM.__AT_0x10001014)
+    m_uicr_mbr_params_page_address           0x10001018   Data           4  bootloader_settings.o(.ARM.__AT_0x10001018)
+    Image$$RW_IRAM1$$Base                    0x20002c00   Number         0  anon$$obj.o ABSOLUTE
+    send_tx_byte                             0x20002c7c   Data           4  hci_slip.o(.data)
+    SystemCoreClock                          0x20002ce0   Data           4  system_nrf52.o(.data)
+    nrf_nvic_state                           0x20003750   Data          12  softdevice_handler.o(.bss)
+    __initial_sp                             0x20005760   Data           0  arm_startup_nrf52.o(STACK)
+
+
+
+==============================================================================
+
+Memory Map of the image
+
+  Image Entry point : 0x0007a401
+
+  Load Region LR_IROM1 (Base: 0x0007a000, Size: 0x000034e4, Max: 0x00004000, ABSOLUTE)
+
+    Execution Region ER_IROM1 (Base: 0x0007a000, Size: 0x00003400, Max: 0x00004000, ABSOLUTE)
+
+    Base Addr    Size         Type   Attr      Idx    E Section Name        Object
+
+    0x0007a000   0x00000400   Data   RO         2151    RESET               arm_startup_nrf52.o
+    0x0007a400   0x00000000   Code   RO         2192  * .ARM.Collect$$$$00000000  mc_w.l(entry.o)
+    0x0007a400   0x00000004   Code   RO         2203    .ARM.Collect$$$$00000001  mc_w.l(entry2.o)
+    0x0007a404   0x00000004   Code   RO         2206    .ARM.Collect$$$$00000004  mc_w.l(entry5.o)
+    0x0007a408   0x00000000   Code   RO         2208    .ARM.Collect$$$$00000008  mc_w.l(entry7b.o)
+    0x0007a408   0x00000000   Code   RO         2210    .ARM.Collect$$$$0000000A  mc_w.l(entry8b.o)
+    0x0007a408   0x00000008   Code   RO         2211    .ARM.Collect$$$$0000000B  mc_w.l(entry9a.o)
+    0x0007a410   0x00000000   Code   RO         2213    .ARM.Collect$$$$0000000D  mc_w.l(entry10a.o)
+    0x0007a410   0x00000000   Code   RO         2215    .ARM.Collect$$$$0000000F  mc_w.l(entry11a.o)
+    0x0007a410   0x00000004   Code   RO         2204    .ARM.Collect$$$$00002712  mc_w.l(entry2.o)
+    0x0007a414   0x00000076   Code   RO          558    .emb_text           nrf_delay.o
+    0x0007a48a   0x00000002   PAD
+    0x0007a48c   0x00000076   Code   RO         1034    .emb_text           app_timer.o
+    0x0007a502   0x00000002   PAD
+    0x0007a504   0x00000034   Code   RO         1409    .emb_text           bootloader_util.o
+    0x0007a538   0x00000024   Code   RO         2152    .text               arm_startup_nrf52.o
+    0x0007a55c   0x00000024   Code   RO         2195    .text               mc_w.l(memcpya.o)
+    0x0007a580   0x00000024   Code   RO         2197    .text               mc_w.l(memseta.o)
+    0x0007a5a4   0x00000024   Code   RO         2217    .text               mc_w.l(init.o)
+    0x0007a5c8   0x00000016   Code   RO         1035    i.NVIC_ClearPendingIRQ  app_timer.o
+    0x0007a5de   0x00000016   Code   RO         1036    i.NVIC_EnableIRQ    app_timer.o
+    0x0007a5f4   0x00000016   Code   RO         1037    i.NVIC_SetPendingIRQ  app_timer.o
+    0x0007a60a   0x00000020   Code   RO         1038    i.NVIC_SetPriority  app_timer.o
+    0x0007a62a   0x00000002   PAD
+    0x0007a62c   0x00000024   Code   RO         1039    i.RTC1_IRQHandler   app_timer.o
+    0x0007a650   0x00000004   Code   RO         1040    i.SWI0_EGU0_IRQHandler  app_timer.o
+    0x0007a654   0x00000024   Code   RO         2018    i.SWI2_EGU2_IRQHandler  softdevice_handler.o
+    0x0007a678   0x0000026c   Code   RO         2160    i.SystemInit        system_nrf52.o
+    0x0007a8e4   0x00000014   Code   RO          631    i.UARTE0_UART0_IRQHandler  nrf_drv_uart.o
+    0x0007a8f8   0x0000000e   Code   RO         2221    i.__scatterload_copy  mc_w.l(handlers.o)
+    0x0007a906   0x00000002   Code   RO         2222    i.__scatterload_null  mc_w.l(handlers.o)
+    0x0007a908   0x0000000e   Code   RO         2223    i.__scatterload_zeroinit  mc_w.l(handlers.o)
+    0x0007a916   0x00000002   PAD
+    0x0007a918   0x0000002c   Code   RO         1879    i.ack_transmit      hci_transport.o
+    0x0007a944   0x00000024   Code   RO          964    i.app_error_fault_handler  app_error_weak.o
+    0x0007a968   0x00000016   Code   RO          925    i.app_error_handler_bare  app_error.o
+    0x0007a97e   0x00000002   PAD
+    0x0007a980   0x00000024   Code   RO          832    i.app_notify        pstorage_raw.o
+    0x0007a9a4   0x00000044   Code   RO          988    i.app_sched_event_get  app_scheduler.o
+    0x0007a9e8   0x000000a0   Code   RO          989    i.app_sched_event_put  app_scheduler.o
+    0x0007aa88   0x0000001e   Code   RO          990    i.app_sched_execute  app_scheduler.o
+    0x0007aaa6   0x00000002   PAD
+    0x0007aaa8   0x0000002c   Code   RO          991    i.app_sched_init    app_scheduler.o
+    0x0007aad4   0x00000024   Code   RO         1043    i.app_timer_create  app_timer.o
+    0x0007aaf8   0x00000018   Code   RO         1195    i.app_timer_evt_get  app_timer_appsh.o
+    0x0007ab10   0x00000018   Code   RO         1196    i.app_timer_evt_schedule  app_timer_appsh.o
+    0x0007ab28   0x00000090   Code   RO         1044    i.app_timer_init    app_timer.o
+    0x0007abb8   0x00000080   Code   RO         1045    i.app_timer_start   app_timer.o
+    0x0007ac38   0x00000050   Code   RO         1046    i.app_timer_stop    app_timer.o
+    0x0007ac88   0x0000000a   Code   RO          463    i.app_uart_close    app_uart.o
+    0x0007ac92   0x00000002   PAD
+    0x0007ac94   0x00000084   Code   RO          466    i.app_uart_init     app_uart.o
+    0x0007ad18   0x00000024   Code   RO          467    i.app_uart_put      app_uart.o
+    0x0007ad3c   0x00000048   Code   RO         1224    i.app_util_critical_region_enter  app_util_platform.o
+    0x0007ad84   0x00000034   Code   RO         1225    i.app_util_critical_region_exit  app_util_platform.o
+    0x0007adb8   0x00000078   Code   RO          632    i.apply_config      nrf_drv_uart.o
+    0x0007ae30   0x00000084   Code   RO            5    i.ble_stack_init    main.o
+    0x0007aeb4   0x0000003c   Code   RO         1276    i.bootloader_app_is_valid  bootloader.o
+    0x0007aef0   0x00000054   Code   RO         1277    i.bootloader_app_start  bootloader.o
+    0x0007af44   0x0000001e   Code   RO         1278    i.bootloader_dfu_sd_in_progress  bootloader.o
+    0x0007af62   0x0000003a   Code   RO         1279    i.bootloader_dfu_sd_update_continue  bootloader.o
+    0x0007af9c   0x0000002c   Code   RO         1280    i.bootloader_dfu_sd_update_finalize  bootloader.o
+    0x0007afc8   0x00000018   Code   RO         1281    i.bootloader_dfu_start  bootloader.o
+    0x0007afe0   0x000000e4   Code   RO         1282    i.bootloader_dfu_update_process  bootloader.o
+    0x0007b0c4   0x0000002c   Code   RO         1283    i.bootloader_init   bootloader.o
+    0x0007b0f0   0x0000002e   Code   RO         1284    i.bootloader_settings_get  bootloader.o
+    0x0007b11e   0x00000002   PAD
+    0x0007b120   0x00000030   Code   RO         1285    i.bootloader_settings_save  bootloader.o
+    0x0007b150   0x00000004   Code   RO         1410    i.bootloader_util_app_start  bootloader_util.o
+    0x0007b154   0x0000000c   Code   RO         1382    i.bootloader_util_settings_get  bootloader_settings.o
+    0x0007b160   0x00000068   Code   RO          833    i.cmd_process       pstorage_raw.o
+    0x0007b1c8   0x00000020   Code   RO          834    i.cmd_queue_element_init  pstorage_raw.o
+    0x0007b1e8   0x00000058   Code   RO          835    i.cmd_queue_enqueue  pstorage_raw.o
+    0x0007b240   0x000000ac   Code   RO         1048    i.compare_reg_update  app_timer.o
+    0x0007b2ec   0x00000036   Code   RO         1425    i.crc16_compute     crc16.o
+    0x0007b322   0x00000002   PAD
+    0x0007b324   0x0000003c   Code   RO         1644    i.data_queue_element_free  dfu_transport_serial.o
+    0x0007b360   0x0000001c   Code   RO         1645    i.data_queue_element_init  dfu_transport_serial.o
+    0x0007b37c   0x00000040   Code   RO         1476    i.dfu_activate_app  dfu_single_bank.o
+    0x0007b3bc   0x00000028   Code   RO         1477    i.dfu_activate_bl   dfu_single_bank.o
+    0x0007b3e4   0x0000002c   Code   RO         1478    i.dfu_activate_sd   dfu_single_bank.o
+    0x0007b410   0x00000036   Code   RO         1479    i.dfu_bl_image_swap  dfu_single_bank.o
+    0x0007b446   0x0000003c   Code   RO         1480    i.dfu_bl_image_validate  dfu_single_bank.o
+    0x0007b482   0x0000000a   Code   RO         1646    i.dfu_cb_handler    dfu_transport_serial.o
+    0x0007b48c   0x00000028   Code   RO         1481    i.dfu_cleared_func_app  dfu_single_bank.o
+    0x0007b4b4   0x00000016   Code   RO         1482    i.dfu_compare_block  dfu_single_bank.o
+    0x0007b4ca   0x00000016   Code   RO         1483    i.dfu_copy_sd       dfu_single_bank.o
+    0x0007b4e0   0x0000006c   Code   RO         1484    i.dfu_data_pkt_handle  dfu_single_bank.o
+    0x0007b54c   0x00000034   Code   RO         1485    i.dfu_image_activate  dfu_single_bank.o
+    0x0007b580   0x0000003c   Code   RO         1486    i.dfu_image_validate  dfu_single_bank.o
+    0x0007b5bc   0x0000006c   Code   RO         1487    i.dfu_init          dfu_single_bank.o
+    0x0007b628   0x00000030   Code   RO         1488    i.dfu_init_pkt_complete  dfu_single_bank.o
+    0x0007b658   0x0000005c   Code   RO         1489    i.dfu_init_pkt_handle  dfu_single_bank.o
+    0x0007b6b4   0x0000001c   Code   RO         1440    i.dfu_init_postvalidate  dfu_init_template.o
+    0x0007b6d0   0x00000088   Code   RO         1441    i.dfu_init_prevalidate  dfu_init_template.o
+    0x0007b758   0x00000028   Code   RO         1490    i.dfu_prepare_func_app_erase  dfu_single_bank.o
+    0x0007b780   0x0000000c   Code   RO         1491    i.dfu_register_callback  dfu_single_bank.o
+    0x0007b78c   0x0000007a   Code   RO         1493    i.dfu_sd_image_swap  dfu_single_bank.o
+    0x0007b806   0x00000060   Code   RO         1494    i.dfu_sd_image_validate  dfu_single_bank.o
+    0x0007b866   0x0000004a   Code   RO         1495    i.dfu_sd_img_block_swap  dfu_single_bank.o
+    0x0007b8b0   0x000000a8   Code   RO         1496    i.dfu_start_pkt_handle  dfu_single_bank.o
+    0x0007b958   0x0000001c   Code   RO         1497    i.dfu_timeout_handler  dfu_single_bank.o
+    0x0007b974   0x0000003c   Code   RO         1498    i.dfu_timer_restart  dfu_single_bank.o
+    0x0007b9b0   0x00000018   Code   RO         1647    i.dfu_transport_close  dfu_transport_serial.o
+    0x0007b9c8   0x00000044   Code   RO         1648    i.dfu_transport_update_start  dfu_transport_serial.o
+    0x0007ba0c   0x00000040   Code   RO         1049    i.elapsed_ticks_acquire  app_timer.o
+    0x0007ba4c   0x00000028   Code   RO         1768    i.handle_rx_byte_default  hci_slip.o
+    0x0007ba74   0x00000038   Code   RO         1769    i.handle_rx_byte_esc  hci_slip.o
+    0x0007baac   0x00000014   Code   RO         1770    i.handle_rx_byte_wait_start  hci_slip.o
+    0x0007bac0   0x00000028   Code   RO         1771    i.handle_slip_end   hci_slip.o
+    0x0007bae8   0x00000004   Code   RO         1702    i.hci_mem_pool_close  hci_mem_pool.o
+    0x0007baec   0x00000028   Code   RO         1703    i.hci_mem_pool_open  hci_mem_pool.o
+    0x0007bb14   0x00000068   Code   RO         1704    i.hci_mem_pool_rx_consume  hci_mem_pool.o
+    0x0007bb7c   0x00000024   Code   RO         1705    i.hci_mem_pool_rx_data_size_set  hci_mem_pool.o
+    0x0007bba0   0x00000048   Code   RO         1706    i.hci_mem_pool_rx_extract  hci_mem_pool.o
+    0x0007bbe8   0x00000050   Code   RO         1707    i.hci_mem_pool_rx_produce  hci_mem_pool.o
+    0x0007bc38   0x00000010   Code   RO         1772    i.hci_slip_close    hci_slip.o
+    0x0007bc48   0x0000000c   Code   RO         1773    i.hci_slip_evt_handler_register  hci_slip.o
+    0x0007bc54   0x00000038   Code   RO         1774    i.hci_slip_open     hci_slip.o
+    0x0007bc8c   0x0000001c   Code   RO         1775    i.hci_slip_rx_buffer_register  hci_slip.o
+    0x0007bca8   0x0000003c   Code   RO         1776    i.hci_slip_write    hci_slip.o
+    0x0007bce4   0x0000003c   Code   RO         1880    i.hci_transport_close  hci_transport.o
+    0x0007bd20   0x00000028   Code   RO         1881    i.hci_transport_evt_handler_reg  hci_transport.o
+    0x0007bd48   0x00000060   Code   RO         1882    i.hci_transport_open  hci_transport.o
+    0x0007bda8   0x00000006   Code   RO         1884    i.hci_transport_rx_pkt_consume  hci_transport.o
+    0x0007bdae   0x00000002   PAD
+    0x0007bdb0   0x0000003c   Code   RO         1885    i.hci_transport_rx_pkt_extract  hci_transport.o
+    0x0007bdec   0x00000006   Code   RO         1886    i.hci_transport_timeout_handle  hci_transport.o
+    0x0007bdf2   0x00000012   Code   RO         1890    i.header_checksum_calculate  hci_transport.o
+    0x0007be04   0x00000070   Code   RO         2019    i.intern_softdevice_events_execute  softdevice_handler.o
+    0x0007be74   0x0000000c   Code   RO          836    i.is_word_aligned   pstorage_raw.o
+    0x0007be80   0x000000bc   Code   RO         1050    i.list_deletions_handler  app_timer.o
+    0x0007bf3c   0x000000cc   Code   RO         1051    i.list_insertions_handler  app_timer.o
+    0x0007c008   0x0000013c   Code   RO            6    i.main              main.o
+    0x0007c144   0x0000001a   Code   RO          559    i.nrf_delay_ms      nrf_delay.o
+    0x0007c15e   0x00000038   Code   RO          593    i.nrf_drv_common_irq_enable  nrf_drv_common.o
+    0x0007c196   0x00000002   PAD
+    0x0007c198   0x00000094   Code   RO          634    i.nrf_drv_uart_init  nrf_drv_uart.o
+    0x0007c22c   0x0000008c   Code   RO          635    i.nrf_drv_uart_rx   nrf_drv_uart.o
+    0x0007c2b8   0x00000020   Code   RO          638    i.nrf_drv_uart_rx_enable  nrf_drv_uart.o
+    0x0007c2d8   0x0000009c   Code   RO          639    i.nrf_drv_uart_rx_for_uart  nrf_drv_uart.o
+    0x0007c374   0x00000090   Code   RO          640    i.nrf_drv_uart_rx_for_uarte  nrf_drv_uart.o
+    0x0007c404   0x00000090   Code   RO          641    i.nrf_drv_uart_tx   nrf_drv_uart.o
+    0x0007c494   0x00000080   Code   RO          643    i.nrf_drv_uart_tx_for_uart  nrf_drv_uart.o
+    0x0007c514   0x00000010   Code   RO          644    i.nrf_drv_uart_tx_in_progress  nrf_drv_uart.o
+    0x0007c524   0x00000040   Code   RO          645    i.nrf_drv_uart_uninit  nrf_drv_uart.o
+    0x0007c564   0x00000022   Code   RO            7    i.nrf_gpio_cfg      main.o
+    0x0007c586   0x00000022   Code   RO          646    i.nrf_gpio_cfg      nrf_drv_uart.o
+    0x0007c5a8   0x00000012   Code   RO          647    i.nrf_gpio_cfg_default  nrf_drv_uart.o
+    0x0007c5ba   0x00000012   Code   RO          648    i.nrf_gpio_cfg_input  nrf_drv_uart.o
+    0x0007c5cc   0x00000014   Code   RO          649    i.nrf_gpio_cfg_output  nrf_drv_uart.o
+    0x0007c5e0   0x0000000a   Code   RO          650    i.nrf_uart_event_check  nrf_drv_uart.o
+    0x0007c5ea   0x0000000c   Code   RO          651    i.nrf_uart_int_enable_check  nrf_drv_uart.o
+    0x0007c5f6   0x0000000a   Code   RO          652    i.nrf_uarte_event_check  nrf_drv_uart.o
+    0x0007c600   0x00000054   Code   RO          653    i.pins_to_default   nrf_drv_uart.o
+    0x0007c654   0x00000070   Code   RO         1649    i.process_dfu_packet  dfu_transport_serial.o
+    0x0007c6c4   0x00000020   Code   RO         1286    i.pstorage_callback_handler  bootloader.o
+    0x0007c6e4   0x00000054   Code   RO         1500    i.pstorage_callback_handler  dfu_single_bank.o
+    0x0007c738   0x00000012   Code   RO          838    i.pstorage_clear    pstorage_raw.o
+    0x0007c74a   0x00000002   PAD
+    0x0007c74c   0x00000040   Code   RO          839    i.pstorage_init     pstorage_raw.o
+    0x0007c78c   0x00000028   Code   RO          840    i.pstorage_register  pstorage_raw.o
+    0x0007c7b4   0x0000002e   Code   RO          841    i.pstorage_store    pstorage_raw.o
+    0x0007c7e2   0x00000002   PAD
+    0x0007c7e4   0x0000009c   Code   RO          842    i.pstorage_sys_event_handler  pstorage_raw.o
+    0x0007c880   0x000000a4   Code   RO         1650    i.rpc_transport_event_handler  dfu_transport_serial.o
+    0x0007c924   0x0000003c   Code   RO         1052    i.rtc1_stop         app_timer.o
+    0x0007c960   0x00000030   Code   RO          654    i.rx_byte           nrf_drv_uart.o
+    0x0007c990   0x00000020   Code   RO          655    i.rx_done_event     nrf_drv_uart.o
+    0x0007c9b0   0x00000018   Code   RO          656    i.rx_enable         nrf_drv_uart.o
+    0x0007c9c8   0x000000e8   Code   RO         1892    i.rx_vendor_specific_pkt_type_handle  hci_transport.o
+    0x0007cab0   0x00000020   Code   RO            8    i.scheduler_init    main.o
+    0x0007cad0   0x00000088   Code   RO         2021    i.sd_nvic_EnableIRQ  softdevice_handler.o
+    0x0007cb58   0x00000020   Code   RO         1777    i.send_tx_byte_default  hci_slip.o
+    0x0007cb78   0x00000038   Code   RO         1778    i.send_tx_byte_encoded  hci_slip.o
+    0x0007cbb0   0x00000024   Code   RO         1779    i.send_tx_byte_end  hci_slip.o
+    0x0007cbd4   0x0000001c   Code   RO         1780    i.send_tx_byte_esc  hci_slip.o
+    0x0007cbf0   0x000000ac   Code   RO         1893    i.slip_event_handle  hci_transport.o
+    0x0007cc9c   0x00000050   Code   RO         1781    i.slip_uart_eventhandler  hci_slip.o
+    0x0007ccec   0x00000014   Code   RO         2023    i.softdevice_enable  softdevice_handler.o
+    0x0007cd00   0x00000026   Code   RO         2024    i.softdevice_enable_get_default_config  softdevice_handler.o
+    0x0007cd26   0x00000012   Code   RO         2122    i.softdevice_evt_get  softdevice_handler_appsh.o
+    0x0007cd38   0x00000010   Code   RO         2123    i.softdevice_evt_schedule  softdevice_handler_appsh.o
+    0x0007cd48   0x00000004   Code   RO         2025    i.softdevice_fault_handler  softdevice_handler.o
+    0x0007cd4c   0x00000034   Code   RO         2026    i.softdevice_handler_init  softdevice_handler.o
+    0x0007cd80   0x00000014   Code   RO         2029    i.softdevice_sys_evt_handler_set  softdevice_handler.o
+    0x0007cd94   0x00000004   Code   RO            9    i.sys_evt_dispatch  main.o
+    0x0007cd98   0x0000008c   Code   RO         1053    i.timer_list_handler  app_timer.o
+    0x0007ce24   0x0000003c   Code   RO         1054    i.timer_list_insert  app_timer.o
+    0x0007ce60   0x00000084   Code   RO         1055    i.timer_timeouts_check  app_timer.o
+    0x0007cee4   0x00000074   Code   RO         1782    i.transmit_buffer   hci_slip.o
+    0x0007cf58   0x00000024   Code   RO          657    i.tx_byte           nrf_drv_uart.o
+    0x0007cf7c   0x00000024   Code   RO          658    i.tx_done_event     nrf_drv_uart.o
+    0x0007cfa0   0x000000ac   Code   RO         1894    i.tx_sm_event_handle  hci_transport.o
+    0x0007d04c   0x00000010   Code   RO         1895    i.tx_sm_state_change  hci_transport.o
+    0x0007d05c   0x00000058   Code   RO          468    i.uart_event_handler  app_uart.o
+    0x0007d0b4   0x00000108   Code   RO          659    i.uart_irq_handler  nrf_drv_uart.o
+    0x0007d1bc   0x000000d8   Code   RO          660    i.uarte_irq_handler  nrf_drv_uart.o
+    0x0007d294   0x0000003e   Code   RO         1056    i.user_id_get       app_timer.o
+    0x0007d2d2   0x00000028   Code   RO         1057    i.user_op_alloc     app_timer.o
+    0x0007d2fa   0x00000002   PAD
+    0x0007d2fc   0x00000024   Code   RO         1287    i.wait_for_events   bootloader.o
+    0x0007d320   0x00000014   Data   RO           11    .constdata          main.o
+    0x0007d334   0x00000020   Data   RO          469    .constdata          app_uart.o
+    0x0007d354   0x00000020   Data   RO          662    .constdata          nrf_drv_uart.o
+    0x0007d374   0x00000020   Data   RO         1289    .constdata          bootloader.o
+    0x0007d394   0x00000024   Data   RO         1503    .constdata          dfu_single_bank.o
+    0x0007d3b8   0x00000024   Data   RO         1783    .constdata          hci_slip.o
+    0x0007d3dc   0x00000004   Data   RO         1897    .constdata          hci_transport.o
+    0x0007d3e0   0x00000020   Data   RO         2219    Region$$Table       anon$$obj.o
+
+
+    Execution Region RW_IRAM1 (Base: 0x20002c00, Size: 0x00002b60, Max: 0x0000d380, ABSOLUTE)
+
+    Base Addr    Size         Type   Attr      Idx    E Section Name        Object
+
+    0x20002c00   0x00000008   Data   RW          470    .data               app_uart.o
+    0x20002c08   0x00000008   Data   RW          844    .data               pstorage_raw.o
+    0x20002c10   0x00000010   Data   RW          992    .data               app_scheduler.o
+    0x20002c20   0x00000020   Data   RW         1058    .data               app_timer.o
+    0x20002c40   0x0000000c   Data   RW         1290    .data               bootloader.o
+    0x20002c4c   0x00000001   Data   RW         1443    .data               dfu_init_template.o
+    0x20002c4d   0x00000003   PAD
+    0x20002c50   0x00000020   Data   RW         1504    .data               dfu_single_bank.o
+    0x20002c70   0x00000001   Data   RW         1711    .data               hci_mem_pool.o
+    0x20002c71   0x00000003   PAD
+    0x20002c74   0x00000028   Data   RW         1784    .data               hci_slip.o
+    0x20002c9c   0x0000002d   Data   RW         1898    .data               hci_transport.o
+    0x20002cc9   0x00000003   PAD
+    0x20002ccc   0x00000014   Data   RW         2031    .data               softdevice_handler.o
+    0x20002ce0   0x00000004   Data   RW         2161    .data               system_nrf52.o
+    0x20002ce4   0x00000360   Zero   RW           10    .bss                main.o
+    0x20003044   0x00000020   Zero   RW          661    .bss                nrf_drv_uart.o
+    0x20003064   0x00000100   Zero   RW          843    .bss                pstorage_raw.o
+    0x20003164   0x0000001c   Zero   RW         1288    .bss                bootloader.o
+    0x20003180   0x0000000a   Zero   RW         1442    .bss                dfu_init_template.o
+    0x2000318a   0x00000002   PAD
+    0x2000318c   0x00000020   Zero   RW         1501    .bss                dfu_single_bank.o
+    0x200031ac   0x0000005c   Zero   RW         1502    .bss                dfu_single_bank.o
+    0x20003208   0x00000034   Zero   RW         1651    .bss                dfu_transport_serial.o
+    0x2000323c   0x000004f4   Zero   RW         1710    .bss                hci_mem_pool.o
+    0x20003730   0x00000020   Zero   RW         1896    .bss                hci_transport.o
+    0x20003750   0x0000000c   Zero   RW         2030    .bss                softdevice_handler.o
+    0x2000375c   0x00000004   PAD
+    0x20003760   0x00002000   Zero   RW         2149    STACK               arm_startup_nrf52.o
+
+
+    Execution Region RW_IRAM2 (Base: 0x2000ff80, Size: 0x00000000, Max: 0x00000080, ABSOLUTE, UNINIT)
+
+    **** No section assigned to this execution region ****
+
+
+
+  Load Region LR$$.ARM.__AT_0x0007E000 (Base: 0x0007e000, Size: 0x00000000, Max: 0x00001000, ABSOLUTE)
+
+    Execution Region ER$$.ARM.__AT_0x0007E000 (Base: 0x0007e000, Size: 0x00001000, Max: 0x00001000, ABSOLUTE, UNINIT)
+
+    Base Addr    Size         Type   Attr      Idx    E Section Name        Object
+
+    0x0007e000   0x00001000   Zero   RW         1383    .ARM.__AT_0x0007E000  bootloader_settings.o
+
+
+
+  Load Region LR$$.ARM.__AT_0x0007F000 (Base: 0x0007f000, Size: 0x00000000, Max: 0x00001000, ABSOLUTE)
+
+    Execution Region ER$$.ARM.__AT_0x0007F000 (Base: 0x0007f000, Size: 0x00001000, Max: 0x00001000, ABSOLUTE, UNINIT)
+
+    Base Addr    Size         Type   Attr      Idx    E Section Name        Object
+
+    0x0007f000   0x00001000   Zero   RW         1384    .ARM.__AT_0x0007F000  bootloader_settings.o
+
+
+
+  Load Region LR$$.ARM.__AT_0x10001014 (Base: 0x10001014, Size: 0x00000004, Max: 0x00000004, ABSOLUTE)
+
+    Execution Region ER$$.ARM.__AT_0x10001014 (Base: 0x10001014, Size: 0x00000004, Max: 0x00000004, ABSOLUTE, UNINIT)
+
+    Base Addr    Size         Type   Attr      Idx    E Section Name        Object
+
+    0x10001014   0x00000004   Data   RW         1385    .ARM.__AT_0x10001014  bootloader_settings.o
+
+
+
+  Load Region LR$$.ARM.__AT_0x10001018 (Base: 0x10001018, Size: 0x00000004, Max: 0x00000004, ABSOLUTE)
+
+    Execution Region ER$$.ARM.__AT_0x10001018 (Base: 0x10001018, Size: 0x00000004, Max: 0x00000004, ABSOLUTE, UNINIT)
+
+    Base Addr    Size         Type   Attr      Idx    E Section Name        Object
+
+    0x10001018   0x00000004   Data   RW         1386    .ARM.__AT_0x10001018  bootloader_settings.o
+
+
+==============================================================================
+
+Image component sizes
+
+
+      Code (inc. data)   RO Data    RW Data    ZI Data      Debug   Object Name
+
+        22          0          0          0          0       2221   app_error.o
+        36         10          0          0          0        726   app_error_weak.o
+       302         14          0         16          0       5503   app_scheduler.o
+      1766         94          0         32          0      55175   app_timer.o
+        48          6          0          0          0       2077   app_timer_appsh.o
+       266         22         32          8          0      12833   app_uart.o
+       124         14          0          0          0       9110   app_util_platform.o
+        36          8       1024          0       8192        912   arm_startup_nrf52.o
+       734         36         32         12         28      12936   bootloader.o
+        12          6          0          8       8192       1846   bootloader_settings.o
+        56          2          0          0          0       1280   bootloader_util.o
+        54          0          0          0          0       1304   crc16.o
+       164         14          0          1         10       4075   dfu_init_template.o
+      1498        154         36         32        124      22256   dfu_single_bank.o
+       466         36          0          0         52       9005   dfu_transport_serial.o
+       336         26          0          1       1268       6583   hci_mem_pool.o
+       676        136         36         40          0      12607   hci_slip.o
+       922         64          4         45         32      14408   hci_transport.o
+       518         48         20          0        864     117346   main.o
+       144          0          0          0          0       1847   nrf_delay.o
+        56          0          0          0          0      27535   nrf_drv_common.o
+      1974        168         32          0         32      65390   nrf_drv_uart.o
+       596         52          0          8        256      15151   pstorage_raw.o
+       418         40          0         20         12      38355   softdevice_handler.o
+        34          6          0          0          0       2151   softdevice_handler_appsh.o
+       620         54          0          4          0       2551   system_nrf52.o
+
+    ----------------------------------------------------------------------
+     11904       1010       1248        236      19068     445183   Object Totals
+         0          0         32          0          0          0   (incl. Generated)
+        26          0          0          9          6          0   (incl. Padding)
+
+    ----------------------------------------------------------------------
+
+      Code (inc. data)   RO Data    RW Data    ZI Data      Debug   Library Member Name
+
+         0          0          0          0          0          0   entry.o
+         0          0          0          0          0          0   entry10a.o
+         0          0          0          0          0          0   entry11a.o
+         8          4          0          0          0          0   entry2.o
+         4          0          0          0          0          0   entry5.o
+         0          0          0          0          0          0   entry7b.o
+         0          0          0          0          0          0   entry8b.o
+         8          4          0          0          0          0   entry9a.o
+        30          0          0          0          0          0   handlers.o
+        36          8          0          0          0         68   init.o
+        36          0          0          0          0         68   memcpya.o
+        36          0          0          0          0        108   memseta.o
+
+    ----------------------------------------------------------------------
+       160         16          0          0          0        244   Library Totals
+         2          0          0          0          0          0   (incl. Padding)
+
+    ----------------------------------------------------------------------
+
+      Code (inc. data)   RO Data    RW Data    ZI Data      Debug   Library Name
+
+       158         16          0          0          0        244   mc_w.l
+
+    ----------------------------------------------------------------------
+       160         16          0          0          0        244   Library Totals
+
+    ----------------------------------------------------------------------
+
+==============================================================================
+
+
+      Code (inc. data)   RO Data    RW Data    ZI Data      Debug   
+
+     12064       1026       1248        236      19068     429079   Grand Totals
+     12064       1026       1248        236      19068     429079   ELF Image Totals
+     12064       1026       1248        236          0          0   ROM Totals
+
+==============================================================================
+
+    Total RO  Size (Code + RO Data)                13312 (  13.00kB)
+    Total RW  Size (RW Data + ZI Data)             19304 (  18.85kB)
+    Total ROM Size (Code + RO Data + RW Data)      13548 (  13.23kB)
+
+==============================================================================
+
