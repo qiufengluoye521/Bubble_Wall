@@ -451,6 +451,7 @@ static void uart_init(void)
                        UART_RX_BUF_SIZE,
                        UART_TX_BUF_SIZE,
                        uart_event_handle,
+                       //NULL,
                        APP_IRQ_PRIORITY_LOW,
                        err_code);
     APP_ERROR_CHECK(err_code);
@@ -542,7 +543,7 @@ int main(void)
 	
 		printf("app_init_1\r\n");
 //		timer_init();
-    app_init_1();
+//    app_init_1();
     
     // Enter main loop.
     for (;;)

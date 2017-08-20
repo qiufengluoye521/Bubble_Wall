@@ -4,7 +4,7 @@
 
 uint32_t app_init_1(void)
 {
-    led_timer_init();
+//    led_timer_init();
     return NRF_SUCCESS;
 }
 

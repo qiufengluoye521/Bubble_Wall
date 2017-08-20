@@ -25,3 +25,4 @@
 .\_build\led_display.o: E:\Keil_v5\ARM\ARMCC\Bin\..\include\stdarg.h
 .\_build\led_display.o: ..\..\..\..\..\..\components\libraries\util\app_util.h
 .\_build\led_display.o: ..\..\..\..\..\..\components\libraries\util\app_error_weak.h
+.\_build\led_display.o: ..\..\..\..\..\..\components\drivers_nrf\delay\nrf_delay.h
