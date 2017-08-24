@@ -23,6 +23,20 @@ typedef struct
 
 bubble_wall_pic_frame m_bubble_wall_pic_frame;
 
+typedef struct
+{
+    uint8_t latch_pin;              // 锁存脚
+    uint8_t latch_data_pin;         // 数据脚
+} latch_chip_pin;
+
+latch_chip_pin m_latch_chip_pin[32] = 
+{
+    {.latch_pin = 4,.latch_data_pin = 15}, {GPIO_A7,GPIO_P12},{GPIO_A7,GPIO_P13}, {GPIO_A7,GPIO_P14}, {GPIO_A7,GPIO_P15},{GPIO_A7,GPIO_P16},
+    {GPIO_A5,GPIO_P9}, {GPIO_A5,GPIO_P10},{GPIO_A5,GPIO_P11}, {GPIO_A5,GPIO_P12},{GPIO_A5,GPIO_P13}, {GPIO_A5,GPIO_P14},{GPIO_A5,GPIO_P15}, {GPIO_A5,GPIO_P16},
+    {GPIO_A6,GPIO_P9}, {GPIO_A6,GPIO_P10},{GPIO_A6,GPIO_P11}, {GPIO_A6,GPIO_P12},{GPIO_A6,GPIO_P13}, {GPIO_A6,GPIO_P14},{GPIO_A6,GPIO_P15}, {GPIO_A6,GPIO_P16},
+    {GPIO_A4,GPIO_P9}, {GPIO_A4,GPIO_P10},{GPIO_A4,GPIO_P11}, {GPIO_A4,GPIO_P12},{GPIO_A4,GPIO_P13}, {GPIO_A4,GPIO_P14},{GPIO_A4,GPIO_P15}, {GPIO_A4,GPIO_P16},
+};
+
 const uint8_t bubble_wall_pic[BUBBLE_WALL_PIC_LENGTH] =
 {
     0x80,0x00,0x00,0x04,0x40,0x00,0x00,0x08,0x20,0x00,0x00,0x10,0x10,0x00,0x00,0x20,
@@ -70,7 +84,10 @@ const uint8_t bubble_wall_pic[BUBBLE_WALL_PIC_LENGTH] =
     0x00,0x00,0x00,0x04,0x00,0x00,0x00,0x00
 };
 
-uint8_t gpio_pin[8] = 
+uint8_t bubble_wall_pic_one_frame[32] = {0};
+
+
+uint8_t latch_gpio_pin[8] = 
 {
     GPIO_P9,GPIO_P10,GPIO_P11,GPIO_P12,GPIO_P13,GPIO_P14,GPIO_P15,GPIO_P16
 };
@@ -115,7 +132,7 @@ static void turn_on_led(uint8_t dis_i,uint8_t dis_j)
     nrf_gpio_pin_clear(GPIO_A7);
     
     // 开启指定脚led
-    nrf_gpio_pin_set(gpio_pin[dis_j]);
+    nrf_gpio_pin_set(latch_gpio_pin[dis_j]);
 //    nrf_delay_ms(10);
         
     // 开启指定脚的锁存端口
@@ -133,29 +150,65 @@ static void turn_on_led(uint8_t dis_i,uint8_t dis_j)
 /**
 * @brief : turn_off_led
 *
-* @parain: i,j-> select led num to turn off
+* @parain: null
 * @paraout: null
 *
 * @return:null
 */
-static void turn_off_led(uint8_t dis_i,uint8_t dis_j)
+static void turn_off_led(void)
 {
-    uint8_t display_num;
-    
-    display_num = (dis_i+1)*(dis_j+1);
-    
+    uint8_t i=0;
+
     // 关闭锁存端口
     nrf_gpio_pin_clear(GPIO_A4);
     nrf_gpio_pin_clear(GPIO_A5);
     nrf_gpio_pin_clear(GPIO_A6);
     nrf_gpio_pin_clear(GPIO_A7);
+
     
-    // 开启指定脚led
-    nrf_gpio_pin_clear(gpio_pin[dis_j]);
-//    nrf_delay_ms(10);
+    // 显示第一个锁存器控制的几个LED
+    for(i=2;i<8;i++)
+    {
+        nrf_gpio_pin_clear(latch_gpio_pin[i]);
+    }
+    nrf_gpio_pin_set(GPIO_A7);    
+    nrf_gpio_pin_clear(GPIO_A4);
+    nrf_gpio_pin_clear(GPIO_A5);
+    nrf_gpio_pin_clear(GPIO_A6);
+    nrf_gpio_pin_clear(GPIO_A7);
     
-    // 开启指定脚的锁存端口
-    nrf_gpio_pin_set(latch_pin[display_num-1]);
+    // 显示第二个锁存器控制的几个LED
+    for(i=0;i<8;i++)
+    {
+        nrf_gpio_pin_clear(latch_gpio_pin[i]);
+    }
+    nrf_gpio_pin_set(GPIO_A5);    
+    nrf_gpio_pin_clear(GPIO_A4);
+    nrf_gpio_pin_clear(GPIO_A5);
+    nrf_gpio_pin_clear(GPIO_A6);
+    nrf_gpio_pin_clear(GPIO_A7);
+    
+    // 显示第三个锁存器控制的几个LED
+    for(i=0;i<8;i++)
+    {
+        nrf_gpio_pin_clear(latch_gpio_pin[i]);
+    }
+    nrf_gpio_pin_set(GPIO_A6);    
+    nrf_gpio_pin_clear(GPIO_A4);
+    nrf_gpio_pin_clear(GPIO_A5);
+    nrf_gpio_pin_clear(GPIO_A6);
+    nrf_gpio_pin_clear(GPIO_A7);
+    
+    // 显示第四个锁存器控制的几个LED
+    for(i=0;i<8;i++)
+    {
+        nrf_gpio_pin_clear(latch_gpio_pin[i]);
+    }
+    nrf_gpio_pin_set(GPIO_A4);    
+    nrf_gpio_pin_clear(GPIO_A4);
+    nrf_gpio_pin_clear(GPIO_A5);
+    nrf_gpio_pin_clear(GPIO_A6);
+    nrf_gpio_pin_clear(GPIO_A7);
 
     return;
 }
@@ -169,29 +222,102 @@ static void turn_off_led(uint8_t dis_i,uint8_t dis_j)
 *
 * @return:null
 */
-uint8_t temp1;
-uint8_t temp2;
-bool temp3;
 static void display_one_frame(const uint8_t * data)
 {
-    uint8_t i;
-    uint8_t j;
-    for(i=0;i<4;i++)
+    uint8_t i=0;
+    uint32_t data_frame;
+    // 关闭锁存端口
+    nrf_gpio_pin_clear(GPIO_A4);
+    nrf_gpio_pin_clear(GPIO_A5);
+    nrf_gpio_pin_clear(GPIO_A6);
+    nrf_gpio_pin_clear(GPIO_A7);
+    
+    data_frame = (data[0] << 24) | (data[1] << 16) | (data[2] << 8) | (data[3] << 0);
+    
+    for(i=0;i<32;i++)
     {
-        for(j=8;j>0;j--)
+        if(data_frame & (1<<i))
         {
-            temp1 = 1<<(j-1);
-            temp2 = data[i] & temp1;
-            temp3 = (temp2 != 0);
-            if(temp3)
-            {
-                turn_on_led(i,j);
-            } else
-            {
-                turn_off_led(i,j);
-            }
+            bubble_wall_pic_one_frame[31-i] = 1;
+        }
+        else
+        {
+            bubble_wall_pic_one_frame[31-i] = 0;
         }
     }
+    
+    // 显示第一个锁存器控制的几个LED
+    for(i=2;i<8;i++)
+    {
+        if(1 == bubble_wall_pic_one_frame[i-2])
+        {
+            nrf_gpio_pin_set(latch_gpio_pin[i]);
+        } 
+        else
+        {
+            nrf_gpio_pin_clear(latch_gpio_pin[i]);
+        }
+    }
+    nrf_gpio_pin_set(GPIO_A7);    
+    nrf_gpio_pin_clear(GPIO_A4);
+    nrf_gpio_pin_clear(GPIO_A5);
+    nrf_gpio_pin_clear(GPIO_A6);
+    nrf_gpio_pin_clear(GPIO_A7);
+    
+    // 显示第二个锁存器控制的几个LED
+    for(i=0;i<8;i++)
+    {
+        if(1 == bubble_wall_pic_one_frame[i+6])
+        {
+            nrf_gpio_pin_set(latch_gpio_pin[i]);
+        } 
+        else
+        {
+            nrf_gpio_pin_clear(latch_gpio_pin[i]);
+        }
+    }
+    nrf_gpio_pin_set(GPIO_A5);    
+    nrf_gpio_pin_clear(GPIO_A4);
+    nrf_gpio_pin_clear(GPIO_A5);
+    nrf_gpio_pin_clear(GPIO_A6);
+    nrf_gpio_pin_clear(GPIO_A7);
+    
+    // 显示第三个锁存器控制的几个LED
+    for(i=0;i<8;i++)
+    {
+        if(1 == bubble_wall_pic_one_frame[i+14])
+        {
+            nrf_gpio_pin_set(latch_gpio_pin[i]);
+        } 
+        else
+        {
+            nrf_gpio_pin_clear(latch_gpio_pin[i]);
+        }
+    }
+    nrf_gpio_pin_set(GPIO_A6);    
+    nrf_gpio_pin_clear(GPIO_A4);
+    nrf_gpio_pin_clear(GPIO_A5);
+    nrf_gpio_pin_clear(GPIO_A6);
+    nrf_gpio_pin_clear(GPIO_A7);
+    
+    // 显示第四个锁存器控制的几个LED
+    for(i=0;i<8;i++)
+    {
+        if(1 == bubble_wall_pic_one_frame[i+22])
+        {
+            nrf_gpio_pin_set(latch_gpio_pin[i]);
+        } 
+        else
+        {
+            nrf_gpio_pin_clear(latch_gpio_pin[i]);
+        }
+    }
+    nrf_gpio_pin_set(GPIO_A4);    
+    nrf_gpio_pin_clear(GPIO_A4);
+    nrf_gpio_pin_clear(GPIO_A5);
+    nrf_gpio_pin_clear(GPIO_A6);
+    nrf_gpio_pin_clear(GPIO_A7);
+    
 }
 
 /**
@@ -211,7 +337,13 @@ static void Timer_change_frame_process(void * p_contex)
     m_bubble_wall_pic_frame.pic_frame   = &bubble_wall_pic[m_bubble_wall_pic_frame.offset];
     display_one_frame(m_bubble_wall_pic_frame.pic_frame);
     
-    m_bubble_wall_pic_frame.offset      = m_bubble_wall_pic_frame.offset + 4;
+    if(m_bubble_wall_pic_frame.offset < BUBBLE_WALL_PIC_LENGTH - 8)
+    {
+        m_bubble_wall_pic_frame.offset      = m_bubble_wall_pic_frame.offset + 4;
+    } else
+    {
+        m_bubble_wall_pic_frame.offset      = 0;
+    }
     
 
     err_code = app_timer_start(m_close_led_id, TIMER_CLOSE_LED_INTERVAL, NULL);
@@ -223,14 +355,9 @@ static void Timer_close_led_process(void * p_contex)
     uint8_t i;
     int8_t j;
     printf("Timer_close_led_process ----> turn off all led\r\n");
+    
+    turn_off_led();
 
-    for(i=0;i<4;i++)
-    {
-        for(j=7;j>=0;j--)
-        {
-            turn_off_led(i,j);
-        }
-    }
 }
 
 static void led_timer_init(void)
