@@ -4,16 +4,20 @@
 #include "nrf_delay.h"
 
 
-#define LED_CHANGE_TIMER_MS                         1000
+#define LED_CHANGE_TIMER_MS                         10
 #define APP_TIMER_PRESCALER                         0
 #define TIMER_LED_CHANGE_INTERVAL                   APP_TIMER_TICKS(LED_CHANGE_TIMER_MS, APP_TIMER_PRESCALER) 
 
-#define LED_CLOSE_LED_TIMER_MS                      400
+#define LED_CLOSE_LED_TIMER_MS                      5
 #define TIMER_CLOSE_LED_INTERVAL                    APP_TIMER_TICKS(LED_CLOSE_LED_TIMER_MS, APP_TIMER_PRESCALER) 
 
 APP_TIMER_DEF(m_led_frame_change_id);
 APP_TIMER_DEF(m_close_led_id);
 
+uint16_t led_chang_time_cnt         = 100;
+uint16_t led_close_time_cnt         = 100;
+static uint16_t led_change_num      = 0;
+static uint16_t led_close_num       = 0;
 
 typedef struct
 {
@@ -332,6 +336,16 @@ static void Timer_change_frame_process(void * p_contex)
 {
     uint32_t err_code  = 0;
     
+    if(led_change_num < led_chang_time_cnt)
+    {
+        led_change_num ++;
+        return;
+    }
+    else
+    {
+        led_change_num = 0;
+    }
+    
     printf("Timer_change_frame_process ----> display one frame\r\n");
     
     m_bubble_wall_pic_frame.pic_frame   = &bubble_wall_pic[m_bubble_wall_pic_frame.offset];
@@ -354,9 +368,23 @@ static void Timer_close_led_process(void * p_contex)
 {
     uint8_t i;
     int8_t j;
+    uint32_t err_code;
+    if(led_close_num < led_close_time_cnt)
+    {
+        led_close_num ++;
+        return;
+    }
+    else
+    {
+        led_close_num = 0;
+    }
+    
     printf("Timer_close_led_process ----> turn off all led\r\n");
     
     turn_off_led();
+    
+    err_code = app_timer_stop(m_close_led_id);
+    APP_ERROR_CHECK(err_code);
 
 }
 
@@ -365,7 +393,7 @@ static void led_timer_init(void)
     uint32_t err_code  = 0;
     err_code = app_timer_create(&m_led_frame_change_id, APP_TIMER_MODE_REPEATED, Timer_change_frame_process);
     APP_ERROR_CHECK(err_code);    
-    err_code = app_timer_create(&m_close_led_id, APP_TIMER_MODE_SINGLE_SHOT, Timer_close_led_process);
+    err_code = app_timer_create(&m_close_led_id, APP_TIMER_MODE_REPEATED, Timer_close_led_process);
     APP_ERROR_CHECK(err_code);
     
     err_code = app_timer_start(m_led_frame_change_id, TIMER_LED_CHANGE_INTERVAL, NULL);
