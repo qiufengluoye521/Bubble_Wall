@@ -579,9 +579,9 @@ ARM Macro Assembler    Page 9
               00000000 
               00000000 
 Command Line: --debug --xref --diag_suppress=9931 --cpu=Cortex-M4.fp --apcs=int
-erwork --depend=.\_build\arm_startup_nrf52.d -o.\_build\arm_startup_nrf52.o -IF
+erwork --depend=.\_build\arm_startup_nrf52.d -o.\_build\arm_startup_nrf52.o -IE
 :\design\C\Bubble_Wall\examples\ble_peripheral\ble_app_uart\pca10040\s132\arm5_
-no_packs\RTE -IE:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include -IE:\Keil_v5\A
+no_packs\RTE -ID:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include -ID:\Keil_v5\A
 RM\PACK\NordicSemiconductor\nRF_DeviceFamilyPack\8.5.0\Device\Include --predefi
 
 
