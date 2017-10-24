@@ -132,11 +132,39 @@ static void gap_params_init(void)
 /**@snippet [Handling the data received over BLE] */
 static void nus_data_handler(ble_nus_t * p_nus, uint8_t * p_data, uint16_t length)
 {
-    for (uint32_t i = 0; i < length; i++)
+    uint16_t set_value;
+//    for (uint32_t i = 0; i < length; i++)
+//    {
+//        while(app_uart_put(p_data[i]) != NRF_SUCCESS);
+//    }
+//    while(app_uart_put('\n') != NRF_SUCCESS);
+    /*
+    * 0xAB00:add led_chang_time_cnt
+    * 0xAB01:sub led_chang_time_cnt
+    * 0xAB02:add led_close_time_cnt
+    * 0xAB03:sub led_close_time_cnt
+    */
+    if(length == 5)
     {
-        while(app_uart_put(p_data[i]) != NRF_SUCCESS);
+        if((p_data[0] == 'A') && (p_data[1] == 'B'))
+        {
+            set_value = ((p_data[3]-'0') << 8) | (p_data[4]-'0');
+            printf("receice 0xAB command, set value is %d\r\n",set_value);
+            
+            switch(p_data[2])
+            {
+                case (0+0x30):
+                    set_led_chang_time_cnt(set_value);
+                    break;
+                case (1+0x30):
+                    set_led_close_time_cnt(set_value);
+                    break;
+                default:
+                    break;
+            }
+            
+        }
     }
-    while(app_uart_put('\n') != NRF_SUCCESS);
 }
 /**@snippet [Handling the data received over BLE] */
 
@@ -455,7 +483,6 @@ static void uart_init(void)
                        UART_RX_BUF_SIZE,
                        UART_TX_BUF_SIZE,
                        uart_event_handle,
-                       //NULL,
                        APP_IRQ_PRIORITY_LOW,
                        err_code);
     APP_ERROR_CHECK(err_code);
@@ -538,16 +565,14 @@ int main(void)
     advertising_init();
     conn_params_init();
 
-    printf("ble_advertising_start\r\n");
+//    printf("\r\nble_advertising_start\r\n");
     err_code = ble_advertising_start(BLE_ADV_MODE_FAST);
     APP_ERROR_CHECK(err_code);
 
-		printf("led init\r\n");
+    printf("led init\r\n");
     led_init();
-	
-		printf("app_init_1\r\n");
-//		timer_init();
-//    app_init_1();
+
+    printf("app_init_1\r\n");
     
     // Enter main loop.
     for (;;)

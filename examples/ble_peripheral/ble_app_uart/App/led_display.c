@@ -2,6 +2,7 @@
 #include "nrf_gpio.h"
 #include "app_timer.h"
 #include "nrf_delay.h"
+#include "pca10040.h"
 
 
 #define LED_CHANGE_TIMER_MS                         10
@@ -407,22 +408,74 @@ void led_init(void)
 {
     uint8_t i;
     
-    for(i=0;i<32;i++)
-    {
-        nrf_gpio_cfg_output(i);
-        nrf_gpio_pin_clear(i);
-    }
-    
-    
+//    for(i=0;i<32;i++)
+//    {
+//        nrf_gpio_cfg_output(i);
+//        nrf_gpio_pin_clear(i);
+//    }
     
     led_timer_init();
-    for(i=0;i<32;i++)
-    {
-        nrf_gpio_cfg_output(i);
-        nrf_gpio_pin_set(i);
-    }
+//    for(i=0;i<32;i++)
+//    {
+//        if((TX_PIN_NUMBER != i) && (RX_PIN_NUMBER != i) && (CTS_PIN_NUMBER != i) && (RTS_PIN_NUMBER != i))
+//        {
+//            nrf_gpio_cfg_output(i);
+//            nrf_gpio_pin_set(i);
+//        }
+//    }
+    // 使用的IO口设置为输出
+    nrf_gpio_cfg_output(GPIO_A1);
+    nrf_gpio_cfg_output(GPIO_A2);
+    nrf_gpio_cfg_output(GPIO_A3);
+    nrf_gpio_cfg_output(GPIO_A4);
+    nrf_gpio_cfg_output(GPIO_A5);
+    nrf_gpio_cfg_output(GPIO_A6);
+    nrf_gpio_cfg_output(GPIO_A7);
+    
+    nrf_gpio_cfg_output(GPIO_P9);
+    nrf_gpio_cfg_output(GPIO_P10);
+    nrf_gpio_cfg_output(GPIO_P11);
+    nrf_gpio_cfg_output(GPIO_P12);
+    nrf_gpio_cfg_output(GPIO_P13);
+    nrf_gpio_cfg_output(GPIO_P14);
+    nrf_gpio_cfg_output(GPIO_P15);
+    nrf_gpio_cfg_output(GPIO_P16);
+    
+    nrf_gpio_pin_set(GPIO_A1);
+    nrf_gpio_pin_set(GPIO_A2);
+    nrf_gpio_pin_set(GPIO_A3);
+    nrf_gpio_pin_set(GPIO_A4);
+    nrf_gpio_pin_set(GPIO_A5);
+    nrf_gpio_pin_set(GPIO_A6);
+    nrf_gpio_pin_set(GPIO_A7);
+    
+    nrf_gpio_pin_set(GPIO_P9);
+    nrf_gpio_pin_set(GPIO_P10);
+    nrf_gpio_pin_set(GPIO_P11);
+    nrf_gpio_pin_set(GPIO_P12);
+    nrf_gpio_pin_set(GPIO_P13);
+    nrf_gpio_pin_set(GPIO_P14);
+    nrf_gpio_pin_set(GPIO_P15);
+    nrf_gpio_pin_set(GPIO_P16);
+    
 
 }
+
+// set led_chang_time_cnt used in debug mode
+void set_led_chang_time_cnt(uint16_t data)
+{
+    led_chang_time_cnt = data;
+    return;
+}
+
+// set led_close_time_cnt used in debug mode
+void set_led_close_time_cnt(uint16_t data)
+{
+    led_close_time_cnt = data;
+    return;
+}
+
+
 
 
 

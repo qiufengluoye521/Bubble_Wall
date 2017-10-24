@@ -26,3 +26,4 @@
 .\_build\led_display.o: ..\..\..\..\..\..\components\libraries\util\app_util.h
 .\_build\led_display.o: ..\..\..\..\..\..\components\libraries\util\app_error_weak.h
 .\_build\led_display.o: ..\..\..\..\..\..\components\drivers_nrf\delay\nrf_delay.h
+.\_build\led_display.o: ..\..\..\..\..\bsp\pca10040.h

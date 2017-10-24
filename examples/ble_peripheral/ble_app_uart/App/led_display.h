@@ -22,7 +22,11 @@
 #define GPIO_P16                         20
 
 
+//uint16_t led_chang_time_cnt         = 100;
+//uint16_t led_close_time_cnt         = 100;
 
 void led_init(void);
+void set_led_chang_time_cnt(uint16_t data);
+void set_led_close_time_cnt(uint16_t data);
 
 #endif      // #ifndef __LED_DISPLAY_H
